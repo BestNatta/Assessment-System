@@ -1,32 +1,8 @@
 <template>
-  <form action="#" @submit.prevent="onSubmit">
-    <!-- <p v-if="errorsPresent" class="error text-center">กรุณากรอกข้อมูลให้ครบถ้วน !</p> -->
-    <div class="container w-50">
-      <div class="ui labeled input fluid">
-        <div class="ui label">
-          <i class="calendar plus icon"></i>ชื่อบริษัท
-        </div>
-        <input type="text" placeholder="Enter task..." v-model="forms.company_name" />
-      </div>
-      <div class="ui form">
-        <div class="ui label">
-          <b-icon icon="book-half" scale="1"></b-icon> ส่วนที่ 4
-        </div>
-        <input type="text" placeholder="Enter Details" v-model="forms.chapter1" />
-        <textarea rows="4" v-model="forms.description1"></textarea>
-      </div>
-      <div class="ui form mt-2">
-        <div class="ui label">
-          <b-icon icon="book-half" scale="1"></b-icon> ส่วนที่ 5
-        </div>
-        <input type="text" placeholder="Enter Details" v-model="forms.chapter2" />
-        <textarea rows="4" v-model="forms.description2"></textarea>
-      </div>
-    </div>
-    <hr />
+  <!-- <form action="#" @submit.prevent="onSubmit"> -->
+    <div class="container-report">
 
-    <!-- Descriptions -->
-    <div class="container mb-5 w-75 text-center">
+      <div class="container mb-5 w-75 text-center">
         <h4 class="mb-5"><u>เกณฑ์การจัดระดับความสำคัญ</u></h4>
         <table id="tasks" class="ui celled compact table">
           <thead>
@@ -66,6 +42,9 @@
           </tr>
         </table>
       </div>
+      <hr />
+
+      <!------------------------- Form Content ------------------------------>
 
       <div class="container">
         <b-row class="mt-5">
@@ -75,8 +54,6 @@
         </b-row>
 
         <div class="form-content">
-
-          <!-- 1. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-1 icon="arrow-down-right-square-fill"></b-icon>
@@ -289,7 +266,6 @@
             </b-collapse>
           </section>
 
-          <!-- 2. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-2 icon="arrow-down-right-square-fill"></b-icon>
@@ -578,7 +554,6 @@
             </b-collapse>
           </section>
 
-          <!-- 3. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-3 icon="arrow-down-right-square-fill"></b-icon>
@@ -730,7 +705,6 @@
             </b-collapse>
           </section>
 
-          <!-- 4. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-4 icon="arrow-down-right-square-fill"></b-icon>
@@ -969,7 +943,6 @@
             </b-collapse>
           </section>
 
-          <!-- 5. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-5 icon="arrow-down-right-square-fill"></b-icon>
@@ -1163,7 +1136,6 @@
             </b-collapse>
           </section>
 
-          <!-- 6. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-6 icon="arrow-down-right-square-fill"></b-icon>
@@ -1352,7 +1324,6 @@
             </b-collapse>
           </section>
 
-          <!-- 7. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-7 icon="arrow-down-right-square-fill"></b-icon>
@@ -1585,7 +1556,6 @@
             </b-collapse>
           </section>
 
-          <!-- 8. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-8 icon="arrow-down-right-square-fill"></b-icon>
@@ -1773,7 +1743,6 @@
             </b-collapse>
           </section>
 
-            <!-- 9. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-9 icon="arrow-down-right-square-fill"></b-icon>
@@ -1917,7 +1886,6 @@
             </b-collapse>
           </section>
 
-          <!-- 10. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-10 icon="arrow-down-right-square-fill"></b-icon>
@@ -2156,7 +2124,6 @@
             </b-collapse>
           </section>
 
-          <!-- 11. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-11 icon="arrow-down-right-square-fill"></b-icon>
@@ -2344,7 +2311,6 @@
             </b-collapse>
           </section>
 
-          <!-- 11. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-12 icon="arrow-down-right-square-fill"></b-icon>
@@ -2664,7 +2630,6 @@
             </b-collapse>
           </section>
 
-          <!-- 13. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-13 icon="arrow-down-right-square-fill"></b-icon>
@@ -2944,7 +2909,6 @@
             </b-collapse>
           </section>
 
-          <!-- 14. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-14 icon="arrow-down-right-square-fill"></b-icon>
@@ -3090,7 +3054,6 @@
             </b-collapse>
           </section>
 
-          <!-- 15. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-15 icon="arrow-down-right-square-fill"></b-icon>
@@ -3190,7 +3153,6 @@
             </b-collapse>
           </section>
 
-          <!-- 16. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-16 icon="arrow-down-right-square-fill"></b-icon>
@@ -3466,7 +3428,6 @@
             </b-collapse>
           </section>
 
-          <!-- 17. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-17 icon="arrow-down-right-square-fill"></b-icon>
@@ -3576,7 +3537,6 @@
             </b-col>
           </b-row>
 
-          <!-- 18. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-18 icon="arrow-down-right-square-fill"></b-icon>
@@ -3852,7 +3812,6 @@
             </b-collapse>
           </section>
 
-          <!-- 19. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-19 icon="arrow-down-right-square-fill"></b-icon>
@@ -4040,7 +3999,6 @@
             </b-collapse>
           </section>
 
-          <!-- 20. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-20 icon="arrow-down-right-square-fill"></b-icon>
@@ -4184,7 +4142,6 @@
             </b-collapse>
           </section>
 
-          <!-- 21. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-21 icon="arrow-down-right-square-fill"></b-icon>
@@ -4416,7 +4373,6 @@
             </b-collapse>
           </section>
 
-          <!-- 22. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-22 icon="arrow-down-right-square-fill"></b-icon>
@@ -4780,7 +4736,6 @@
             </b-collapse>
           </section>
 
-          <!-- 23. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-23 icon="arrow-down-right-square-fill"></b-icon>
@@ -5056,7 +5011,6 @@
             </b-collapse>
           </section>
 
-          <!-- 24. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-24 icon="arrow-down-right-square-fill"></b-icon>
@@ -5332,7 +5286,6 @@
             </b-collapse>
           </section>
 
-          <!-- 25. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-25 icon="arrow-down-right-square-fill"></b-icon>
@@ -5386,42 +5339,39 @@
               </div>
             </b-collapse>
           </section>
+
         </div>
       </div>
-
-    <b-row >
+      <!-- <b-row >
       <b-col class="d-flex justify-content-center">
         <button class="positive ui button px-5">บันทึก</button>
       </b-col>
-    </b-row>
-  </form>
+    </b-row> -->
+    </div>
+  <!-- </form> -->
+
 </template>
 
+
 <script>
-// import FormReport from '../views/Form.vue'
 export default {
-  name: 'task-form',
+  name: "create-form",
   components: {
-    // FormReport
+
   },
 
   data() {
     return {
 
-      }
+    }
   },
 
   props: {
     forms: {
       type: Object,
-      required: false,
+      required: false  ,
       default: () => {
         return {
-          company_name: '',
-          chapter1: '',
-          description1: '',
-          chapter2: '',
-          description2: '',
           form1: {
             form1_1: {
               currentAction: '',
@@ -5429,7 +5379,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form1_2: {
               currentAction: '',
@@ -5437,7 +5387,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form1_3: {
               currentAction: '',
@@ -5445,7 +5395,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form1_4: {
               currentAction: '',
@@ -5453,7 +5403,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form2: {
@@ -5463,7 +5413,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form2_2: {
               currentAction: '',
@@ -5471,7 +5421,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form2_3: {
               currentAction: '',
@@ -5479,7 +5429,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form2_4: {
               currentAction: '',
@@ -5487,7 +5437,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form2_5: {
               currentAction: '',
@@ -5495,7 +5445,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form2_6: {
               currentAction: '',
@@ -5503,7 +5453,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form3: {
@@ -5513,7 +5463,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form3_2: {
               currentAction: '',
@@ -5521,7 +5471,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form3_3: {
               currentAction: '',
@@ -5529,7 +5479,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form4: {
@@ -5539,7 +5489,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form4_2: {
               currentAction: '',
@@ -5547,7 +5497,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form4_3: {
               currentAction: '',
@@ -5555,7 +5505,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form4_4: {
               currentAction: '',
@@ -5563,7 +5513,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form4_5: {
               currentAction: '',
@@ -5571,7 +5521,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form5: {
@@ -5581,7 +5531,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form5_2: {
               currentAction: '',
@@ -5589,7 +5539,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form5_3: {
               currentAction: '',
@@ -5597,7 +5547,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form5_4: {
               currentAction: '',
@@ -5605,7 +5555,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form6: {
@@ -5615,7 +5565,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form6_2: {
               currentAction: '',
@@ -5623,7 +5573,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form6_3: {
               currentAction: '',
@@ -5631,7 +5581,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form6_4: {
               currentAction: '',
@@ -5639,7 +5589,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form7: {
@@ -5649,7 +5599,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form7_2: {
               currentAction: '',
@@ -5657,7 +5607,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form7_3: {
               currentAction: '',
@@ -5665,7 +5615,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form7_4: {
               currentAction: '',
@@ -5673,7 +5623,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form7_5: {
               currentAction: '',
@@ -5681,7 +5631,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form8: {
@@ -5691,7 +5641,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form8_2: {
               currentAction: '',
@@ -5699,7 +5649,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form8_3: {
               currentAction: '',
@@ -5707,7 +5657,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form8_4: {
               currentAction: '',
@@ -5715,7 +5665,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form9: {
@@ -5725,7 +5675,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form9_2: {
               currentAction: '',
@@ -5733,7 +5683,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form9_3: {
               currentAction: '',
@@ -5741,7 +5691,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form10: {
@@ -5751,7 +5701,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form10_2: {
               currentAction: '',
@@ -5759,7 +5709,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form10_3: {
               currentAction: '',
@@ -5767,7 +5717,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form10_4: {
               currentAction: '',
@@ -5775,7 +5725,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form10_5: {
               currentAction: '',
@@ -5783,7 +5733,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form11: {
@@ -5793,7 +5743,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form11_2: {
               currentAction: '',
@@ -5801,7 +5751,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form11_3: {
               currentAction: '',
@@ -5809,7 +5759,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form11_4: {
               currentAction: '',
@@ -5817,7 +5767,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form12: {
@@ -5827,7 +5777,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_2: {
               currentAction: '',
@@ -5835,7 +5785,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_3: {
               currentAction: '',
@@ -5843,7 +5793,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_4: {
               currentAction: '',
@@ -5851,7 +5801,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_5: {
               currentAction: '',
@@ -5859,7 +5809,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_6: {
               currentAction: '',
@@ -5867,7 +5817,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form12_7: {
               currentAction: '',
@@ -5875,7 +5825,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form13: {
@@ -5885,7 +5835,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form13_2: {
               currentAction: '',
@@ -5893,7 +5843,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form13_3: {
               currentAction: '',
@@ -5901,7 +5851,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form13_4: {
               currentAction: '',
@@ -5909,7 +5859,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form13_5: {
               currentAction: '',
@@ -5917,7 +5867,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form13_6: {
               currentAction: '',
@@ -5925,7 +5875,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form14: {
@@ -5935,7 +5885,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form14_2: {
               currentAction: '',
@@ -5943,7 +5893,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form14_3: {
               currentAction: '',
@@ -5951,7 +5901,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
           form15: {
@@ -5961,7 +5911,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form15_2: {
               currentAction: '',
@@ -5969,7 +5919,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -5980,7 +5930,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form16_2: {
               currentAction: '',
@@ -5988,7 +5938,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form16_3: {
               currentAction: '',
@@ -5996,7 +5946,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form16_4: {
               currentAction: '',
@@ -6004,7 +5954,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form16_5: {
               currentAction: '',
@@ -6012,7 +5962,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form16_6: {
               currentAction: '',
@@ -6020,7 +5970,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6031,7 +5981,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form17_2: {
               currentAction: '',
@@ -6039,7 +5989,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6050,7 +6000,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form18_2: {
               currentAction: '',
@@ -6058,7 +6008,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form18_3: {
               currentAction: '',
@@ -6066,7 +6016,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form18_4: {
               currentAction: '',
@@ -6074,7 +6024,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form18_5: {
               currentAction: '',
@@ -6082,7 +6032,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form18_6: {
               currentAction: '',
@@ -6090,7 +6040,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6101,7 +6051,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form19_2: {
               currentAction: '',
@@ -6109,7 +6059,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form19_3: {
               currentAction: '',
@@ -6117,7 +6067,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form19_4: {
               currentAction: '',
@@ -6125,7 +6075,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6136,7 +6086,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form20_2: {
               currentAction: '',
@@ -6144,7 +6094,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form20_3: {
               currentAction: '',
@@ -6152,7 +6102,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6163,7 +6113,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form21_2: {
               currentAction: '',
@@ -6171,7 +6121,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form21_3: {
               currentAction: '',
@@ -6179,7 +6129,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form21_4: {
               currentAction: '',
@@ -6187,7 +6137,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form21_5: {
               currentAction: '',
@@ -6195,7 +6145,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6206,7 +6156,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_2: {
               currentAction: '',
@@ -6214,7 +6164,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_3: {
               currentAction: '',
@@ -6222,7 +6172,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_4: {
               currentAction: '',
@@ -6230,7 +6180,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_5: {
               currentAction: '',
@@ -6238,7 +6188,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_6: {
               currentAction: '',
@@ -6246,7 +6196,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_7: {
               currentAction: '',
@@ -6254,7 +6204,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form22_8: {
               currentAction: '',
@@ -6262,7 +6212,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6273,7 +6223,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form23_2: {
               currentAction: '',
@@ -6281,7 +6231,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form23_3: {
               currentAction: '',
@@ -6289,7 +6239,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form23_4: {
               currentAction: '',
@@ -6297,7 +6247,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form23_5: {
               currentAction: '',
@@ -6305,7 +6255,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form23_6: {
               currentAction: '',
@@ -6313,7 +6263,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6324,7 +6274,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form24_2: {
               currentAction: '',
@@ -6332,7 +6282,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form24_3: {
               currentAction: '',
@@ -6340,7 +6290,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form24_4: {
               currentAction: '',
@@ -6348,7 +6298,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form24_5: {
               currentAction: '',
@@ -6356,7 +6306,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
             form24_6: {
               currentAction: '',
@@ -6364,7 +6314,7 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
 
           },
@@ -6375,26 +6325,26 @@ export default {
               moderate: 0,
               low: 0,
               aic: 0,
-              total: 0
+              total: ''
             },
           },
-        };
+          
+        }
       }
-    },
+    }
   },
 
-  methods: {
+/*   methods: {
     onSubmit: function () {
-      if (this.forms.company_name === '') {
-        alert('กรุณากรอกข้อมูลให้ครบ!')
-      } else {
-        this.$emit('createFormInput', this.forms);
-        // console.log(this.$emit('createFormInput', this.forms.form1))
-      }
+      // if (this.form1_1.currentAction === '') {
+      //   alert('กรุณากรอกข้อมูลให้ครบ!')
+      // } else {
+        // console.log('xxx')
+        // this.$emit('createFormCheckbox', this.forms);
+        // console.log(this.forms)
+      // }
     },
-
-  },
-
+  }, */
 
 };
 </script>

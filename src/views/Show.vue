@@ -21,8 +21,10 @@
     </div>
   </div>
 </template>
+
+
 <script>
-import { api } from '../helpers/Helpers';
+// import { api } from '../helpers/Helpers';
 export default {
   name: 'show',
   data() {
@@ -30,11 +32,12 @@ export default {
       task: ''
     };
   },
-  async mounted() {
-    this.task = await api.gettask(this.$route.params.id);
-  }
+  // async mounted() {
+  //   this.task = await api.gettask(this.$route.params.id);
+  // }
 };
 </script>
+
 <style scoped>
 .actions a {
   display: block;

@@ -1,8 +1,12 @@
 <template>
   <div>
-    <h1>Edit task</h1>
+    <b-row class="mb-5">
+      <b-col class="text-center">
+        <h2>แก้ไขเอกสารประเมิน</h2>
+      </b-col>
+    </b-row>
     <flash-message></flash-message>
-    <task-form @createOrUpdate="createOrUpdate" :task=this.task></task-form>
+    <task-form @createFormInput="createOrUpdate" :forms=this.forms></task-form>
   </div>
 </template>
 <script>
@@ -15,18 +19,20 @@ export default {
   },
   data: function() {
     return {
-      task: {}
+      forms: {}
     };
   },
+  
   methods: {
-    createOrUpdate: async function(task) {
-      await api.updatetask(task);
+    createOrUpdate: async function(form) {
+      await api.updatetask(form);
       this.flash('task updated sucessfully!', 'success');
-      this.$router.push(`/tasks/${task._id}`);
+      this.$router.push(`/tasks/`);
     }
   },
+
   async mounted() {
-    this.task = await api.gettask(this.$route.params.id);
+    this.forms = await api.gettask(this.$route.params.id);
   }
 };
 </script>

@@ -14,6 +14,7 @@ const handleError = fn => (...params) =>
   fn(...params).catch(error => {
     vm.flash(`${error.response.status}: ${error.response.statusText}`, 'error');
   });
+  
 export const api = {
   gettask: handleError(async id => {
     const res = await axios.get(baseURL + id);
