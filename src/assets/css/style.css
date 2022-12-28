@@ -242,6 +242,11 @@
   color: #fff;
 }
 
+.row-footer {
+  background-color: #1c1966a9;
+  color: #fff;
+}
+
 .container-result .container {
   width: 75%;
 

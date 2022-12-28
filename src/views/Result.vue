@@ -717,7 +717,7 @@
                         <b>{{ this.totalELC = resultHeightELC + resultModerateELC + resultLowELC + resultAicELC }}</b>
                     </b-col>
                 </b-row>
-                <b-row class="border p-2">
+                <b-row class="border p-2 row-footer">
                     <b-col  cols="7">
                         <b class="list-title">รวม</b>
                     </b-col>
@@ -796,44 +796,51 @@ export default {
   },
   computed: {
     resultHeightPLC() {
+        return  this.sum18.height + this.sum19.height + this.sum20.height + this.sum21.height +
+                this.sum22.height + this.sum23.height + this.sum24.height + this.sum25.height
+       
+    },
+    resultModeratePLC() {
+        return  this.sum18.moderate + this.sum19.moderate + this.sum20.moderate + this.sum21.moderate +
+                this.sum22.moderate + this.sum23.moderate + this.sum24.moderate + this.sum25.moderate
+                         
+    },
+    resultLowPLC() {
+        return  this.sum18.low + this.sum19.low + this.sum20.low + this.sum21.low +
+                this.sum22.low + this.sum23.low + this.sum24.low + this.sum25.low
+                     
+    },
+    resultAicPLC() {
+        return  this.sum18.aic + this.sum19.aic + this.sum20.aic + this.sum21.aic +
+                this.sum22.aic + this.sum23.aic + this.sum24.aic + this.sum25.aic
+    },
+
+    resultHeightELC() {
         return  this.sum1.height + this.sum2.height + this.sum3.height + this.sum4.height +
                 this.sum5.height + this.sum6.height + this.sum7.height + this.sum8.height +
                 this.sum9.height + this.sum10.height + this.sum11.height + this.sum12.height +
                 this.sum13.height + this.sum14.height + this.sum15.height + this.sum16.height + this.sum17.height
     },
-    resultModeratePLC() {
+
+    resultModerateELC() {
         return  this.sum1.moderate + this.sum2.moderate + this.sum3.moderate + this.sum4.moderate +
                 this.sum5.moderate + this.sum6.moderate + this.sum7.moderate + this.sum8.moderate +
                 this.sum9.moderate + this.sum10.moderate + this.sum11.moderate + this.sum12.moderate +
                 this.sum13.moderate + this.sum14.moderate + this.sum15.moderate + this.sum16.moderate + this.sum17.moderate
     },
-    resultLowPLC() {
+
+    resultLowELC() {
         return  this.sum1.low + this.sum2.low + this.sum3.low + this.sum4.low +
                 this.sum5.low + this.sum6.low + this.sum7.low + this.sum8.low +
                 this.sum9.low + this.sum10.low + this.sum11.low + this.sum12.low +
                 this.sum13.low + this.sum14.low + this.sum15.low + this.sum16.low + this.sum17.low
     },
-    resultAicPLC() {
+
+    resultAicELC() {
         return  this.sum1.aic + this.sum2.aic + this.sum3.aic + this.sum4.aic +
                 this.sum5.aic + this.sum6.aic + this.sum7.aic + this.sum8.aic +
                 this.sum9.aic + this.sum10.aic + this.sum11.aic + this.sum12.aic +
                 this.sum13.aic + this.sum14.aic + this.sum15.aic + this.sum16.aic + this.sum17.aic
-    },
-    resultHeightELC() {
-        return  this.sum18.height + this.sum19.height + this.sum20.height + this.sum21.height +
-                this.sum22.height + this.sum23.height + this.sum24.height + this.sum25.height
-    },
-    resultModerateELC() {
-        return  this.sum18.moderate + this.sum19.moderate + this.sum20.moderate + this.sum21.moderate +
-                this.sum22.moderate + this.sum23.moderate + this.sum24.moderate + this.sum25.moderate
-    },
-    resultLowELC() {
-        return  this.sum18.low + this.sum19.low + this.sum20.low + this.sum21.low +
-                this.sum22.low + this.sum23.low + this.sum24.low + this.sum25.low
-    },
-    resultAicELC() {
-        return  this.sum18.aic + this.sum19.aic + this.sum20.aic + this.sum21.aic +
-                this.sum22.aic + this.sum23.aic + this.sum24.aic + this.sum25.aic
     },
   }
 }
