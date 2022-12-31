@@ -1773,7 +1773,7 @@
             </b-collapse>
           </section>
 
-            <!-- 9. -->
+          <!-- 9. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-9 icon="arrow-down-right-square-fill"></b-icon>
@@ -2344,7 +2344,7 @@
             </b-collapse>
           </section>
 
-          <!-- 11. -->
+          <!-- 12. -->
           <section class="mb-4">
             <header class="d-flex">
               <b-icon class="vue-icon" v-b-toggle.collapse-12 icon="arrow-down-right-square-fill"></b-icon>
