@@ -803,7 +803,7 @@
                         </div>
                     </b-collapse>
                 </section>
-                
+
             </div>
         </div>
     </div>
@@ -812,7 +812,6 @@
 <script>
 export default {
     name: 'form-report1',
-
     props: {
         forms: {
             type: Object,
@@ -933,10 +932,5 @@ export default {
             }
         }
     },
-    methods: {
-        sendData() {
-            this.$emit(this.forms, 'createOrUpdate')
-        }
-    }
 } 
 </script>
