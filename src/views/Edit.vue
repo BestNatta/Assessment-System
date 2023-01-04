@@ -6,18 +6,18 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <task-form @createFormInput="createOrUpdate" :forms=this.forms></task-form>
+    <task-form @formInput="createOrUpdate" :forms=this.forms></task-form>
   </div>
 </template>
 <script>
-import taskForm from '../components/TaskForm.vue';
+import taskForm from '../views/forms/formInput.vue';
 import { api } from '../helpers/Helpers';
 export default {
   name: 'edit',
   components: {
     'task-form': taskForm
   },
-  data: function() {
+  data() {
     return {
       forms: {}
     };

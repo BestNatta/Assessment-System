@@ -26,14 +26,14 @@
                 <hr />
             </div>
             <form-report1 ref="formData1" />
-            <form-report2 />
-            <form-report3 />
-            <form-report4 />
-            <form-report5 />
-            <form-report6 />
-            <form-report7 />
-            <form-report8 />
-            <form-report9 />
+            <form-report2 ref="formData2" />
+            <form-report3 ref="formData3" />
+            <form-report4 ref="formData4" />
+            <form-report5 ref="formData5" />
+            <form-report6 ref="formData6" />
+            <form-report7 ref="formData7" />
+            <form-report8 ref="formData8" />
+            <form-report9 ref="formData9" />
             <b-row>
                 <b-col class="d-flex justify-content-center">
                     <button class="positive ui button px-5">บันทึก</button>
@@ -69,7 +69,17 @@ export default {
     },
     data() {
         return {
-            getData1: '',
+            getForms: '',
+            getForm1: '',
+            getForm2: '',
+            getForm3: '',
+            getForm4: '',
+            getForm5: '',
+            getForm6: '',
+            getForm7: '',
+            getForm8: '',
+            getForm9: '',
+            combineValue: ''
         }
     },
     props: {
@@ -89,8 +99,24 @@ export default {
     },
     methods: {
         onSubmit() {
+            this.getForms = this.forms
             this.getData1 = this.$refs.formData1.forms
-            this.$emit('formInput',this.getData1)
+            this.getData2 = this.$refs.formData2.forms
+            this.getData3 = this.$refs.formData3.forms
+            this.getData4 = this.$refs.formData4.forms
+            this.getData5 = this.$refs.formData5.forms
+            this.getData6 = this.$refs.formData6.forms
+            this.getData7 = this.$refs.formData7.forms
+            this.getData8 = this.$refs.formData8.forms
+            this.getData9 = this.$refs.formData9.forms
+            this.combineValue = {
+                ...this.getForms, ...this.getData1,
+                ...this.getData2, ...this.getData3,
+                ...this.getData4, ...this.getData5,
+                ...this.getData6, ...this.getData7,
+                ...this.getData8, ...this.getData9,
+            }
+            this.$emit('formInput',this.combineValue)
         }
     }
 }

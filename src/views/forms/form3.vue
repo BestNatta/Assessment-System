@@ -14,14 +14,13 @@
                         <!-----------7.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">7.1</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label
                                         for="">บริษัทระบุความเสี่ยงทุกประเภทซึ่งอาจมีผลกระทบต่อการดำเนินธุรกิจทั้งระดับองค์กร
                                         หน่วยธุรกิจ ฝ่ายงาน และหน้าที่งานต่างๆ</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -51,13 +50,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form7.form7_1.group" :options="forms.form7.form7_1.options7_1"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form7.form7_1.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form7.form7_1.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -65,15 +69,14 @@
                         <!-----------7.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">7.2</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label
                                         for="">บริษัทวิเคราะห์ความเสี่ยงทุกประเภทที่อาจเกิดจากทั้งปัจจัยภายในและปัจจัยภายนอกองค์กร
                                         ซึ่งรวมถึงความเสี่ยงด้านกลยุทธ์ การดำเนินงาน การรายงาน การปฏิบัติตามกฎเกณฑ์
                                         และด้านเทคโนโลยีสารสนเทศ</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -103,13 +106,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form7.form7_2.group" :options="forms.form7.form7_2.options7_2"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form7.form7_2.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form7.form7_2.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -117,12 +125,11 @@
                         <!-----------7.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">7.3</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label for="">ผู้บริหารทุกระดับมีส่วนร่วมในการบริหารความเสี่ยง</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -152,13 +159,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form7.form7_3.group" :options="forms.form7.form7_3.options7_3"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form7.form7_3.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form7.form7_3.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -166,13 +178,12 @@
                         <!-----------7.4---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">7.4</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label for="">บริษัทได้ประเมินความสำคัญของความเสี่ยง
                                         โดยพิจารณาทั้งโอกาสเกิดเหตุการณ์ และผลกระทบที่อาจเกิดขึ้น</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -202,13 +213,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Operation</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form7.form7_4.group" :options="forms.form7.form7_4.options7_4"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form7.form7_4.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form7.form7_4.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -216,14 +232,13 @@
                         <!-----------7.5---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">7.5</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label for="">บริษัทมีมาตรการและแผนปฏิบัติงานเพื่อจัดการความเสี่ยง
                                         โดยอาจเป็นการยอมรับความเสี่ยงนั้น (acceptance) การลดความเสี่ยง (reduction)
                                         การหลีกเลี่ยงความเสี่ยง (avoidance) หรือการร่วมรับความเสี่ยง (sharing)</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -253,13 +268,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Operation</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form7.form7_5.group" :options="forms.form7.form7_5.options7_5"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form7.form7_5.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form7.form7_5.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -280,8 +300,7 @@
                         <!-----------8.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">8.1</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label for="">บริษัทประเมินโอกาสที่จะเกิดการทุจริตขึ้น โดยครอบคลุมการทุจริตแบบต่างๆ
                                         เช่น การจัดทำรายงานทางการเงินเท็จ การทำให้สูญเสียทรัพย์สิน การคอร์รัปชั่น
@@ -289,7 +308,7 @@
                                         controls) การเปลี่ยนแปลงข้อมูลในรายงานที่สำคัญ
                                         การได้มาหรือใช้ไปซึ่งทรัพย์สินโดยไม่ถูกต้อง เป็นต้น</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -319,13 +338,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form8.form8_1.group" :options="forms.form8.form8_1.options8_1"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form8.form8_1.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form8.form8_1.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -333,8 +357,7 @@
                         <!-----------8.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">8.2</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label for="">บริษัทได้ทบทวนเป้าหมายการปฏิบัติงานอย่างรอบคอบ
                                         โดยพิจารณาความเป็นไปได้ของเป้าหมายที่กำหนดแล้ว
@@ -343,7 +366,7 @@
                                         ไม่ตั้งเป้าหมายยอดขายของบริษัทไว้สูงเกินความเป็นจริงจนทำให้เกิดแรงจูงใจในการตกแต่งตัวเลขยอดขาย
                                         เป็นต้น</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -373,13 +396,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form8.form8_2.group" :options="forms.form8.form8_2.options8_2"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form8.form8_2.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form8.form8_2.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -387,14 +415,13 @@
                         <!-----------8.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">8.3</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label
                                         for="">คณะกรรมการตรวจสอบได้พิจารณาและสอบถามผู้บริหารเกี่ยวกับโอกาสในการเกิดทุจริต
                                         และมาตรการที่บริษัทดำเนินการเพื่อป้องกันหรือแก้ไขการทุจริต</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -424,13 +451,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Board of Directors</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form8.form8_3.group" :options="forms.form8.form8_3.options8_3"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form8.form8_3.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form8.form8_3.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -438,13 +470,13 @@
                         <!-----------8.4---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">8.4</b>
-                            <b-col cols="6" class="">
+                            <b-col cols="6" >
 
                                 <div class="form-offer">
                                     <label
                                         for="">บริษัทได้สื่อสารให้พนักงานทุกคนเข้าใจและปฏิบัติตามนโยบายและแนวปฏิบัติที่กำหนดไว้</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -474,13 +506,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Operation</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form8.form8_4.group" :options="forms.form8.form8_4.options8_4"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form8.form8_4.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form8.form8_4.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -500,15 +537,14 @@
                         <!-----------9.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">9.1</b>
-                            <b-col cols="6" class="">
-
+                            <b-col cols="6" >
                                 <div class="form-offer">
                                     <label
                                         for="">บริษัทประเมินการเปลี่ยนแปลงปัจจัยภายนอกองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
                                         การควบคุมภายใน และรายงานทางการเงิน
                                         ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -538,13 +574,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form9.form9_1.group" :options="forms.form9.form9_1.options9_1"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form9.form9_1.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form9.form9_1.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -552,7 +593,7 @@
                         <!-----------9.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">9.2</b>
-                            <b-col cols="6" class="">
+                            <b-col cols="6" >
 
                                 <div class="form-offer">
                                     <label
@@ -560,7 +601,7 @@
                                         การควบคุมภายใน และรายงานทางการเงิน
                                         ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -590,13 +631,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form9.form9_2.group" :options="forms.form9.form9_2.options9_2"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form9.form9_2.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form9.form9_2.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -604,7 +650,7 @@
                         <!-----------9.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">9.3</b>
-                            <b-col cols="6" class="">
+                            <b-col cols="6" >
 
                                 <div class="form-offer">
                                     <label
@@ -612,7 +658,7 @@
                                         การควบคุมภายใน และรายงานทางการเงิน
                                         ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
@@ -642,13 +688,18 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" class="">
-                                <b>กลุ่ม</b>
-                                <p class="form-details">Management</p>
+                            <b-col cols="5" >
+                                <b-form-group content-cols="8" label-cols="12">
+                                    <b>กลุ่ม</b>
+                                    <b-form-select v-model="forms.form9.form9_3.group" :options="forms.form9.form9_3.options9_3"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
-                                    <b>การดำเนินการในปัจจุบัน</b>
-                                    <b-form-textarea rows="5"
-                                        v-model="forms.form9.form9_3.currentAction"></b-form-textarea>
+                                    <b-col>
+                                        <b-form-group content-cols="12" label-cols="12">
+                                            <b>การดำเนินการในปัจจุบัน</b>
+                                            <b-form-textarea rows="5" v-model="forms.form9.form9_3.currentAction"></b-form-textarea>
+                                        </b-form-group>
+                                    </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
@@ -676,7 +727,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options7_1: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form7_2: {
                             currentAction: '',
@@ -684,7 +741,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options7_2: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form7_3: {
                             currentAction: '',
@@ -692,7 +755,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options7_3: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form7_4: {
                             currentAction: '',
@@ -700,7 +769,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Operation', 
+                            options7_4: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form7_5: {
                             currentAction: '',
@@ -708,7 +783,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Operation', 
+                            options7_5: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                     },
                     form8: {
@@ -718,7 +799,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options8_1: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form8_2: {
                             currentAction: '',
@@ -726,7 +813,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options8_2: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form8_3: {
                             currentAction: '',
@@ -734,7 +827,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Board of Directors', 
+                            options8_3: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form8_4: {
                             currentAction: '',
@@ -742,7 +841,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Operation', 
+                            options8_4: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                     },
                     form9: {
@@ -752,7 +857,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options9_1: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form9_2: {
                             currentAction: '',
@@ -760,7 +871,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options9_2: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                         form9_3: {
                             currentAction: '',
@@ -768,7 +885,13 @@ export default {
                             moderate: 0,
                             low: 0,
                             aic: 0,
-                            total: 0
+                            total: 0,
+                            group: 'Management', 
+                            options9_3: [
+                                { value: 'Board of Directors', text: 'Board of Directors' },
+                                { value: 'Management', text: 'Management' },
+                                { value: 'Operation', text: 'Operation' },
+                            ],
                         },
                     },
                 }

@@ -26,6 +26,7 @@ const taskSchema = new Schema(
     form1: {
       form1_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -34,6 +35,7 @@ const taskSchema = new Schema(
       },
       form1_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -42,6 +44,7 @@ const taskSchema = new Schema(
       },
       form1_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -50,6 +53,7 @@ const taskSchema = new Schema(
       },
       form1_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -63,6 +67,7 @@ const taskSchema = new Schema(
     form2: {
       form2_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -71,6 +76,7 @@ const taskSchema = new Schema(
       },
       form2_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -79,6 +85,7 @@ const taskSchema = new Schema(
       },
       form2_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -87,6 +94,7 @@ const taskSchema = new Schema(
       },
       form2_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -95,6 +103,7 @@ const taskSchema = new Schema(
       },
       form2_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -103,6 +112,7 @@ const taskSchema = new Schema(
       },
       form2_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -116,6 +126,7 @@ const taskSchema = new Schema(
     form3: {
       form3_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -124,6 +135,7 @@ const taskSchema = new Schema(
       },
       form3_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -132,6 +144,7 @@ const taskSchema = new Schema(
       },
       form3_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -145,6 +158,7 @@ const taskSchema = new Schema(
     form4: {
       form4_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -153,6 +167,7 @@ const taskSchema = new Schema(
       },
       form4_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -161,6 +176,7 @@ const taskSchema = new Schema(
       },
       form4_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -169,6 +185,7 @@ const taskSchema = new Schema(
       },
       form4_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -177,6 +194,7 @@ const taskSchema = new Schema(
       },
       form4_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -190,6 +208,7 @@ const taskSchema = new Schema(
     form5: {
       form5_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -198,6 +217,7 @@ const taskSchema = new Schema(
       },
       form5_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -206,6 +226,7 @@ const taskSchema = new Schema(
       },
       form5_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -214,6 +235,7 @@ const taskSchema = new Schema(
       },
       form5_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -227,6 +249,7 @@ const taskSchema = new Schema(
     form6: {
       form6_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -235,6 +258,7 @@ const taskSchema = new Schema(
       },
       form6_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -243,6 +267,7 @@ const taskSchema = new Schema(
       },
       form6_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -251,6 +276,7 @@ const taskSchema = new Schema(
       },
       form6_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -264,6 +290,7 @@ const taskSchema = new Schema(
     form7: {
       form7_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -272,6 +299,7 @@ const taskSchema = new Schema(
       },
       form7_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -280,6 +308,7 @@ const taskSchema = new Schema(
       },
       form7_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -288,6 +317,7 @@ const taskSchema = new Schema(
       },
       form7_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -296,6 +326,7 @@ const taskSchema = new Schema(
       },
       form7_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -309,6 +340,7 @@ const taskSchema = new Schema(
     form8: {
       form8_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -317,6 +349,7 @@ const taskSchema = new Schema(
       },
       form8_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -325,6 +358,7 @@ const taskSchema = new Schema(
       },
       form8_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -333,6 +367,7 @@ const taskSchema = new Schema(
       },
       form8_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -346,6 +381,7 @@ const taskSchema = new Schema(
     form9: {
       form9_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -354,6 +390,7 @@ const taskSchema = new Schema(
       },
       form9_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -362,6 +399,7 @@ const taskSchema = new Schema(
       },
       form9_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -375,6 +413,7 @@ const taskSchema = new Schema(
     form10: {
       form10_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -383,6 +422,7 @@ const taskSchema = new Schema(
       },
       form10_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -391,6 +431,7 @@ const taskSchema = new Schema(
       },
       form10_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -399,6 +440,7 @@ const taskSchema = new Schema(
       },
       form10_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -407,6 +449,7 @@ const taskSchema = new Schema(
       },
       form10_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -420,6 +463,7 @@ const taskSchema = new Schema(
     form11: {
       form11_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -428,6 +472,7 @@ const taskSchema = new Schema(
       },
       form11_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -436,6 +481,7 @@ const taskSchema = new Schema(
       },
       form11_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -444,6 +490,7 @@ const taskSchema = new Schema(
       },
       form11_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -457,6 +504,7 @@ const taskSchema = new Schema(
     form12: {
       form12_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -465,6 +513,7 @@ const taskSchema = new Schema(
       },
       form12_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -473,6 +522,7 @@ const taskSchema = new Schema(
       },
       form12_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -481,6 +531,7 @@ const taskSchema = new Schema(
       },
       form12_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -489,6 +540,7 @@ const taskSchema = new Schema(
       },
       form12_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -497,6 +549,7 @@ const taskSchema = new Schema(
       },
       form12_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -505,6 +558,7 @@ const taskSchema = new Schema(
       },
       form12_7: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -518,6 +572,7 @@ const taskSchema = new Schema(
     form13: {
       form13_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -526,6 +581,7 @@ const taskSchema = new Schema(
       },
       form13_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -534,6 +590,7 @@ const taskSchema = new Schema(
       },
       form13_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -542,6 +599,7 @@ const taskSchema = new Schema(
       },
       form13_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -550,6 +608,7 @@ const taskSchema = new Schema(
       },
       form13_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -558,6 +617,7 @@ const taskSchema = new Schema(
       },
       form13_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -571,6 +631,7 @@ const taskSchema = new Schema(
     form14: {
       form14_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -579,6 +640,7 @@ const taskSchema = new Schema(
       },
       form14_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -587,6 +649,7 @@ const taskSchema = new Schema(
       },
       form14_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -600,6 +663,7 @@ const taskSchema = new Schema(
     form15: {
       form15_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -608,6 +672,7 @@ const taskSchema = new Schema(
       },
       form15_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -621,6 +686,7 @@ const taskSchema = new Schema(
     form16: {
       form16_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -629,6 +695,7 @@ const taskSchema = new Schema(
       },
       form16_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -637,6 +704,7 @@ const taskSchema = new Schema(
       },
       form16_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -645,6 +713,7 @@ const taskSchema = new Schema(
       },
       form16_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -653,6 +722,7 @@ const taskSchema = new Schema(
       },
       form16_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -661,6 +731,7 @@ const taskSchema = new Schema(
       },
       form16_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -674,6 +745,7 @@ const taskSchema = new Schema(
     form17: {
       form17_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -682,6 +754,7 @@ const taskSchema = new Schema(
       },
       form17_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -695,6 +768,7 @@ const taskSchema = new Schema(
     form18: {
       form18_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -703,6 +777,7 @@ const taskSchema = new Schema(
       },
       form18_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -711,6 +786,7 @@ const taskSchema = new Schema(
       },
       form18_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -719,6 +795,7 @@ const taskSchema = new Schema(
       },
       form18_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -727,6 +804,7 @@ const taskSchema = new Schema(
       },
       form18_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -735,6 +813,7 @@ const taskSchema = new Schema(
       },
       form18_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -748,6 +827,7 @@ const taskSchema = new Schema(
     form19: {
       form19_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -756,6 +836,7 @@ const taskSchema = new Schema(
       },
       form19_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -764,6 +845,7 @@ const taskSchema = new Schema(
       },
       form19_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -772,6 +854,7 @@ const taskSchema = new Schema(
       },
       form19_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -785,6 +868,7 @@ const taskSchema = new Schema(
     form20: {
       form20_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -793,6 +877,7 @@ const taskSchema = new Schema(
       },
       form20_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -801,6 +886,7 @@ const taskSchema = new Schema(
       },
       form20_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -814,6 +900,7 @@ const taskSchema = new Schema(
     form21: {
       form21_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -822,6 +909,7 @@ const taskSchema = new Schema(
       },
       form21_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -830,6 +918,7 @@ const taskSchema = new Schema(
       },
       form21_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -838,6 +927,7 @@ const taskSchema = new Schema(
       },
       form21_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -846,6 +936,7 @@ const taskSchema = new Schema(
       },
       form21_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -859,6 +950,7 @@ const taskSchema = new Schema(
     form22: {
       form22_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -867,6 +959,7 @@ const taskSchema = new Schema(
       },
       form22_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -875,6 +968,7 @@ const taskSchema = new Schema(
       },
       form22_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -883,6 +977,7 @@ const taskSchema = new Schema(
       },
       form22_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -891,6 +986,7 @@ const taskSchema = new Schema(
       },
       form22_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -899,6 +995,7 @@ const taskSchema = new Schema(
       },
       form22_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -907,6 +1004,7 @@ const taskSchema = new Schema(
       },
       form22_7: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -915,6 +1013,7 @@ const taskSchema = new Schema(
       },
       form22_8: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -928,6 +1027,7 @@ const taskSchema = new Schema(
     form23: {
       form23_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -936,6 +1036,7 @@ const taskSchema = new Schema(
       },
       form23_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -944,6 +1045,7 @@ const taskSchema = new Schema(
       },
       form23_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -952,6 +1054,7 @@ const taskSchema = new Schema(
       },
       form23_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -960,6 +1063,7 @@ const taskSchema = new Schema(
       },
       form23_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -968,6 +1072,7 @@ const taskSchema = new Schema(
       },
       form23_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -981,6 +1086,7 @@ const taskSchema = new Schema(
     form24: {
       form24_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -989,6 +1095,7 @@ const taskSchema = new Schema(
       },
       form24_2: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -997,6 +1104,7 @@ const taskSchema = new Schema(
       },
       form24_3: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -1005,6 +1113,7 @@ const taskSchema = new Schema(
       },
       form24_4: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -1013,6 +1122,7 @@ const taskSchema = new Schema(
       },
       form24_5: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -1021,6 +1131,7 @@ const taskSchema = new Schema(
       },
       form24_6: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -1034,6 +1145,7 @@ const taskSchema = new Schema(
     form25: {
       form25_1: {
         currentAction: String,
+        group: String,
         height: Number,
         moderate: Number,
         low: Number,
@@ -1042,222 +1154,6 @@ const taskSchema = new Schema(
       }
     },
     
-    // company_name: {
-    //   type: String,
-    //   require: true
-    // },
-    // chapter1: {
-    //   type: String,
-    // },
-    // description1: {
-    //   type: String
-    // },
-    // chapter2: {
-    //   type: String,
-    // },
-    // description2: {
-    //   type: String
-    // },
-    // form1: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form2: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form3: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form4: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form5: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form6: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form7: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form8: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form9: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form10: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form11: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form12: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form13: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form14: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form15: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form16: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form17: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form18: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form19: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form20: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form21: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form22: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form23: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form24: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
-    // form25: {
-    //   currentAction: String,
-    //   height: Number,
-    //   moderate: Number,
-    //   low: Number,
-    //   aic: Number,
-    //   total: Number
-    // },
   },
   { collection: 'form' }
 );

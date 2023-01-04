@@ -112,7 +112,8 @@
   }
 
   .title-head-form {
-    margin-left: 7.7rem;
+    /* margin-left: 7.7rem; */
+    margin-top: 1rem;
   }
 
 .title-head-form p {
