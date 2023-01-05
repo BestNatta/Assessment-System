@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <task-form @formInput="createOrUpdate" :forms=this.forms></task-form>
+    <form-input @formInput="createOrUpdate" :forms=this.forms />
   </div>
 </template>
 <script>
@@ -15,7 +15,7 @@ import { api } from '../helpers/Helpers';
 export default {
   name: 'edit',
   components: {
-    'task-form': taskForm
+    'form-input': taskForm,
   },
   data() {
     return {
@@ -28,11 +28,12 @@ export default {
       await api.updatetask(form);
       this.flash('task updated sucessfully!', 'success');
       this.$router.push(`/tasks/`);
+      
     }
   },
 
   async mounted() {
-    this.forms = await api.gettask(this.$route.params.id);
+     this.forms = await api.gettask(this.$route.params.id);
   }
 };
 </script>

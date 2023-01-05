@@ -6389,7 +6389,6 @@ export default {
         alert('กรุณากรอกข้อมูลให้ครบ!')
       } else {
         this.$emit('createFormInput', this.forms);
-        // console.log(this.$emit('createFormInput', this.forms.form1))
       }
     },
 

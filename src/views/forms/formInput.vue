@@ -25,7 +25,8 @@
                 <br>
                 <hr />
             </div>
-            <form-report1 ref="formData1" />
+
+            <form-report1 ref="formData1" :forms="forms" />
             <form-report2 ref="formData2" />
             <form-report3 ref="formData3" />
             <form-report4 ref="formData4" />
@@ -80,6 +81,7 @@ export default {
             getForm8: '',
             getForm9: '',
             combineValue: ''
+            
         }
     },
     props: {
@@ -94,7 +96,7 @@ export default {
                     chapter2: '',
                     description2: '',
                 }
-            }
+            },
         }
     },
     methods: {
@@ -109,6 +111,7 @@ export default {
             this.getData7 = this.$refs.formData7.forms
             this.getData8 = this.$refs.formData8.forms
             this.getData9 = this.$refs.formData9.forms
+
             this.combineValue = {
                 ...this.getForms, ...this.getData1,
                 ...this.getData2, ...this.getData3,
@@ -116,8 +119,8 @@ export default {
                 ...this.getData6, ...this.getData7,
                 ...this.getData8, ...this.getData9,
             }
-            this.$emit('formInput',this.combineValue)
+            this.$emit('formInput', this.combineValue)
         }
-    }
+    },
 }
 </script>
