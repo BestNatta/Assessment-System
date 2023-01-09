@@ -6,16 +6,16 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <form-input @formInput="createOrUpdate" :forms=this.forms />
+    <form-input @formInput="createOrUpdate" :forms="this.forms" />
   </div>
 </template>
 <script>
-import taskForm from '../views/forms/formInput.vue';
+import formInput from '../views/forms/formInput.vue';
 import { api } from '../helpers/Helpers';
 export default {
   name: 'edit',
   components: {
-    'form-input': taskForm,
+    'form-input': formInput,
   },
   data() {
     return {

@@ -26,15 +26,16 @@
                 <hr />
             </div>
 
-            <form-report1 ref="formData1" :forms="forms" />
-            <form-report2 ref="formData2" />
-            <form-report3 ref="formData3" />
-            <form-report4 ref="formData4" />
-            <form-report5 ref="formData5" />
-            <form-report6 ref="formData6" />
-            <form-report7 ref="formData7" />
-            <form-report8 ref="formData8" />
-            <form-report9 ref="formData9" />
+            <form-report1 ref="formData1" :forms="this.forms" />
+            <form-report2 ref="formData2" :forms="this.forms" />
+            <form-report3 ref="formData3" :forms="this.forms" />
+            <form-report4 ref="formData4" :forms="this.forms" />
+            <form-report5 ref="formData5" :forms="this.forms" />
+            <form-report6 ref="formData6" :forms="this.forms" />
+            <form-report7 ref="formData7" :forms="this.forms" />
+            <form-report8 ref="formData8" :forms="this.forms" />
+            <form-report9 ref="formData9" :forms="this.forms" />
+
             <b-row>
                 <b-col class="d-flex justify-content-center">
                     <button class="positive ui button px-5">บันทึก</button>
@@ -70,6 +71,7 @@ export default {
     },
     data() {
         return {
+            // ตัวแปรเก็บ value จาก components
             getForms: '',
             getForm1: '',
             getForm2: '',
@@ -80,8 +82,7 @@ export default {
             getForm7: '',
             getForm8: '',
             getForm9: '',
-            combineValue: ''
-            
+            combineValue: '',
         }
     },
     props: {
@@ -112,6 +113,8 @@ export default {
             this.getData8 = this.$refs.formData8.forms
             this.getData9 = this.$refs.formData9.forms
 
+            // เอาตัวแปรที่เก็บ value ใน component อื่นเก็บตัวตัวแปร combineValue
+
             this.combineValue = {
                 ...this.getForms, ...this.getData1,
                 ...this.getData2, ...this.getData3,
@@ -122,5 +125,6 @@ export default {
             this.$emit('formInput', this.combineValue)
         }
     },
+
 }
 </script>
