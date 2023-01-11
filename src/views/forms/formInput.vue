@@ -27,14 +27,6 @@
             </div>
 
             <form-report1 ref="formData1" :forms="this.forms" />
-            <form-report2 ref="formData2" :forms="this.forms" />
-            <form-report3 ref="formData3" :forms="this.forms" />
-            <form-report4 ref="formData4" :forms="this.forms" />
-            <form-report5 ref="formData5" :forms="this.forms" />
-            <form-report6 ref="formData6" :forms="this.forms" />
-            <form-report7 ref="formData7" :forms="this.forms" />
-            <form-report8 ref="formData8" :forms="this.forms" />
-            <form-report9 ref="formData9" :forms="this.forms" />
 
             <b-row>
                 <b-col class="d-flex justify-content-center">
@@ -47,27 +39,59 @@
 
 <script>
 import formReport1 from './form1.vue'
-import formReport2 from './form2.vue'
-import formReport3 from './form3.vue'
-import formReport4 from './form4.vue'
-import formReport5 from './form5.vue'
-import formReport6 from './form6.vue'
-import formReport7 from './form7.vue'
-import formReport8 from './form8.vue'
-import formReport9 from './form9.vue'
+// import formReport2 from './form2.vue'
+// import formReport3 from './form3.vue'
+// import formReport4 from './form4.vue'
+// import formReport5 from './form5.vue'
+// import formReport6 from './form6.vue'
+// import formReport7 from './form7.vue'
+// import formReport8 from './form8.vue'
+// import formReport9 from './form9.vue'
+// import formReport10 from './form10.vue'
+// import formReport11 from './form11.vue'
+// import formReport12 from './form12.vue'
+// import formReport13 from './form13.vue'
+// import formReport14 from './form14.vue'
+// import formReport15 from './form15.vue'
+// import formReport16 from './form16.vue'
+// import formReport17 from './form17.vue'
+// import formReport18 from './form18.vue'
+// import formReport19 from './form19.vue'
+// import formReport20 from './form20.vue'
+// import formReport21 from './form21.vue'
+// import formReport22 from './form22.vue'
+// import formReport23 from './form23.vue'
+// import formReport24 from './form24.vue'
+// import formReport25 from './form25.vue'
 
 export default {
     name: 'form-input',
     components: {
         "form-report1": formReport1,
-        "form-report2": formReport2,
-        "form-report3": formReport3,
-        "form-report4": formReport4,
-        "form-report5": formReport5,
-        "form-report6": formReport6,
-        "form-report7": formReport7,
-        "form-report8": formReport8,
-        "form-report9": formReport9,
+        // "form-report2": formReport2,
+        // "form-report3": formReport3,
+        // "form-report4": formReport4,
+        // "form-report5": formReport5,
+        // "form-report6": formReport6,
+        // "form-report7": formReport7,
+        // "form-report8": formReport8,
+        // "form-report9": formReport9,
+        // "form-report10": formReport10,
+        // "form-report11": formReport11,
+        // "form-report12": formReport12,
+        // "form-report13": formReport13,
+        // "form-report14": formReport14,
+        // "form-report15": formReport15,
+        // "form-report16": formReport16,
+        // "form-report17": formReport17,
+        // "form-report18": formReport18,
+        // "form-report19": formReport19,
+        // "form-report20": formReport20,
+        // "form-report21": formReport21,
+        // "form-report22": formReport22,
+        // "form-report23": formReport23,
+        // "form-report24": formReport24,
+        // "form-report25": formReport25,
     },
     data() {
         return {
@@ -98,33 +122,28 @@ export default {
                     description2: '',
                 }
             },
-        }
+        },
     },
     methods: {
-        onSubmit() {
-            this.getForms = this.forms
-            this.getData1 = this.$refs.formData1.forms
-            this.getData2 = this.$refs.formData2.forms
-            this.getData3 = this.$refs.formData3.forms
-            this.getData4 = this.$refs.formData4.forms
-            this.getData5 = this.$refs.formData5.forms
-            this.getData6 = this.$refs.formData6.forms
-            this.getData7 = this.$refs.formData7.forms
-            this.getData8 = this.$refs.formData8.forms
-            this.getData9 = this.$refs.formData9.forms
+            onSubmit() {
+                this.getForms = this.forms
+                this.getData1 = this.$refs.formData1.forms
+                // this.getData2 = this.$refs.formData2.forms
+                // this.getData3 = this.$refs.formData3.forms
+                // this.getData4 = this.$refs.formData4.forms
+                // this.getData5 = this.$refs.formData5.forms
+                // this.getData6 = this.$refs.formData6.forms
+                // this.getData7 = this.$refs.formData7.forms
+                // this.getData8 = this.$refs.formData8.forms
+                // this.getData9 = this.$refs.formData9.forms
 
-            // เอาตัวแปรที่เก็บ value ใน component อื่นเก็บตัวตัวแปร combineValue
+                // เอาตัวแปรที่เก็บ value ใน component อื่นเก็บตัวตัวแปร combineValue
 
-            this.combineValue = {
-                ...this.getForms, ...this.getData1,
-                ...this.getData2, ...this.getData3,
-                ...this.getData4, ...this.getData5,
-                ...this.getData6, ...this.getData7,
-                ...this.getData8, ...this.getData9,
+                this.combineValue = {
+                    ...this.getForms, ...this.getData1,
+                }
+                this.$emit('formInput', this.combineValue)
             }
-            this.$emit('formInput', this.combineValue)
-        }
-    },
-
+        },
 }
 </script>

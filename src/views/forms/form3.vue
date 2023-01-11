@@ -1,902 +1,318 @@
 <template>
     <div>
+        <!-- Descriptions -->
+        <div class="container mb-5 w-75 text-center">
+            <h4 class="mb-5"><u>เกณฑ์การจัดระดับความสำคัญ</u></h4>
+            <table id="tasks" class="ui celled compact table">
+                <thead>
+                    <tr>
+                        <th class="th-lavel text-center"><b-icon icon="kanban" scale="1"></b-icon> ระดับความสำคัญ</th>
+                        <th class="th-description text-center"><i class="info circle icon"></i>คำอธิบาย</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <th class="th-height">สูง</th>
+                    <td>ประเด็นที่การควบคุมภายในต้องได้รับการแก้ไขอย่างเร่งด่วน เนื่องจากเป็นการ
+                        ควบคุมที่มีความสำคัญสูงตามแบบประเมินความเพียงพอของระบบการควบคุมภายใน
+                        แต่บริษัทยังไม่ได้นำมาปฏิบัติหรือนำมาปฏิบัติแล้วแต่ยังไม่เพียงพอในประเด็นที่สำคัญ
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th-moderate">ปานกลาง</th>
+                    <td>ประเด็นที่การควบคุมภายในควรได้รับการแก้ไข เนื่องจากเป็นการควบคุมที่สำคัญตาม
+                        แนวทางการควบคุมภายในที่ดีแต่บริษัทยังไม่ได้นำมาปฏิบัติหรือนำมาปฏิบัติแล้วแต่
+                        ยังไม่เพียงพอ
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th-low">ต่ำ</th>
+                    <td>ประเด็นที่การควบคุมภายในมีความเพียงพอตามหลักการควบคุมภายใน ทำให้บริษัท
+                        สามารถดำเนินการต่อไปตามปกติแต่ควรต้องได้รับการระวังในกรณีที่การดำเนินงาน
+                        ของบริษัทมีการเปลี่ยนแปลงและทำให้ระดับความเสี่ยงของประเด็นนี้สูงขึ้น ผู้รายงาน
+                        และติดตามประเด็นนี้ควรเป็นเจ้าของกระบวนการผู้ตรวจสอบภายในหรือผู้บริหารที่
+                        เกี่ยวข้อง
+                    </td>
+                </tr>
+                <tr>
+                    <th class="th-aic">AIC</th>
+                    <td>ระบบการควบคุมภายในที่มีอยู่ในปัจจุบันเพียงพอและมีประสิทธิผล
+                        (Appropriate Internal Control)
+                    </td>
+                </tr>
+            </table>
+        </div>
+
         <div class="container">
-            <!-- 7. -->
-            <section class="mb-4">
-                <header class="d-flex">
-                    <b-icon class="vue-icon" v-b-toggle.collapse-7 icon="arrow-down-right-square-fill"></b-icon>
-                    <p>7.
-                        องค์กรระบุและวิเคราะห์ความเสี่ยงทุกประเภทที่อาจกระทบต่อการบรรลุวัตถุประสงค์ไว้อย่างครอบคลุมทั่วทั้งองค์กร
-                    </p>
-                </header>
-                <b-collapse id="collapse-7" class="mt-2">
-                    <div class="container-form">
-                        <!-----------7.1---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">7.1</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทระบุความเสี่ยงทุกประเภทซึ่งอาจมีผลกระทบต่อการดำเนินธุรกิจทั้งระดับองค์กร
-                                        หน่วยธุรกิจ ฝ่ายงาน และหน้าที่งานต่างๆ</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form7.form7_1.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form7.form7_1.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form7.form7_1.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form7.form7_1.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form7.form7_1.group" :options="forms.form7.form7_1.options7_1"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form7.form7_1.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------7.2---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">7.2</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทวิเคราะห์ความเสี่ยงทุกประเภทที่อาจเกิดจากทั้งปัจจัยภายในและปัจจัยภายนอกองค์กร
-                                        ซึ่งรวมถึงความเสี่ยงด้านกลยุทธ์ การดำเนินงาน การรายงาน การปฏิบัติตามกฎเกณฑ์
-                                        และด้านเทคโนโลยีสารสนเทศ</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form7.form7_2.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form7.form7_2.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form7.form7_2.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form7.form7_2.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form7.form7_2.group" :options="forms.form7.form7_2.options7_2"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form7.form7_2.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------7.3---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">7.3</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label for="">ผู้บริหารทุกระดับมีส่วนร่วมในการบริหารความเสี่ยง</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form7.form7_3.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form7.form7_3.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form7.form7_3.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form7.form7_3.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form7.form7_3.group" :options="forms.form7.form7_3.options7_3"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form7.form7_3.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------7.4---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">7.4</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label for="">บริษัทได้ประเมินความสำคัญของความเสี่ยง
-                                        โดยพิจารณาทั้งโอกาสเกิดเหตุการณ์ และผลกระทบที่อาจเกิดขึ้น</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form7.form7_4.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form7.form7_4.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form7.form7_4.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form7.form7_4.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form7.form7_4.group" :options="forms.form7.form7_4.options7_4"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form7.form7_4.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------7.5---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">7.5</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label for="">บริษัทมีมาตรการและแผนปฏิบัติงานเพื่อจัดการความเสี่ยง
-                                        โดยอาจเป็นการยอมรับความเสี่ยงนั้น (acceptance) การลดความเสี่ยง (reduction)
-                                        การหลีกเลี่ยงความเสี่ยง (avoidance) หรือการร่วมรับความเสี่ยง (sharing)</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form7.form7_5.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form7.form7_5.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form7.form7_5.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form7.form7_5.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form7.form7_5.group" :options="forms.form7.form7_5.options7_5"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form7.form7_5.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                    </div>
-                </b-collapse>
-            </section>
+            <b-row class="mt-5">
+                <b-col class="text-center">
+                    <h4><u>สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน</u></h4>
+                </b-col>
+            </b-row>
 
-            <!-- 8. -->
-            <section class="mb-4">
-                <header class="d-flex">
-                    <b-icon class="vue-icon" v-b-toggle.collapse-8 icon="arrow-down-right-square-fill"></b-icon>
-                    <p>8. องค์กรได้พิจารณาถึงโอกาสที่จะเกิดการทุจริต
-                        ในการประเมินความเสี่ยงที่จะบรรลุวัตถุประสงค์ขององค์กร</p>
-                </header>
-                <b-collapse id="collapse-8" class="mt-2">
-                    <div class="container-form">
-                        <!-----------8.1---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">8.1</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label for="">บริษัทประเมินโอกาสที่จะเกิดการทุจริตขึ้น โดยครอบคลุมการทุจริตแบบต่างๆ
-                                        เช่น การจัดทำรายงานทางการเงินเท็จ การทำให้สูญเสียทรัพย์สิน การคอร์รัปชั่น
-                                        การที่ผู้บริหารสามารถฝ่าฝืนระบบควบคุมภายใน (Management override of internal
-                                        controls) การเปลี่ยนแปลงข้อมูลในรายงานที่สำคัญ
-                                        การได้มาหรือใช้ไปซึ่งทรัพย์สินโดยไม่ถูกต้อง เป็นต้น</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form8.form8_1.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form8.form8_1.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form8.form8_1.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form8.form8_1.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form8.form8_1.group" :options="forms.form8.form8_1.options8_1"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form8.form8_1.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------8.2---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">8.2</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label for="">บริษัทได้ทบทวนเป้าหมายการปฏิบัติงานอย่างรอบคอบ
-                                        โดยพิจารณาความเป็นไปได้ของเป้าหมายที่กำหนดแล้ว
-                                        รวมทั้งได้พิจารณาความสมเหตุสมผลของการให้สิ่งจูงใจหรือผลตอบแทนแก่พนักงานแล้วด้วยว่า
-                                        ไม่มีลักษณะส่งเสริมให้พนักงานกระทำไม่เหมาะสม เช่น
-                                        ไม่ตั้งเป้าหมายยอดขายของบริษัทไว้สูงเกินความเป็นจริงจนทำให้เกิดแรงจูงใจในการตกแต่งตัวเลขยอดขาย
-                                        เป็นต้น</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form8.form8_2.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form8.form8_2.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form8.form8_2.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form8.form8_2.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form8.form8_2.group" :options="forms.form8.form8_2.options8_2"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form8.form8_2.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------8.3---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">8.3</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label
-                                        for="">คณะกรรมการตรวจสอบได้พิจารณาและสอบถามผู้บริหารเกี่ยวกับโอกาสในการเกิดทุจริต
-                                        และมาตรการที่บริษัทดำเนินการเพื่อป้องกันหรือแก้ไขการทุจริต</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form8.form8_3.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form8.form8_3.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form8.form8_3.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form8.form8_3.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form8.form8_3.group" :options="forms.form8.form8_3.options8_3"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form8.form8_3.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------8.4---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">8.4</b>
-                            <b-col cols="6" >
+            <div class="form-content">
 
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทได้สื่อสารให้พนักงานทุกคนเข้าใจและปฏิบัติตามนโยบายและแนวปฏิบัติที่กำหนดไว้</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form8.form8_4.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form8.form8_4.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form8.form8_4.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form8.form8_4.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
+                <!-- 3. -->
+                <section class="mb-4">
+                    <header class="d-flex">
+                        <b-icon class="vue-icon" v-b-toggle.collapse-3 icon="arrow-down-right-square-fill"></b-icon>
+                        <p>3. ฝ่ายบริหารได้จัดให้มีโครงสร้างสายการรายงาน
+                            การกำหนดอำนาจในการสั่งการและความรับผิดชอบที่เหมาะสมเพื่อให้องค์กรบรรลุวัตถุประสงค์
+                            ภายใต้การกำกับดูแล
+                            (oversight) ของคณะกรรมการ</p>
+                    </header>
+                    <b-collapse id="collapse-3" class="mt-2">
+                        <div class="container-form">
+                            <!-----------3.1---------->
+                            <b-row class="mt-4 d-flex justify-content-between ">
+                                <b class="mb-3">3.1</b>
+                                <b-col cols="6">
+                                    <div class="form-offer">
+                                        <label
+                                            for="">ผู้บริหารระดับสูงกำหนดโครงสร้างองค์กรที่สนับสนุนการบรรลุวัตถุประสงค์ของบริษัท
+                                            โดยพิจารณาถึงความเหมาะสมทั้งทางธุรกิจและกฎหมาย
+                                            รวมถึงการจัดให้มีการควบคุมภายในอย่างมีประสิทธิภาพ
+                                            เช่น แบ่งแยกหน้าที่ในส่วนงานที่สำคัญ
+                                            ซึ่งทำให้เกิดการตรวจสอบถ่วงดุลระหว่างกัน
+                                            มีงานตรวจสอบภายในที่ขึ้นตรงกับกรรมการตรวจสอบ และมีสายการรายงานที่ชัดเจน
+                                            เป็นต้น</label>
                                     </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form8.form8_4.group" :options="forms.form8.form8_4.options8_4"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form8.form8_4.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                    </div>
-                </b-collapse>
-            </section>
+                                    <b-row class="mt-5 d-block px-3">
+                                        <b>ระดับความสำคัญ</b>
+                                        <div class="title-head-form d-flex">
+                                            <div class="con-checkbox">
+                                                <label class="container-box">สูง
+                                                    <input type="checkbox" value="height"
+                                                        v-model=forms.form3.form3_1.height :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color1"></span>
+                                                </label>
+                                                <label class="container-box">ปานกลาง
+                                                    <input type="checkbox" value="moderate"
+                                                        v-model=forms.form3.form3_1.moderate :true-value=1
+                                                        :false-value=0>
+                                                    <span class="checkmark checkbox-color2"></span>
+                                                </label>
+                                            </div>
+                                            <div class="con-checkbox">
+                                                <label class="container-box">ต่ำ
+                                                    <input type="checkbox" value="low" v-model=forms.form3.form3_1.low
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color3"></span>
+                                                </label>
+                                                <label class="container-box">AIC
+                                                    <input type="checkbox" value="aic" v-model=forms.form3.form3_1.aic
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color4"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </b-row>
+                                </b-col>
+                                <b-col cols="5">
+                                    <b-form-selected content-cols="8" label-cols="12">
+                                        <b>กลุ่ม</b>
+                                        <b-form-select v-model="forms.form3.form3_1.selected"
+                                            :options="forms.form3.form3_1.options"></b-form-select>
+                                    </b-form-selected>
+                                    <b-row class="mt-5">
+                                        <b-col>
+                                            <b-form-selected content-cols="12" label-cols="12">
+                                                <b>การดำเนินการในปัจจุบัน</b>
+                                                <b-form-textarea rows="5"
+                                                    v-model="forms.form3.form3_1.currentAction"></b-form-textarea>
+                                            </b-form-selected>
+                                        </b-col>
+                                    </b-row>
+                                </b-col>
+                            </b-row>
+                            <hr>
+                            <!-----------3.2---------->
+                            <b-row class="mt-4 d-flex justify-content-between ">
+                                <b class="mb-3">3.2</b>
+                                <b-col cols="6">
+                                    <div class="form-offer">
+                                        <label for="">ผู้บริหารระดับสูงกำหนดสายการรายงานในบริษัท
+                                            โดยพิจารณาถึงความเหมาะสมเกี่ยวกับอำนาจหน้าที่ ความรับผิดชอบ
+                                            และการสื่อสารข้อมูล</label>
+                                    </div>
+                                    <b-row class="mt-5 d-block px-3">
+                                        <b>ระดับความสำคัญ</b>
+                                        <div class="title-head-form d-flex">
+                                            <div class="con-checkbox">
+                                                <label class="container-box">สูง
+                                                    <input type="checkbox" value="height"
+                                                        v-model=forms.form3.form3_2.height :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color1"></span>
+                                                </label>
+                                                <label class="container-box">ปานกลาง
+                                                    <input type="checkbox" value="moderate"
+                                                        v-model=forms.form3.form3_2.moderate :true-value=1
+                                                        :false-value=0>
+                                                    <span class="checkmark checkbox-color2"></span>
+                                                </label>
+                                            </div>
+                                            <div class="con-checkbox">
+                                                <label class="container-box">ต่ำ
+                                                    <input type="checkbox" value="low" v-model=forms.form3.form3_2.low
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color3"></span>
+                                                </label>
+                                                <label class="container-box">AIC
+                                                    <input type="checkbox" value="aic" v-model=forms.form3.form3_2.aic
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color4"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </b-row>
+                                </b-col>
+                                <b-col cols="5">
+                                    <b-form-selected content-cols="8" label-cols="12">
+                                        <b>กลุ่ม</b>
+                                        <b-form-select v-model="forms.form3.form3_2.selected"
+                                            :options="forms.form3.form3_2.options"></b-form-select>
+                                    </b-form-selected>
+                                    <b-row class="mt-5">
+                                        <b-col>
+                                            <b-form-selected content-cols="12" label-cols="12">
+                                                <b>การดำเนินการในปัจจุบัน</b>
+                                                <b-form-textarea rows="5"
+                                                    v-model="forms.form3.form3_2.currentAction"></b-form-textarea>
+                                            </b-form-selected>
+                                        </b-col>
+                                    </b-row>
+                                </b-col>
+                            </b-row>
+                            <hr>
+                            <!-----------3.3---------->
+                            <b-row class="mt-4 d-flex justify-content-between ">
+                                <b class="mb-3">3.3</b>
+                                <b-col cols="6">
+                                    <div class="form-offer">
+                                        <label for="">มีการกำหนด มอบหมาย
+                                            และจำกัดอำนาจหน้าที่และความรับผิดชอบอย่างเหมาะสมระหว่างคณะกรรมการบริษัท
+                                            ผู้บริหารระดับสูง
+                                            ผู้บริหาร และพนักงาน</label>
+                                    </div>
+                                    <b-row class="mt-5 d-block px-3">
+                                        <b>ระดับความสำคัญ</b>
+                                        <div class="title-head-form d-flex">
+                                            <div class="con-checkbox">
+                                                <label class="container-box">สูง
+                                                    <input type="checkbox" value="height"
+                                                        v-model=forms.form3.form3_3.height :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color1"></span>
+                                                </label>
+                                                <label class="container-box">ปานกลาง
+                                                    <input type="checkbox" value="moderate"
+                                                        v-model=forms.form3.form3_3.moderate :true-value=1
+                                                        :false-value=0>
+                                                    <span class="checkmark checkbox-color2"></span>
+                                                </label>
+                                            </div>
+                                            <div class="con-checkbox">
+                                                <label class="container-box">ต่ำ
+                                                    <input type="checkbox" value="low" v-model=forms.form3.form3_3.low
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color3"></span>
+                                                </label>
+                                                <label class="container-box">AIC
+                                                    <input type="checkbox" value="aic" v-model=forms.form3.form3_3.aic
+                                                        :true-value=1 :false-value=0>
+                                                    <span class="checkmark checkbox-color4"></span>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </b-row>
+                                </b-col>
+                                <b-col cols="5">
+                                    <b-form-selected content-cols="8" label-cols="12">
+                                        <b>กลุ่ม</b>
+                                        <b-form-select v-model="forms.form3.form3_3.selected"
+                                            :options="forms.form3.form3_3.options"></b-form-select>
+                                    </b-form-selected>
+                                    <b-row class="mt-5">
+                                        <b-col>
+                                            <b-form-selected content-cols="12" label-cols="12">
+                                                <b>การดำเนินการในปัจจุบัน</b>
+                                                <b-form-textarea rows="5"
+                                                    v-model="forms.form3.form3_3.currentAction"></b-form-textarea>
+                                            </b-form-selected>
+                                        </b-col>
+                                    </b-row>
+                                </b-col>
+                            </b-row>
+                            <hr>
+                        </div>
+                    </b-collapse>
+                </section>
 
-            <!-- 9. -->
-            <section class="mb-4">
-                <header class="d-flex">
-                    <b-icon class="vue-icon" v-b-toggle.collapse-9 icon="arrow-down-right-square-fill"></b-icon>
-                    <p>9. องค์กรสามารถระบุและประเมินความเปลี่ยนแปลงที่อาจมีผลกระทบต่อระบบการควบคุมภายใน</p>
-                </header>
-                <b-collapse id="collapse-9" class="mt-2">
-                    <div class="container-form">
-                        <!-----------9.1---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.1</b>
-                            <b-col cols="6" >
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงปัจจัยภายนอกองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_1.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_1.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_1.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_1.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_1.group" :options="forms.form9.form9_1.options9_1"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form9.form9_1.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------9.2---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.2</b>
-                            <b-col cols="6" >
-
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงรูปแบบการทำธุรกิจที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_2.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_2.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_2.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_2.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_2.group" :options="forms.form9.form9_2.options9_2"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form9.form9_2.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                        <!-----------9.3---------->
-                        <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.3</b>
-                            <b-col cols="6" >
-
-                                <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงผู้นำองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
-                                </div>
-                                <b-row class="mt-5 d-block px-3">
-                                    <b>ระดับความสำคัญ</b>
-                                    <div class="title-head-form d-flex">
-                                        <div class="con-checkbox">
-                                            <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_3.height
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color1"></span>
-                                            </label>
-                                            <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_3.moderate :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color2"></span>
-                                            </label>
-                                        </div>
-                                        <div class="con-checkbox">
-                                            <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_3.low
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color3"></span>
-                                            </label>
-                                            <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_3.aic
-                                                    :true-value=1 :false-value=0>
-                                                <span class="checkmark checkbox-color4"></span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </b-row>
-                            </b-col>
-                            <b-col cols="5" >
-                                <b-form-group content-cols="8" label-cols="12">
-                                    <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_3.group" :options="forms.form9.form9_3.options9_3"></b-form-select>
-                                </b-form-group>
-                                <b-row class="mt-5">
-                                    <b-col>
-                                        <b-form-group content-cols="12" label-cols="12">
-                                            <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form9.form9_3.currentAction"></b-form-textarea>
-                                        </b-form-group>
-                                    </b-col>
-                                </b-row>
-                            </b-col>
-                        </b-row>
-                        <hr>
-                    </div>
-                </b-collapse>
-            </section>
+            </div>
         </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'form-report3',
+    name: 'form-report1',
+    data() {
+        return {
+
+        }
+    },
     props: {
         forms: {
             type: Object,
             required: false,
             default: () => {
                 return {
-                    form7: {
-                        form7_1: {
+                    form3: {
+                        form3_1: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
                             low: 0,
                             aic: 0,
                             total: 0,
-                            group: 'Management', 
-                            options7_1: [
+                            selected: 'Management',
+                            options: [
                                 { value: 'Board of Directors', text: 'Board of Directors' },
                                 { value: 'Management', text: 'Management' },
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-                        form7_2: {
+                        form3_2: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
                             low: 0,
                             aic: 0,
                             total: 0,
-                            group: 'Management', 
-                            options7_2: [
+                            selected: 'Management',
+                            options: [
                                 { value: 'Board of Directors', text: 'Board of Directors' },
                                 { value: 'Management', text: 'Management' },
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-                        form7_3: {
+                        form3_3: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
                             low: 0,
                             aic: 0,
                             total: 0,
-                            group: 'Management', 
-                            options7_3: [
+                            selected: 'Management',
+                            options: [
                                 { value: 'Board of Directors', text: 'Board of Directors' },
                                 { value: 'Management', text: 'Management' },
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-                        form7_4: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Operation', 
-                            options7_4: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form7_5: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Operation', 
-                            options7_5: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                    },
-                    form8: {
-                        form8_1: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Management', 
-                            options8_1: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form8_2: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Management', 
-                            options8_2: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form8_3: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Board of Directors', 
-                            options8_3: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form8_4: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Operation', 
-                            options8_4: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                    },
-                    form9: {
-                        form9_1: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Management', 
-                            options9_1: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form9_2: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Management', 
-                            options9_2: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form9_3: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            group: 'Management', 
-                            options9_3: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                    },
+                    }
                 }
             }
         }
-    }
-}
+    },
+
+} 
 </script>

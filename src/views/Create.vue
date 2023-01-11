@@ -30,8 +30,8 @@ export default {
                 form1: {
                     form1_1: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -44,8 +44,8 @@ export default {
                     },
                     form1_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -58,8 +58,8 @@ export default {
                     },
                     form1_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -72,8 +72,8 @@ export default {
                     },
                     form1_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -88,8 +88,8 @@ export default {
                 form2: {
                     form2_1: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -102,8 +102,8 @@ export default {
                     },
                     form2_2: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -116,8 +116,8 @@ export default {
                     },
                     form2_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -130,8 +130,8 @@ export default {
                     },
                     form2_4: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -144,8 +144,8 @@ export default {
                     },
                     form2_5: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -158,8 +158,8 @@ export default {
                     },
                     form2_6: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -174,8 +174,8 @@ export default {
                 form3: {
                     form3_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -188,8 +188,8 @@ export default {
                     },
                     form3_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -202,8 +202,8 @@ export default {
                     },
                     form3_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -218,8 +218,8 @@ export default {
                 form4: {
                     form4_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -232,8 +232,8 @@ export default {
                     },
                     form4_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -246,8 +246,8 @@ export default {
                     },
                     form4_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -260,8 +260,8 @@ export default {
                     },
                     form4_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -274,8 +274,8 @@ export default {
                     },
                     form4_5: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -290,8 +290,8 @@ export default {
                 form5: {
                     form5_1: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -304,8 +304,8 @@ export default {
                     },
                     form5_2: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -318,8 +318,8 @@ export default {
                     },
                     form5_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -332,8 +332,8 @@ export default {
                     },
                     form5_4: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -348,8 +348,8 @@ export default {
                 form6: {
                     form6_1: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -362,8 +362,8 @@ export default {
                     },
                     form6_2: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -376,8 +376,8 @@ export default {
                     },
                     form6_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -390,8 +390,8 @@ export default {
                     },
                     form6_4: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -406,8 +406,8 @@ export default {
                 form7: {
                     form7_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -420,8 +420,8 @@ export default {
                     },
                     form7_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -434,8 +434,8 @@ export default {
                     },
                     form7_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -448,8 +448,8 @@ export default {
                     },
                     form7_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -462,8 +462,8 @@ export default {
                     },
                     form7_5: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -478,8 +478,8 @@ export default {
                 form8: {
                     form8_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -492,8 +492,8 @@ export default {
                     },
                     form8_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -506,8 +506,8 @@ export default {
                     },
                     form8_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -520,8 +520,8 @@ export default {
                     },
                     form8_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -536,8 +536,8 @@ export default {
                 form9: {
                     form9_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -550,8 +550,8 @@ export default {
                     },
                     form9_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -564,8 +564,8 @@ export default {
                     },
                     form9_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -580,8 +580,8 @@ export default {
                 form10: {
                     form10_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -594,8 +594,8 @@ export default {
                     },
                     form10_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -608,8 +608,8 @@ export default {
                     },
                     form10_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -622,8 +622,8 @@ export default {
                     },
                     form10_4: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -636,8 +636,8 @@ export default {
                     },
                     form10_5: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -652,8 +652,8 @@ export default {
                 form11: {
                     form11_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -666,8 +666,8 @@ export default {
                     },
                     form11_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -680,8 +680,8 @@ export default {
                     },
                     form11_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -694,8 +694,8 @@ export default {
                     },
                     form11_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -710,8 +710,8 @@ export default {
                 form12: {
                     form12_1: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -724,8 +724,8 @@ export default {
                     },
                     form12_2: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -738,8 +738,8 @@ export default {
                     },
                     form12_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -752,8 +752,8 @@ export default {
                     },
                     form12_4: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -766,8 +766,8 @@ export default {
                     },
                     form12_5: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -780,8 +780,8 @@ export default {
                     },
                     form12_6: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -794,8 +794,8 @@ export default {
                     },
                     form12_7: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -810,8 +810,8 @@ export default {
                 form13: {
                     form13_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -824,8 +824,8 @@ export default {
                     },
                     form13_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -838,8 +838,8 @@ export default {
                     },
                     form13_3: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -852,8 +852,8 @@ export default {
                     },
                     form13_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -866,8 +866,8 @@ export default {
                     },
                     form13_5: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -880,8 +880,8 @@ export default {
                     },
                     form13_6: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -896,8 +896,8 @@ export default {
                 form14: {
                     form14_1: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -910,8 +910,8 @@ export default {
                     },
                     form14_2: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -924,8 +924,8 @@ export default {
                     },
                     form14_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -940,8 +940,8 @@ export default {
                 form15: {
                     form15_1: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -954,8 +954,8 @@ export default {
                     },
                     form15_2: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -970,8 +970,8 @@ export default {
                 form16: {
                     form16_1: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -984,8 +984,8 @@ export default {
                     },
                     form16_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -998,8 +998,8 @@ export default {
                     },
                     form16_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1012,8 +1012,8 @@ export default {
                     },
                     form16_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1026,8 +1026,8 @@ export default {
                     },
                     form16_5: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1040,8 +1040,8 @@ export default {
                     },
                     form16_6: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1056,8 +1056,8 @@ export default {
                 form17: {
                     form17_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1070,8 +1070,8 @@ export default {
                     },
                     form17_2: {
                         currentAction: '',
-                        group: 'Board of Directors',
-                        options1_1: [
+                        selected: 'Board of Directors',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1086,8 +1086,8 @@ export default {
                 form18: {
                     form18_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1100,8 +1100,8 @@ export default {
                     },
                     form18_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1114,8 +1114,8 @@ export default {
                     },
                     form18_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1128,8 +1128,8 @@ export default {
                     },
                     form18_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1142,8 +1142,8 @@ export default {
                     },
                     form18_5: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1156,8 +1156,8 @@ export default {
                     },
                     form18_6: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1172,8 +1172,8 @@ export default {
                 form19: {
                     form19_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1186,8 +1186,8 @@ export default {
                     },
                     form19_2: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1200,8 +1200,8 @@ export default {
                     },
                     form19_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1214,8 +1214,8 @@ export default {
                     },
                     form19_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1230,8 +1230,8 @@ export default {
                 form20: {
                     form20_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1244,8 +1244,8 @@ export default {
                     },
                     form20_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1258,8 +1258,8 @@ export default {
                     },
                     form20_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1274,8 +1274,8 @@ export default {
                 form21: {
                     form21_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1288,8 +1288,8 @@ export default {
                     },
                     form21_2: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1302,8 +1302,8 @@ export default {
                     },
                     form21_3: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1316,8 +1316,8 @@ export default {
                     },
                     form21_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1330,8 +1330,8 @@ export default {
                     },
                     form21_5: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1346,8 +1346,8 @@ export default {
                 form22: {
                     form22_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1360,8 +1360,8 @@ export default {
                     },
                     form22_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1374,8 +1374,8 @@ export default {
                     },
                     form22_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1388,8 +1388,8 @@ export default {
                     },
                     form22_4: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1402,8 +1402,8 @@ export default {
                     },
                     form22_5: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1416,8 +1416,8 @@ export default {
                     },
                     form22_6: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1430,8 +1430,8 @@ export default {
                     },
                     form22_7: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1444,8 +1444,8 @@ export default {
                     },
                     form22_8: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1460,8 +1460,8 @@ export default {
                 form23: {
                     form23_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1474,8 +1474,8 @@ export default {
                     },
                     form23_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1488,8 +1488,8 @@ export default {
                     },
                     form23_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1502,8 +1502,8 @@ export default {
                     },
                     form23_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1516,8 +1516,8 @@ export default {
                     },
                     form23_5: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1530,8 +1530,8 @@ export default {
                     },
                     form23_6: {
                         currentAction: '',
-                        group: 'Operation',
-                        options1_1: [
+                        selected: 'Operation',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1546,8 +1546,8 @@ export default {
                 form24: {
                     form24_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1560,8 +1560,8 @@ export default {
                     },
                     form24_2: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1574,8 +1574,8 @@ export default {
                     },
                     form24_3: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1588,8 +1588,8 @@ export default {
                     },
                     form24_4: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1602,8 +1602,8 @@ export default {
                     },
                     form24_5: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1616,8 +1616,8 @@ export default {
                     },
                     form24_6: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1632,8 +1632,8 @@ export default {
                 form25: {
                     form25_1: {
                         currentAction: '',
-                        group: 'Management',
-                        options1_1: [
+                        selected: 'Management',
+                        options: [
                             { value: 'Board of Directors', text: 'Board of Directors' },
                             { value: 'Management', text: 'Management' },
                             { value: 'Operation', text: 'Operation' },
@@ -1655,5 +1655,6 @@ export default {
             this.$router.push(`/tasks/${res._id}/result`);
         },
     },
+
 }
 </script>

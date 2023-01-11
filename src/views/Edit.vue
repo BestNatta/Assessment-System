@@ -28,7 +28,6 @@ export default {
       await api.updatetask(form);
       this.flash('task updated sucessfully!', 'success');
       this.$router.push(`/tasks/`);
-      
     }
   },
 

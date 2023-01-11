@@ -1,48 +1,50 @@
 <template>
     <div>
         <div class="container">
+            <b-row class="my-5">
+                <b-col class="text-center">
+                    <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน</u></h4>
+                </b-col>
+            </b-row>
 
-            <!-- 9. -->
+            <!-- 20. -->
             <section class="mb-4">
                 <header class="d-flex">
-                    <b-icon class="vue-icon" v-b-toggle.collapse-9 icon="arrow-down-right-square-fill"></b-icon>
-                    <p>9. องค์กรสามารถระบุและประเมินความเปลี่ยนแปลงที่อาจมีผลกระทบต่อระบบการควบคุมภายใน</p>
+                    <b-icon class="vue-icon" v-b-toggle.collapse-20 icon="arrow-down-right-square-fill"></b-icon>
+                    <p>20. กระบวนการบริหารสินค้าคงคลัง</p>
                 </header>
-                <b-collapse id="collapse-9" class="mt-2">
+                <b-collapse id="collapse-20" class="mt-2">
                     <div class="container-form">
-                        <!-----------9.1---------->
+                        <!-----------20.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.1</b>
+                            <b class="mb-3">20.1</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงปัจจัยภายนอกองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
+                                    <label for="">นโยบายและคู่มือการปฏิบัติงาน</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
                                             <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_1.height
-                                                    :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="height"
+                                                    v-model=forms.form20.form20_1.height :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
                                                 <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_1.moderate :true-value=1 :false-value=0>
+                                                    v-model=forms.form20.form20_1.moderate :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
                                         <div class="con-checkbox">
                                             <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_1.low
+                                                <input type="checkbox" value="low" v-model=forms.form20.form20_1.low
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color3"></span>
                                             </label>
                                             <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_1.aic
+                                                <input type="checkbox" value="aic" v-model=forms.form20.form20_1.aic
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color4"></span>
                                             </label>
@@ -53,55 +55,51 @@
                             <b-col cols="5">
                                 <b-form-selected content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_1.selected"
-                                        :options="forms.form9.form9_1.options"></b-form-select>
+                                    <b-form-select v-model="forms.form20.form20_1.selected"
+                                        :options="forms.form20.form20_1.options"></b-form-select>
                                 </b-form-selected>
                                 <b-row class="mt-5">
                                     <b-col>
                                         <b-form-selected content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
-                                                v-model="forms.form9.form9_1.currentAction"></b-form-textarea>
+                                                v-model="forms.form20.form20_1.currentAction"></b-form-textarea>
                                         </b-form-selected>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
                         <hr>
-                        <!-----------9.2---------->
+                        <!-----------20.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.2</b>
+                            <b class="mb-3">20.2</b>
                             <b-col cols="6">
-
                                 <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงรูปแบบการทำธุรกิจที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
+                                    <label for="">การบริหารจัดการฐานข้อมูล</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
                                             <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_2.height
-                                                    :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="height"
+                                                    v-model=forms.form20.form20_2.height :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
                                                 <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_2.moderate :true-value=1 :false-value=0>
+                                                    v-model=forms.form20.form20_2.moderate :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
                                         <div class="con-checkbox">
                                             <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_2.low
+                                                <input type="checkbox" value="low" v-model=forms.form20.form20_2.low
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color3"></span>
                                             </label>
                                             <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_2.aic
+                                                <input type="checkbox" value="aic" v-model=forms.form20.form20_2.aic
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color4"></span>
                                             </label>
@@ -112,55 +110,51 @@
                             <b-col cols="5">
                                 <b-form-selected content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_2.selected"
-                                        :options="forms.form9.form9_2.options"></b-form-select>
+                                    <b-form-select v-model="forms.form20.form20_2.selected"
+                                        :options="forms.form20.form20_2.options"></b-form-select>
                                 </b-form-selected>
                                 <b-row class="mt-5">
                                     <b-col>
                                         <b-form-selected content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
-                                                v-model="forms.form9.form9_2.currentAction"></b-form-textarea>
+                                                v-model="forms.form20.form20_2.currentAction"></b-form-textarea>
                                         </b-form-selected>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
                         <hr>
-                        <!-----------9.3---------->
+                        <!-----------20.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
-                            <b class="mb-3">9.3</b>
+                            <b class="mb-3">20.3</b>
                             <b-col cols="6">
-
                                 <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงผู้นำองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
-                                        การควบคุมภายใน และรายงานทางการเงิน
-                                        ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
+                                    <label for="">การดูแลฐานข้อมูล</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">
                                             <label class="container-box">สูง
-                                                <input type="checkbox" value="height" v-model=forms.form9.form9_3.height
-                                                    :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="height"
+                                                    v-model=forms.form20.form20_3.height :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
                                                 <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_3.moderate :true-value=1 :false-value=0>
+                                                    v-model=forms.form20.form20_3.moderate :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
                                         <div class="con-checkbox">
                                             <label class="container-box">ต่ำ
-                                                <input type="checkbox" value="low" v-model=forms.form9.form9_3.low
+                                                <input type="checkbox" value="low" v-model=forms.form20.form20_3.low
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color3"></span>
                                             </label>
                                             <label class="container-box">AIC
-                                                <input type="checkbox" value="aic" v-model=forms.form9.form9_3.aic
+                                                <input type="checkbox" value="aic" v-model=forms.form20.form20_3.aic
                                                     :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color4"></span>
                                             </label>
@@ -171,15 +165,15 @@
                             <b-col cols="5">
                                 <b-form-selected content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form9.form9_3.selected"
-                                        :options="forms.form9.form9_3.options"></b-form-select>
+                                    <b-form-select v-model="forms.form20.form20_3.selected"
+                                        :options="forms.form20.form20_3.options"></b-form-select>
                                 </b-form-selected>
                                 <b-row class="mt-5">
                                     <b-col>
                                         <b-form-selected content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
-                                                v-model="forms.form9.form9_3.currentAction"></b-form-textarea>
+                                                v-model="forms.form20.form20_3.currentAction"></b-form-textarea>
                                         </b-form-selected>
                                     </b-col>
                                 </b-row>
@@ -195,15 +189,15 @@
 
 <script>
 export default {
-    name: 'form-report3',
+    name: 'form-report7',
     props: {
         forms: {
             type: Object,
             required: false,
             default: () => {
                 return {
-                    form9: {
-                        form9_1: {
+                    form20: {
+                        form20_1: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
@@ -217,7 +211,7 @@ export default {
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-                        form9_2: {
+                        form20_2: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
@@ -231,14 +225,14 @@ export default {
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-                        form9_3: {
+                        form20_3: {
                             currentAction: '',
                             height: 0,
                             moderate: 0,
                             low: 0,
                             aic: 0,
                             total: 0,
-                            selected: 'Management',
+                            selected: 'Operation',
                             options: [
                                 { value: 'Board of Directors', text: 'Board of Directors' },
                                 { value: 'Management', text: 'Management' },
