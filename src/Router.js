@@ -7,6 +7,7 @@ import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
 import Result from './views/Result.vue'
 import ResuleCircle from './components/ResultCircle.vue'
+import Dashboard from './views/Dashboard/dashboard.vue'
 
 Vue.use(Router);
 
@@ -25,12 +26,6 @@ export default new Router({
       name: 'tasks',
       component: Tasks
     },
-
-    // {
-    //   path: '/tasks/new',
-    //   name: 'new-task',
-    //   component: Form
-    // },
 
     {
       path: '/tasks/create',
@@ -61,6 +56,12 @@ export default new Router({
       name: 'result-circle',
       component: ResuleCircle
     },
+
+    {
+      path: '/tasks/:id/Dashboard',
+      name: 'dashboard',
+      component: Dashboard
+    }
    
   ]
 });

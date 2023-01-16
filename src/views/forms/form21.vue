@@ -12,7 +12,7 @@
                         <!-----------21.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">21.1</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">นโยบายและคู่มือการปฏิบัติงาน</label>
                                 </div>
@@ -46,17 +46,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form21.form21_1.selected" :options="forms.form21.form21_1.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form21.form21_1.selected"
+                                        :options="forms.form21.form21_1.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form21.form21_1.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form21.form21_1.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -65,7 +67,7 @@
                         <!-----------21.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">21.2</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การได้มาซึ่งสินทรัพย์ถาวร</label>
                                 </div>
@@ -99,17 +101,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form21.form21_2.selected" :options="forms.form21.form21_2.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form21.form21_2.selected"
+                                        :options="forms.form21.form21_2.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form21.form21_2.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form21.form21_2.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -118,7 +122,7 @@
                         <!-----------21.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">21.3</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การได้มาซึ่งสินทรัพย์ถาวร</label>
                                 </div>
@@ -152,17 +156,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form21.form21_3.selected" :options="forms.form21.form21_3.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form21.form21_3.selected"
+                                        :options="forms.form21.form21_3.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form21.form21_3.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form21.form21_3.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -171,7 +177,7 @@
                         <!-----------21.4---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">21.4</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การโอนย้ายสินทรัพย์ถาวร</label>
                                 </div>
@@ -205,17 +211,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form21.form21_4.selected" :options="forms.form21.form21_4.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form21.form21_4.selected"
+                                        :options="forms.form21.form21_4.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form21.form21_4.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form21.form21_4.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -224,7 +232,7 @@
                         <!-----------21.5---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">21.5</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การตรวจนับสินทรัพย์ถาวร</label>
                                 </div>
@@ -258,22 +266,23 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form21.form21_5.selected" :options="forms.form21.form21_5.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form21.form21_5.selected"
+                                        :options="forms.form21.form21_5.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form21.form21_5.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form21.form21_5.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                     </div>
                 </b-collapse>
             </section>

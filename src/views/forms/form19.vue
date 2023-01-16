@@ -1,12 +1,6 @@
 <template>
     <div>
         <div class="container">
-            <b-row class="my-5">
-                <b-col class="text-center">
-                    <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน</u></h4>
-                </b-col>
-            </b-row>
-
             <!-- 19. -->
             <section class="mb-4">
                 <header class="d-flex">
@@ -53,18 +47,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form19.form19_1.selected"
                                         :options="forms.form19.form19_1.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form19.form19_1.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -108,18 +102,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form19.form19_2.selected"
                                         :options="forms.form19.form19_2.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form19.form19_2.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -163,18 +157,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form19.form19_3.selected"
                                         :options="forms.form19.form19_3.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form19.form19_3.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -218,23 +212,22 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form19.form19_4.selected"
                                         :options="forms.form19.form19_4.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form19.form19_4.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                     </div>
                 </b-collapse>
             </section>

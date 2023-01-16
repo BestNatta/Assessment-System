@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="forms.form1">
         <!-- Descriptions -->
         <div class="container mb-5 w-75 text-center">
             <h4 class="mb-5"><u>เกณฑ์การจัดระดับความสำคัญ</u></h4>
@@ -196,8 +196,7 @@
                                 <b-col cols="6">
                                     <div class="form-offer">
                                         <label for="">มีกระบวนการติดตามและประเมินผลการปฏิบัติตาม Code of conduct <br>
-                                            •
-                                            การติดตามและประเมินผลโดยหน่วยงานตรวจสอบภายในหรือหน่วยงานกำกับดูแลการปฏิบัติ
+                                            • การติดตามและประเมินผลโดยหน่วยงานตรวจสอบภายในหรือหน่วยงานกำกับดูแลการปฏิบัติ
                                             (compliance unit)
                                             <br>
                                             • การประเมินตนเองโดยผู้บริหารและพนักงาน <br>
@@ -326,78 +325,22 @@
 <script>
 export default {
     name: 'form-1',
+
     data() {
         return {
+        }
+    },
 
-        }
+    props: ['forms'],
+
+    mounted() {
+        // console.log(this.forms)
     },
-    props: {
-        forms: {
-            type: Object,
-            required: false,
-            default: () => {
-                return {
-                    form1: {
-                        form1_1: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            selected: 'Board of Directors',
-                            options: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form1_2: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            selected: 'Management',
-                            options: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form1_3: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            selected: 'Operation',
-                            options: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                        form1_4: {
-                            currentAction: '',
-                            height: 0,
-                            moderate: 0,
-                            low: 0,
-                            aic: 0,
-                            total: 0,
-                            selected: 'Operation',
-                            options: [
-                                { value: 'Board of Directors', text: 'Board of Directors' },
-                                { value: 'Management', text: 'Management' },
-                                { value: 'Operation', text: 'Operation' },
-                            ],
-                        },
-                    },
-                }
-            }
+    watch: {
+        forms(newValue, oldValue) {
+            console.log(newValue)
+            console.log(oldValue)
         }
-    },
+    }
 } 
 </script>

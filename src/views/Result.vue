@@ -47,7 +47,7 @@
                 </b-row>
                 <b-collapse id="collapse-1">
                     <!-- 1. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>1</p>
                         </b-col>
@@ -71,7 +71,7 @@
                         </b-col>
                     </b-row>
                     <!-- 2. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>2</p>
                         </b-col>
@@ -95,7 +95,7 @@
                         </b-col>
                     </b-row>
                     <!-- 3. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>3</p>
                         </b-col>
@@ -119,7 +119,7 @@
                         </b-col>
                     </b-row>
                     <!-- 4. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>4</p>
                         </b-col>
@@ -143,7 +143,7 @@
                         </b-col>
                     </b-row>
                     <!-- 5. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>5</p>
                         </b-col>
@@ -175,7 +175,7 @@
                 </b-row>
                 <b-collapse id="collapse-2">
                     <!-- 6. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>6</p>
                         </b-col>
@@ -199,7 +199,7 @@
                         </b-col>
                     </b-row>
                     <!-- 7. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>7</p>
                         </b-col>
@@ -223,7 +223,7 @@
                         </b-col>
                     </b-row>
                     <!-- 8. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>8</p>
                         </b-col>
@@ -247,7 +247,7 @@
                         </b-col>
                     </b-row>
                     <!-- 9. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>9</p>
                         </b-col>
@@ -279,7 +279,7 @@
                 </b-row>
                 <b-collapse id="collapse-3">
                     <!-- 10. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>10</p>
                         </b-col>
@@ -303,7 +303,7 @@
                         </b-col>
                     </b-row>
                     <!-- 11. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>11</p>
                         </b-col>
@@ -327,7 +327,7 @@
                         </b-col>
                     </b-row>
                     <!-- 12. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>12</p>
                         </b-col>
@@ -359,7 +359,7 @@
                 </b-row>
                 <b-collapse id="collapse-4">
                     <!-- 13. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>13</p>
                         </b-col>
@@ -383,7 +383,7 @@
                         </b-col>
                     </b-row>
                     <!-- 14. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>14</p>
                         </b-col>
@@ -407,7 +407,7 @@
                         </b-col>
                     </b-row>
                     <!-- 15. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>15</p>
                         </b-col>
@@ -439,7 +439,7 @@
                 </b-row>
                 <b-collapse id="collapse-5">
                     <!-- 16. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>16</p>
                         </b-col>
@@ -463,7 +463,7 @@
                         </b-col>
                     </b-row>
                     <!-- 17. -->
-                    <b-row class="border p-2">
+                    <b-row class="border p-2" v-if="tasks.form1">
                         <b-col cols="1" class="text-center">
                             <p>17</p>
                         </b-col>
@@ -493,7 +493,7 @@
                     </b-col>
                 </b-row>
                 <!-- 18 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการขายและรับชำระเงิน</p></li>
@@ -516,7 +516,7 @@
                     </b-col>
                 </b-row>
                 <!-- 19 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการจัดซื้อจัดจ้างและการจ่ายชำระเงิน</p></li>
@@ -539,7 +539,7 @@
                     </b-col>
                 </b-row>
                 <!-- 20 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการบริหารการผลิต</p></li>
@@ -562,7 +562,7 @@
                     </b-col>
                 </b-row>
                 <!-- 21 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการบริหารสินค้าคงคลัง</p></li>
@@ -585,7 +585,7 @@
                     </b-col>
                 </b-row>
                 <!-- 22 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task"> 
                         <ul>
                             <li><p>กระบวนการบริหารสินทรัพย์ถาวร</p></li>
@@ -608,7 +608,7 @@
                     </b-col>
                 </b-row>
                 <!-- 23 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการบริหารทรัพยากรบุคคล</p></li>
@@ -631,7 +631,7 @@
                     </b-col>
                 </b-row>
                 <!-- 24 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการบริหารด้านบัญชีและการเงิน</p></li>
@@ -654,7 +654,7 @@
                     </b-col>
                 </b-row>
                 <!-- 25 -->
-                <b-row class="border p-2">
+                <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7" v-for="task in 1" :key="task">
                         <ul>
                             <li><p>กระบวนการควบคุมทั่วไปด้านระบบเทคโนโลยีสารสนเทศ (IT General Control)</p></li>
@@ -842,6 +842,6 @@ export default {
                 this.sum9.aic + this.sum10.aic + this.sum11.aic + this.sum12.aic +
                 this.sum13.aic + this.sum14.aic + this.sum15.aic + this.sum16.aic + this.sum17.aic
     },
-  }
+  },
 }
 </script>

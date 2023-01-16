@@ -12,7 +12,7 @@
                         <!-----------22.1---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.1</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">นโยบายและคู่มือการปฏิบัติงาน</label>
                                 </div>
@@ -46,17 +46,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_1.selected" :options="forms.form22.form22_1.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_1.selected"
+                                        :options="forms.form22.form22_1.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_1.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_1.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -65,7 +67,7 @@
                         <!-----------22.2---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.2</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การจัดทํา Job Description</label>
                                 </div>
@@ -99,17 +101,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_2.selected" :options="forms.form22.form22_2.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_2.selected"
+                                        :options="forms.form22.form22_2.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_2.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_2.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -118,7 +122,7 @@
                         <!-----------22.3---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.3</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การวางแผนอัตรากําลังคน</label>
                                 </div>
@@ -152,17 +156,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_3.selected" :options="forms.form22.form22_3.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_3.selected"
+                                        :options="forms.form22.form22_3.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_3.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_3.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -171,7 +177,7 @@
                         <!-----------22.4---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.4</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การอบรมและพัฒนาบุคลากร</label>
                                 </div>
@@ -205,17 +211,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_4.selected" :options="forms.form22.form22_4.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_4.selected"
+                                        :options="forms.form22.form22_4.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_4.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_4.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -224,7 +232,7 @@
                         <!-----------22.5---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.5</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การอบรมและพัฒนาบุคลากร</label>
                                 </div>
@@ -258,17 +266,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_5.selected" :options="forms.form22.form22_5.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_5.selected"
+                                        :options="forms.form22.form22_5.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_5.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_5.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -277,7 +287,7 @@
                         <!-----------22.6---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.6</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การประเมินผลการปฏิบัติงาน</label>
                                 </div>
@@ -311,17 +321,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_6.selected" :options="forms.form22.form22_6.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_6.selected"
+                                        :options="forms.form22.form22_6.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_6.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_6.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -330,7 +342,7 @@
                         <!-----------22.7---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.7</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การจ่ายเงินเดือนผลตอบแทนและสวัสดิการ พนักงาน</label>
                                 </div>
@@ -364,17 +376,19 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_7.selected" :options="forms.form22.form22_7.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_7.selected"
+                                        :options="forms.form22.form22_7.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_7.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_7.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -383,7 +397,7 @@
                         <!-----------22.8---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">22.8</b>
-                            <b-col cols="6" >
+                            <b-col cols="6">
                                 <div class="form-offer">
                                     <label for="">การลาออก/เลิกจ้าง พนักงาน</label>
                                 </div>
@@ -417,22 +431,23 @@
                                     </div>
                                 </b-row>
                             </b-col>
-                            <b-col cols="5" >
-                                <b-form-selected content-cols="8" label-cols="12">
+                            <b-col cols="5">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
-                                    <b-form-select v-model="forms.form22.form22_8.selected" :options="forms.form22.form22_8.options"></b-form-select>
-                                </b-form-selected>
+                                    <b-form-select v-model="forms.form22.form22_8.selected"
+                                        :options="forms.form22.form22_8.options"></b-form-select>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
-                                            <b-form-textarea rows="5" v-model="forms.form22.form22_8.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                            <b-form-textarea rows="5"
+                                                v-model="forms.form22.form22_8.currentAction"></b-form-textarea>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                     </div>
                 </b-collapse>
             </section>

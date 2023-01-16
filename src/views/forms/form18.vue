@@ -6,7 +6,6 @@
                     <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน</u></h4>
                 </b-col>
             </b-row>
-
             <!-- 18. -->
             <section class="mb-4">
                 <header class="d-flex">
@@ -53,18 +52,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_1.selected"
                                         :options="forms.form18.form18_1.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_1.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -108,18 +107,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_2.selected"
                                         :options="forms.form18.form18_2.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_2.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -163,18 +162,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_3.selected"
                                         :options="forms.form18.form18_3.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_3.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -218,18 +217,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_4.selected"
                                         :options="forms.form18.form18_4.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_4.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -273,18 +272,18 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_5.selected"
                                         :options="forms.form18.form18_5.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_5.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
@@ -328,23 +327,22 @@
                                 </b-row>
                             </b-col>
                             <b-col cols="5">
-                                <b-form-selected content-cols="8" label-cols="12">
+                                <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form18.form18_6.selected"
                                         :options="forms.form18.form18_6.options"></b-form-select>
-                                </b-form-selected>
+                                </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-selected content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form18.form18_6.currentAction"></b-form-textarea>
-                                        </b-form-selected>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                     </div>
                 </b-collapse>
             </section>

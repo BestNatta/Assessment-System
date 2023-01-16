@@ -19,7 +19,7 @@ export default {
   },
   data() {
     return {
-      forms: {}
+      forms: null
     };
   },
   
@@ -33,6 +33,7 @@ export default {
 
   async mounted() {
      this.forms = await api.gettask(this.$route.params.id);
+     console.log(this.forms)
   }
 };
 </script>
