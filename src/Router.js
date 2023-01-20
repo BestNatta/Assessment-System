@@ -58,7 +58,7 @@ export default new Router({
     },
 
     {
-      path: '/tasks/:id/Dashboard',
+      path: '/tasks/:id/dashboard',
       name: 'dashboard',
       component: Dashboard
     }

@@ -1,107 +1,123 @@
 <template>
-    <div class="container">
-        <div class="text-center mt-3 mb-5">
-            <h3>ชื่อบริษัท : </h3>
-        </div>
-        <CanvasJSChart :options="options" :styles="styleOptions" />
+    <div id="chart" class="apex-chart">
+        <apex-chart type="bar" height="550" :options="chartOptions" :series="series" />
     </div>
 </template>
 
 <script>
-import CanvasJSChart from '../../assets/CanvasJSVueComponent.vue';
+import { api } from '../../helpers/Helpers';
 export default {
-    components: {
-        CanvasJSChart
-    },
+    name: 'HelloWorld',
     data() {
         return {
-            options: {
-                animationEnabled: true,
-                theme: "light2",
-                exportEnabled: true,
-                // title: {
-                //     text: "ชื่อบริษัท : "
-                // },
+
+            series: [{
+                name: 'สูง',
+                data: [],
+            }, {
+                name: 'ปานกลาง',
+                data: []
+            }, {
+                name: 'ต่ำ',
+                data: []
+            }, {
+                name: 'AIC',
+                data: []
+            }],
+            chartOptions: {
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                },
+
+                plotOptions: {
+                    bar: {
+                        horizontal: true,
+                        dataLabels: {
+                            total: {
+                                enabled: true,
+                                offsetX: 0,
+                                style: {
+                                    fontSize: '13px',
+                                    fontWeight: 900,
+                                }
+                            }
+                        }
+                    },
+                },
+
+                stroke: {
+                    width: 1,
+                    colors: ['#fff']
+                },
+
+                title: {
+                    text: 'ชื่อบริษัท',
+                    align: 'center',
+                    style: {
+                        fontSize: '20px',
+                    }
+                },
+
+                xaxis: {
+                    categories: ['ข้อที่ 1', 'ข้อที่ 2', 'ข้อที่ 3', 'ข้อที่ 4', 'ข้อที่ 5', 'ข้อที่ 6', 'ข้อที่ 7', 'ข้อที่ 8'],
+                    labels: {
+                        style: {
+                        }
+                    },
+
+                },
+                yaxis: {
+                    min: 0,
+                    max: 20,
+                    labels: {
+                        style: {
+                            fontSize: '13px',
+                        }
+                    }
+
+                },
+                fill: {
+                    opacity: 1,
+                    colors: ['#C00000', '#FFC000', '#92D050', '#00B0F0'],
+                },
+
                 legend: {
-                    cursor: "pointer",
-                    itemclick: this.toggleDataSeries
+                    position: 'bottom',
+                    horizontalAlign: 'center',
+                    fontSize: '14px',
+                    labels: {
+                    },
+                    markers: {
+                        fillColors: ['#C00000', '#FFC000', '#92D050', '#00B0F0'],
+                    },
+                    getValue: {}
                 },
-                axisY: {
-                    prefix: "$",
-                    suffix: "K"
-                },
-                toolTip: {
-                    shared: true
-                },
-                data: [{
-                    type: "stackedBar",
-                    name: "สูง",
-                    showInLegend: true,
-                    color: "#C00000",
-                    // yValueFormatString: "$#,##0K",
-                    dataPoints: [
-                        { label: "ข้อที่ 1", y: 48 },
-                        { label: "ข้อที่ 2", y: 55 },
-                        { label: "ข้อที่ 3", y: 49 },
-                        { label: "ข้อที่ 4", y: 65 }
-                    ]
-                },
-                {
-                    type: "stackedBar",
-                    name: "ปานกลาง",
-                    showInLegend: true,
-                    color: "#FFC000",
-                    // yValueFormatString: "$#,##0K",
-                    dataPoints: [
-                        { label: "ข้อที่ 1", y: 60 },
-                        { label: "ข้อที่ 2", y: 70 },
-                        { label: "ข้อที่ 3", y: 53 },
-                        { label: "ข้อที่ 4", y: 70 }
-                    ]
-                },
-                {
-                    type: "stackedBar",
-                    name: "ต่ำ",
-                    showInLegend: true,
-                    color: "#92D050",
-                    // yValueFormatString: "$#,##0K",
-                    dataPoints: [
-                        { label: "ข้อที่ 1", y: 45 },
-                        { label: "ข้อที่ 2", y: 60 },
-                        { label: "ข้อที่ 3", y: 61 },
-                        { label: "ข้อที่ 4", y: 50 }
-                    ]
-                },
-                {
-                    type: "stackedBar",
-                    name: "AIC",
-                    showInLegend: true,
-                    color: "#00B0F0",
-                    // yValueFormatString: "$#,##0K",
-                    dataPoints: [
-                        { label: "ข้อที่ 1", y: 30 },
-                        { label: "ข้อที่ 2", y: 40 },
-                        { label: "ข้อที่ 3", y: 43 },
-                        { label: "ข้อที่ 4", y: 46 }
-                    ]
-                }]
             },
-            styleOptions: {
-                width: "100%",
-                height: "360px"
-            }
         }
     },
+    // created() {
+    //     this.getData()
+    // },
+    mounted() {
+        this.getValue = api.gettasks(this.$route.params.id)
+        console.log(this.getValue)
+    },
+
     methods: {
-      toggleDataSeries(e) {
-        if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
-          e.dataSeries.visible = false;
-        }
-        else {
-          e.dataSeries.visible = true;
-        }
-        e.chart.render();
-      }
+       getData() {
+        let seriesData = this.getValue.series.map((e) => {
+            return {
+                x: e.data
+            }
+        });
+        this.series  = [{
+            name: 'test',
+            data: seriesData
+        }]
+        console.log(this.series);
+       }
     }
 }
 </script>

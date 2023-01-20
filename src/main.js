@@ -19,6 +19,12 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+// apexchart
+import VueApexCharts from 'vue-apexcharts'
+Vue.use(VueApexCharts)
+Vue.component('apex-chart', VueApexCharts)
+
+
 Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 
