@@ -325,7 +325,7 @@
                                 <b-form-group content-cols="8" label-cols="12">
                                     <b>กลุ่ม</b>
                                     <b-form-select v-model="forms.form24.form24_6.selected"
-                                        :options="forms.form24.form24_6.options24_6"></b-form-select>
+                                        :options="forms.form24.form24_6.options"></b-form-select>
                                 </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>

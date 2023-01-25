@@ -179,11 +179,11 @@
                                 </b-form-group>
                                 <b-row class="mt-5">
                                     <b-col>
-                                        <b-form-select content-cols="12" label-cols="12">
+                                        <b-form-group content-cols="12" label-cols="12">
                                             <b>การดำเนินการในปัจจุบัน</b>
                                             <b-form-textarea rows="5"
                                                 v-model="forms.form3.form3_3.currentAction"></b-form-textarea>
-                                        </b-form-select>
+                                        </b-form-group>
                                     </b-col>
                                 </b-row>
                             </b-col>

@@ -69,7 +69,7 @@
                             <b class="mb-3">23.2</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label for="">นโยบายและคู่มือการปฏิบัติงาน</label>
+                                    <label for="">จัดทำ Job Description</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
@@ -124,7 +124,7 @@
                             <b class="mb-3">23.3</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label for="">การบริหารจัดการวงเงินสดย่อย (Petty Cash)</label>
+                                    <label for="">การวางแผนอัตรากําลังพล</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
@@ -179,7 +179,7 @@
                             <b class="mb-3">23.4</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label for="">การบริหารจัดการวงเงินสดย่อย (Petty Cash)</label>
+                                    <label for="">การฝึกอบรมและพัฒนาบุคลากร</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
@@ -228,13 +228,12 @@
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                         <!-----------23.5---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">23.5</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label for="">งบประมาณ</label>
+                                    <label for="">การประเมินผลการปฏิบัติงาน</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
@@ -283,13 +282,12 @@
                                 </b-row>
                             </b-col>
                         </b-row>
-                        <hr>
                         <!-----------23.6---------->
                         <b-row class="mt-4 d-flex justify-content-between ">
                             <b class="mb-3">23.6</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label for="">การจัดทําทะเบียนคุมเงินทดรองจ่าย</label>
+                                    <label for="">การจ่ายเงินเดือนผลตอบแทนและสวัสดิการพนักงาน</label>
                                 </div>
                                 <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
@@ -338,6 +336,7 @@
                                 </b-row>
                             </b-col>
                         </b-row>
+
                     </div>
                 </b-collapse>
             </section>
@@ -439,7 +438,6 @@ export default {
                                 { value: 'Operation', text: 'Operation' },
                             ],
                         },
-
                     },
                 }
             }

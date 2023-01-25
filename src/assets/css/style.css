@@ -270,12 +270,23 @@
 }
   
   /*                       dashboard.vue                          */
+.con-dashboard {
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-  .apex-chart {
-    width: 70%;
-    margin: 0 auto;
+.apex-chart {
+    width: 73%;
+    /* margin: 0 auto; */
     color: #767676;
     box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.3);
-    padding: 30px 30px;
-    border-radius: 20px;
+    padding: 1.2rem;
+    border-radius: 10px;
+}
+.donut-dash {
+  width: 25%;
+  padding: 1.2rem;
+  box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.3);
+  border-radius: 10px;
+
 }

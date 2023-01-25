@@ -16,7 +16,7 @@
                                 <div class="form-offer">
                                     <label for="">นโยบายและคู่มือการปฏิบัติงาน</label>
                                 </div>
-                                <b-row class="mt-5">
+                                <b-row class="mt-5 d-block px-3">
                                     <b>ระดับความสำคัญ</b>
                                     <div class="title-head-form d-flex">
                                         <div class="con-checkbox">

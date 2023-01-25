@@ -18,7 +18,7 @@
           <td class="text-center">{{ i + 1 }}</td>
           <td>{{ task.company_name }}</td>
           <td class="center aligned">
-            <router-link :to="{ name: 'result', params: { id: task._id } }">แสดงข้อมูล</router-link>
+            <router-link :to="{ name: 'dashboard', params: { id: task._id } }">แสดงข้อมูล</router-link>
           </td>
           <td class="center aligned">
             <router-link :to="{ name: 'edit', params: { id: task._id } }">แก้ไข</router-link>
