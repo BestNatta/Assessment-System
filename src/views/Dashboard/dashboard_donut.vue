@@ -1,6 +1,6 @@
 <template>
     <div>
-        <apex-chart type="donut" :options="chartOptions" :series="series"></apex-chart>
+        <apex-chart width="100%" type="donut" :options="chartOptions" :series="series"></apex-chart>
     </div>
 </template>
 
@@ -9,11 +9,24 @@ export default {
     name: 'dashbord-donut',
     data() {
         return {
-            series: [44, 100],
+            series: [5, 4],
             chartOptions: {
                 chart: {
                     type: 'donut',
+                    width: '340px'
                 },
+                labels:['PLC', 'ELC'],
+                dataLabels: {
+                    enabled: false,
+                },
+                title: {
+                    text: 'Title',
+                    align: 'center',
+                    margin: 20,
+                    style: {
+                        fontSize: '16px'
+                    }
+                },                
                 responsive: [{
                     breakpoint: 480,
                     options: {
@@ -21,29 +34,13 @@ export default {
                             width: 200
                         },
                         legend: {
-                            show: false,
-                            position: 'top',
+                            position: 'bottom'
                         }
                     }
-                }],
-                title: {
-                    text: 'TEST'
-                },
-                dataLabels: {
-                    
-                }
-                // theme: {
-                //     mode: 'dark',
-                //     palette: 'palette1',
-                //     monochrome: {
-                //         enabled: false,
-                //         color: '#255aee',
-                //         shadeTo: 'light',
-                //         shadeIntensity: 0.65
-                //     },
-                // }
+                }]
             },
         }
-    }
+    },
+    
 }
 </script>
