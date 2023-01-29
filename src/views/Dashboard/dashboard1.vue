@@ -1,5 +1,5 @@
 <template>
-    <div class="con-dashboard d-flex justify-content-between">
+    <div class="con-dashboard d-flex justify-content-between mt-5">
         <div id="chart" class="apex-chart">
             <apex-chart ref="chart" type="bar" height="400" :options="chartOptions" :series="series" />
         </div>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import chartDonut from './dashboard_donut.vue'
+import chartDonut from './dashboard2.vue'
 import { api } from '../../helpers/Helpers';
 export default {
     name: 'HelloWorld',
@@ -19,7 +19,6 @@ export default {
     },
     data() {
         return {
-
             series: [
                 {
                     name: 'สูง',
@@ -140,8 +139,6 @@ export default {
     async mounted() {
         this.getValue = await api.gettask(this.$route.params.id);
         this.getData();
-        console.log(this.valuePLC);
-        console.log(this.valueELC);
     },
 
     methods: {

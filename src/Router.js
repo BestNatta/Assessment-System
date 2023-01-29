@@ -7,7 +7,7 @@ import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
 import Result from './views/Result.vue'
 import ResuleCircle from './components/ResultCircle.vue'
-import Dashboard from './views/Dashboard/dashboard.vue'
+import Dashboard from './views/Dashboard/dashboard1.vue'
 
 Vue.use(Router);
 
