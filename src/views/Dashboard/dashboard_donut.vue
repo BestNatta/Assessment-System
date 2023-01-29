@@ -1,6 +1,8 @@
 <template>
     <div>
         <apex-chart width="100%" type="donut" :options="chartOptions" :series="series"></apex-chart>
+        <h1>PLC : {{ this.valuePLC }}</h1>
+        <h1>ELC : {{ this.valueELC }}</h1>
     </div>
 </template>
 
@@ -39,8 +41,24 @@ export default {
                     }
                 }]
             },
+
+            // getValuePLC: null,
+            // getValueELC: null,
         }
     },
+
+    mounted() {
+        // this.valuePLC;
+        // this.valueELC; 
+        // console.log(`component(PLC) = ${this.getValuePLC}`)
+        // console.log(`component(ELC) = ${this.getValueELC}`)
+    },
+
+    props: ['valuePLC', 'valueELC'],
+
+    methods: {
+        
+    }
     
 }
 </script>
