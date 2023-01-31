@@ -1,5 +1,6 @@
 <template>
     <div>
+        
         <b-row class="mt-5" >
             <b-col class="text-center">
                 <h5>ชื่อบริษัท</h5>
@@ -8,7 +9,7 @@
                 </div>
             </b-col>
         </b-row>
-        <div class="container-result">
+        <div id="best" class="container-result">
             <div class="container">
                 <b-row class="mt-5">
                     <b-col>
