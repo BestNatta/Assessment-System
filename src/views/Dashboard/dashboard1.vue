@@ -1,21 +1,30 @@
 <template>
-    <div class="con-dashboard d-flex justify-content-between mt-5">
-        <div id="chart" class="apex-chart">
-            <apex-chart ref="chart" type="bar" height="400" :options="chartOptions" :series="series" />
+    <div>
+        <div class="con-dashboard1 d-flex justify-content-between mt-5">
+            <div class="apex-chart1">
+                <apex-chart ref="chart" type="bar" height="400" :options="chartOptions" :series="series"/>
+            </div>
+            <div class="donut-dash">
+                <chart-donut :valuePLC="valuePLC" :valueELC="valueELC" />
+            </div>
         </div>
-        <div class="donut-dash">
-            <chart-donut :valuePLC="valuePLC" :valueELC="valueELC" />
+        <div class="con-dashboard2 mt-4">
+            <div class="apex-chart2">
+                <chart-column :getSum1="getSum1" :getSum2="getSum2" :getSum3="getSum3" :formName="formName" />
+            </div>
         </div>
     </div>
 </template>
 
 <script>
-import chartDonut from './dashboard2.vue'
+import chartDonut from './dashboard2.vue';
+import chartColumn from './dashboard3.vue'
 import { api } from '../../helpers/Helpers';
 export default {
-    name: 'HelloWorld',
+    name: 'dashbord-1',
     components: {
-        chartDonut
+        chartDonut,
+        chartColumn
     },
     data() {
         return {
@@ -36,9 +45,6 @@ export default {
                     data: []
                 }
             ],
-            title: {
-                text: 'Datasdasdasdasa',
-            },
             chartOptions: {
                 chart: {
                     type: 'bar',
@@ -53,6 +59,13 @@ export default {
                     animations: {
                         enabled: true
                     },
+                },
+                title: {
+                    text: 'บทสรุปผู้บริหาร',
+                    align: 'center',
+                    style: {
+                        fontSize: '18px',
+                    }
                 },
                 responsive: [{
                     breakpoint: 480,
@@ -81,7 +94,12 @@ export default {
                 },
                 xaxis: {
                     type: 'category',
-                    categories: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25'],
+                    categories: ['ข้อที่ 1', 'ข้อที่ 2', ' ข้อที่ 3', ' ข้อที่ 4', 'ข้อที่ 5', 'ข้อที่ 6', 'ข้อที่ 7', 'ข้อที่ 8', 'ข้อที่ 9', 'ข้อที่ 10', 'ข้อที่ 11', 'ข้อที่ 12', 'ข้อที่ 13', 'ข้อที่ 14', 'ข้อที่ 15', 'ข้อที่ 16', 'ข้อที่ 17', 'ข้อที่ 18', 'ข้อที่ 19', 'ข้อที่ 20', 'ข้อที่ 21', 'ข้อที่ 22', 'ข้อที่ 23', 'ข้อที่ 24', 'ข้อที่ 25'],
+                    labels: {
+                        show: true,
+                        rotate: -45,
+                        rotateAlways: true,
+                    }
                 },
                 yaxis: {
                     min: 0,
@@ -118,20 +136,27 @@ export default {
             },
 
             // เก็บค่าจาก api
-
-            getValue: {}, 
+            getValue: {},
 
             // เก็บค่าจากผลบวก แต่ละ level
-
             getFormHeight: [],
             getFormModerate: [],
             getFormLow: [],
             getFormAic: [],
 
             //  กำหนดตัวแปรเพื่อรับค่าจากการบวกของ getFormHeight | getFormModerate | getFormLow | getFormAic
-            
             valuePLC: 0,
-            valueELC: 0
+            valueELC: 0,
+
+            //  เก็บค่าจาก db ที่แปลงจาก string เป็น number เพื่อเอไปแสดงใน dashboard (properties = selected)
+            valueGroup: [],
+
+            getSum1: null,
+            getSum2: null,
+            getSum3: null,
+            formName:null
+
+            
 
         }
     },
@@ -139,6 +164,7 @@ export default {
     async mounted() {
         this.getValue = await api.gettask(this.$route.params.id);
         this.getData();
+        this.dataGroup()
     },
 
     methods: {
@@ -330,18 +356,55 @@ export default {
             // เอาตัวแปร getFormHeight | getFormModerate | getFormLow | getFormAic มาบวกกัน ข้อ 1-17
 
             for (let i = 0; i < 17; i++) {
-               this.valuePLC =  this.valuePLC + this.getFormHeight[i] + this.getFormModerate[i] + this.getFormLow[i] + this.getFormAic[i];
+                this.valuePLC = this.valuePLC + this.getFormHeight[i] + this.getFormModerate[i] + this.getFormLow[i] + this.getFormAic[i];
             }
 
             // // เอาตัวแปร getFormHeight | getFormModerate | getFormLow | getFormAic มาบวกกัน ข้อ 18-25
 
             for (let i = 17; i < 25; i++) {
-               this.valueELC = this.valueELC + this.getFormHeight[i] + this.getFormModerate[i] + this.getFormLow[i] + this.getFormAic[i];
+                this.valueELC = this.valueELC + this.getFormHeight[i] + this.getFormModerate[i] + this.getFormLow[i] + this.getFormAic[i];
             }
 
             this.$refs.chart.updateOptions({
                 series: this.series
             })
+        },
+        dataGroup() {
+            
+            var counterOperation = new Array(25).fill(0);
+            var counterManagement = new Array(25).fill(0);
+            var counterBoardOfDirectors = new Array(25).fill(0);
+            var formNameArr = new Array(25).fill(0);
+
+            var filteredObj = Object.fromEntries(
+                Object.entries(this.getValue).filter(([key]) => key.startsWith("form"))
+            );
+
+            var forms = filteredObj;
+
+
+            Object.entries(forms).forEach(( formValue, formIndex) => {
+                formNameArr[formIndex] = formValue[0];
+                Object.entries(formValue[1]).forEach((formNumberValue) => {
+                    if (formNumberValue[1].selected === "Operation") 
+                        {
+                        counterOperation[formIndex] = counterOperation[formIndex] + 1;
+                        }       
+                    else if (formNumberValue[1].selected === "Management") 
+                        {  
+                        counterManagement[formIndex] = counterManagement[formIndex] + 1;
+                        } 
+                    else if (formNumberValue[1].selected === "Board of Directors") 
+                        {
+                        counterBoardOfDirectors[formIndex] = counterBoardOfDirectors[formIndex] + 1;
+                        }
+                });
+            });
+            this.getSum1 = counterOperation;
+            this.getSum2 = counterManagement;
+            this.getSum3 = counterBoardOfDirectors;
+            this.formName = formNameArr;
+
         }
     },
 

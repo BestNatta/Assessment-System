@@ -9,7 +9,6 @@
           <router-link to="/tasks/create" class="item">
             <i class="plus circle icon"></i> สร้าง
           </router-link>
-      
         </div>
       </div>
     </div>

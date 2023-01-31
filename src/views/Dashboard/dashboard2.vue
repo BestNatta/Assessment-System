@@ -8,7 +8,7 @@
 
 <script>
 export default {
-    name: 'dashbord-donut',
+    name: 'dashbord-2',
     data() {
         return {
             series: [],
@@ -20,13 +20,14 @@ export default {
                 dataLabels: {
                     enabled: false,
                 },
+                colors: ['#CD0404','#F48484'],
                 title: {
-                    text: 'Title',
+                    text: 'การควบคุมภายในระดับองค์กร',
                     align: 'center',
                     margin: 40,
                     offsetY: -10,
                     style: {
-                        fontSize: '16px'
+                        fontSize: '18px'
                     }
                 },
                 responsive: [{
@@ -56,6 +57,7 @@ export default {
                                 },
                                 total: {
                                     show: true,
+                                    label: 'รวม',
                                     showAlways: false,
                                     fontSize: '25px',
                                     fontWeight: 600,
@@ -69,7 +71,7 @@ export default {
         }
     },
 
-    created() {
+    mounted() {
         this.getData();
         this.$refs.chart.updateOptions(this.series, true);
     },
