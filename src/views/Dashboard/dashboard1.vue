@@ -371,18 +371,22 @@ export default {
         },
         dataGroup() {
             
+            // craete array 25 array แล้วกำหนดค่าให้เป็น 0
             var counterOperation = new Array(25).fill(0);
             var counterManagement = new Array(25).fill(0);
             var counterBoardOfDirectors = new Array(25).fill(0);
+
+            // name เอาไว้แสดงในแกน x ของ dashboard 
             var formNameArr = new Array(25).fill(0);
 
+            // สร้าง obj จาก key : value ใน db แล้วทำการดึง key ที่ชื่อว่า 'form'
             var filteredObj = Object.fromEntries(
                 Object.entries(this.getValue).filter(([key]) => key.startsWith("form"))
             );
 
             var forms = filteredObj;
 
-
+            // ทำการ loop key : value ทีละชุด เพื่อเพิ่มค่าในตัวแปร ที่ใช้ if ในการ check ค่า โดยจะเพิ่มค่าทีละ 1
             Object.entries(forms).forEach(( formValue, formIndex) => {
                 formNameArr[formIndex] = formValue[0];
                 Object.entries(formValue[1]).forEach((formNumberValue) => {
@@ -400,6 +404,7 @@ export default {
                         }
                 });
             });
+            
             this.getSum1 = counterOperation;
             this.getSum2 = counterManagement;
             this.getSum3 = counterBoardOfDirectors;

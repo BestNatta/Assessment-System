@@ -20,7 +20,7 @@ export default {
                 dataLabels: {
                     enabled: false,
                 },
-                colors: ['#CD0404','#F48484'],
+                colors: ['#472183','#82C3EC'],
                 title: {
                     text: 'การควบคุมภายในระดับองค์กร',
                     align: 'center',

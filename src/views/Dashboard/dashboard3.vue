@@ -1,6 +1,6 @@
 <template>
     <div>
-        <apex-chart ref="chart" type="bar" height="350" :options="chartOptions" :series="series"></apex-chart>
+        <apex-chart ref="chart" type="bar" height="450" :options="chartOptions" :series="series"></apex-chart>
 
     </div>
 </template>
@@ -82,29 +82,34 @@ export default {
                 },
                 legend: {
                     position: 'right',
-                    offsetY: 40
+                    offsetY: 40,
+                    markers: {
+                        fillColors: ['#6C00FF', '#3C79F5', '#2DCDDF']
+                    }
                 },
                 fill: {
-                    opacity: 1
+                    type: 'light',
+                    gradient: {
+                        shade: 'white',
+                        type: 'vertical'
+                    },
+                    opacity: 1,
+                    colors: ['#6C00FF', '#3C79F5', '#2DCDDF']
                 }
             },
             getValue: {}, // รับ data จาก api
-            // getForm: 
         }
     },
 
     props: ['getSum1', 'getSum2', 'getSum3','formName'],
 
     created() {
-
+        
     },
 
     async mounted() {
-
         this.getValue = await api.gettask(this.$route.params.id);
-        // console.log(this.getSum1); // operations 2
-        // console.log(this.getSum2); // manage 1
-        // console.log(this.getSum3); // board' 0
+
         if (this.getSum3) {
             this.series[0].data = this.getSum3;
             this.series[1].data = this.getSum2;
@@ -114,21 +119,8 @@ export default {
                 this.chartOptions.xaxis.categories[i] = "ข้อที่ " + this.formName[i]
             }
         }
-        
-
-        this.$refs.chart.updateOptions(this.series)
-
-
-
     },
 
-    updated() { },
-
-    methods: {
-        updateData() {
-
-        }
-    },
 
     watch: {
         getSum1(newValue) {
@@ -138,7 +130,6 @@ export default {
         getSum2(newValue) {
             this.series[1].data = newValue;
             this.$refs.chart.updateOptions(this.series)
-
         },
         getSum3(newValue) {
             this.series[0].data = newValue;
@@ -146,14 +137,13 @@ export default {
         },
         formName(newValue){
             let x = newValue;
-            // console.log(x)
             for(let i=0; i<Object.keys(x).length;i++ ){
                 this.chartOptions.xaxis.categories[i] = "ข้อที่ " + newValue[i]
             }
-            // this.chartOptions.xaxis.categories = newValue;
 
             this.$refs.chart.updateOptions(this.chartOptions)
         }
+        
     }
 
 }   
