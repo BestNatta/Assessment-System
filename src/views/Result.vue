@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <b-row class="mt-5">
+        <b-row class="mt-3">
             <b-col class="text-center">
                 <h5>ชื่อบริษัท</h5>
                 <div>
@@ -11,16 +11,11 @@
         </b-row>
 
         <!-- print PDF -->
-        <button @click="exportToPDF">click me!</button>
-
-        <!-- export Excel -->
-        <downloadexcel class="btn btn-default" :data="sum" worksheet="My Worksheet" name="Report.xls">
-            <button>Export Excel</button>
-        </downloadexcel>
+        <!-- <button @click="exportToPDF">click me!</button> -->
 
         <div id="element-to-convert" class="container-result">
             <div class="container">
-                <b-row class="mt-5">
+                <b-row class="mt-3">
                     <b-col>
                         <h5>บทสรุปผู้บริหาร</h5>
                     </b-col>
@@ -76,7 +71,7 @@
                             <p>1</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรแสดงถึงความยึดมั่นในคุณค่าของความซื่อตรง (Integrity) และจริยธรรม</p>
+                            <p>{{ this.titleArr[0] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -110,8 +105,7 @@
                             <p>2</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>คณะกรรมการมีความเป็นอิสระจากฝ่ายบริหาร และทำหน้าที่กำกับดูแล (Oversight)
-                                และพัฒนาการดำเนินการด้านการควบคุมภายใน</p>
+                            <p>{{ this.titleArr[1] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -145,9 +139,7 @@
                             <p>3</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>ฝ่ายบริหารได้จัดให้มีโครงสร้างสายการรายงาน
-                                การกำหนดอำนาจในการสั่งการและความรับผิดชอบที่เหมาะสมเพื่อให้องค์กรบรรลุวัตถุประสงค์
-                                ภายใต้การกำกับดูแล (oversight) ของคณะกรรมการ</p>
+                            <p>{{ this.titleArr[2] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -181,7 +173,7 @@
                             <p>4</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรแสดงถึงความมุ่งมั่นในการจูงใจ พัฒนาและรักษาบุคลากรที่มีความรู้ความสามารถ</p>
+                            <p>{{ this.titleArr[3] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -215,8 +207,7 @@
                             <p>5</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรกำหนดให้บุคลากรมีหน้าที่และความรับผิดชอบในการควบคุมภายใน
-                                เพื่อให้บรรลุตามวัตถุประสงค์ขององค์กร</p>
+                            <p>{{ this.titleArr[4] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -258,8 +249,7 @@
                             <p>6</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรกำหนดวัตถุประสงค์ไว้อย่างชัดเจนเพียงพอ เพื่อให้สามารถระบุและประเมินความเสี่ยงต่าง ๆ
-                                ที่เกี่ยวข้องกับการบรรลุวัตถุประสงค์ขององค์กร</p>
+                            <p>{{ this.titleArr[5] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -293,8 +283,7 @@
                             <p>7</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรระบุและวิเคราะห์ความเสี่ยงทุกประเภทที่อาจกระทบต่อการบรรลุวัตถุประสงค์ไว้อย่างครอบคลุมทั่วทั้งองค์กร
-                            </p>
+                            <p>{{ this.titleArr[6] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -328,8 +317,7 @@
                             <p>8</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรได้พิจารณาถึงโอกาสที่จะเกิดการทุจริต
-                                ในการประเมินความเสี่ยงที่จะบรรลุวัตถุประสงค์ขององค์กร</p>
+                            <p>{{ this.titleArr[7] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -363,7 +351,7 @@
                             <p>9</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรสามารถระบุและประเมินความเปลี่ยนแปลงที่อาจมีผลกระทบต่อระบบการควบคุมภายใน</p>
+                            <p>{{ this.titleArr[8] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -405,8 +393,7 @@
                             <p>10</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรมีมาตรการควบคุมที่ช่วยลดความเสี่ยงที่จะไม่บรรลุวัตถุประสงค์ขององค์กร
-                                ให้อยู่ในระดับที่ยอมรับได้</p>
+                            <p>{{ this.titleArr[9] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -440,8 +427,7 @@
                             <p>11</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรเลือกและพัฒนากิจกรรมการควบคุมทั่วไปด้วยระบบเทคโนโลยี
-                                เพื่อช่วยสนับสนุนการบรรลุวัตถุประสงค์</p>
+                            <p>{{ this.titleArr[10] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -475,9 +461,7 @@
                             <p>12</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรจัดให้มีกิจกรรมการควบคุมผ่านทางนโยบาย
-                                ซึ่งได้กำหนดสิ่งที่คาดหวังและขั้นตอนการปฏิบัติ
-                                เพื่อให้นโยบายที่กำหนดไว้นั้นสามารถนำไปสู่การปฏิบัติได้</p>
+                            <p>{{ this.titleArr[11] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -519,8 +503,7 @@
                             <p>13</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรข้อมูลที่เกี่ยวข้องและมีคุณภาพ
-                                เพื่อสนับสนุนให้การควบคุมภายในสามารถดำเนินไปได้ตามที่กำหนดไว้</p>
+                            <p>{{ this.titleArr[12] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -554,9 +537,7 @@
                             <p>14</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรสื่อสารข้อมูลภายในองค์กร
-                                ซึ่งรวมถึงวัตถุประสงค์และความรับผิดชอบต่อการควบคุมภายในที่จำเป็นต่อการสนับสนุนให้การควบคุมภายในสามารถดำเนินไปได้ตามที่วางไว้
-                            </p>
+                            <p>{{ this.titleArr[13] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -590,7 +571,7 @@
                             <p>15</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรได้สื่อสารกับหน่วยงานภายนอก เกี่ยวกับประเด็นที่อาจมีผลกระทบต่อการควบคุมภายใน</p>
+                            <p>{{ this.titleArr[14] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -632,8 +613,7 @@
                             <p>16</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรติดตามและประเมินผลการควบคุมภายใน
-                                เพื่อให้มั่นใจได้ว่าการควบคุมภายในยังดำเนินไปอย่างครบถ้วน เหมาะสม</p>
+                            <p>{{ this.titleArr[15] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -667,8 +647,7 @@
                             <p>17</p>
                         </b-col>
                         <b-col cols="6">
-                            <p>องค์กรประเมินและสื่อสารข้อบกพร่องของการควบคุมภายในอย่างทันเวลาต่อบุคคลที่รับผิดชอบ
-                                ซึ่งรวมถึงผู้บริหารระดับสูงและคณะกรรมการตามความเหมาะสม</p>
+                            <p>{{ this.titleArr[16] }}</p>
                         </b-col>
                         <b-col cols="1" class="text-center">
                             <p>
@@ -707,402 +686,445 @@
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการขายและรับชำระเงิน</p>
+                                <p>{{ this.titleArr[17] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[17].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[17].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[17].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[17].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[17].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[17].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[17].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[17].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[17].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[17].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 19 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการจัดซื้อจัดจ้างและการจ่ายชำระเงิน</p>
+                                <p>{{ this.titleArr[18] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[18].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[18].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[18].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[18].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[18].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[18].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[18].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[18].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[18].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[18].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 20 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการบริหารการผลิต</p>
+                                <p>{{ this.titleArr[19] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[19].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[19].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[19].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[19].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[19].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[19].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[19].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[19].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[19].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[19].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 21 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการบริหารสินค้าคงคลัง</p>
+                                <p>{{ this.titleArr[20] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[20].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[20].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[20].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[20].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[20].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[20].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[20].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[20].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[20].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[20].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 22 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการบริหารสินทรัพย์ถาวร</p>
+                                <p>{{ this.titleArr[21] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[21].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[21].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[21].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[21].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[21].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[21].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[21].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[21].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[21].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[21].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 23 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการบริหารทรัพยากรบุคคล</p>
+                                <p>{{ this.titleArr[22] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[22].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[22].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[22].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[22].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[22].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[22].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[22].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[22].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[22].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[22].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 24 -->
                 <b-row class="border p-2" v-if="tasks.form1">
                     <b-col cols="7">
                         <ul>
                             <li>
-                                <p>กระบวนการบริหารด้านบัญชีและการเงิน</p>
+                                <p>{{ this.titleArr[23] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[23].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[23].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[23].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[23].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[23].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[23].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[23].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[23].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[23].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[23].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- 25 -->
                 <b-row class="border p-2" v-if="tasks.form1">
-                    <b-col cols="7">
+                    <b-col cols="7 ">
                         <ul>
                             <li>
-                                <p>กระบวนการควบคุมทั่วไปด้านระบบเทคโนโลยีสารสนเทศ (IT General Control)</p>
+                                <p>{{ this.titleArr[24] }}</p>
                             </li>
                         </ul>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[24].height }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[24].moderate }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[24].low }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[24].aic }}
-                            </p>
-                        </b-col>
-                        <b-col cols="1" class="text-center">
-                            <p>
-                                {{ sum[24].total }}
-                            </p>
-                        </b-col>
+                        <p>
+                            {{ sum[24].height }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[24].moderate }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[24].low }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[24].aic }}
+                        </p>
+                    </b-col>
+                    <b-col cols="1" class="text-center">
+                        <p>
+                            {{ sum[24].total }}
+                        </p>
+                    </b-col>
                 </b-row>
                 <!-- รวม -->
                 <b-row class="border p-2">
                     <b-col>
-                        <b class="list-title">รวม การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)</b>
+                        <b class="list-title">{{ this.titleArr[25] }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultHeightPLC }}</b>
+                        <b>{{ this.totalHeightPLC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultModeratePLC }}</b>
+                        <b>{{ this.totalModeratePLC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultLowPLC }}</b>
+                        <b>{{ this.totalLowPLC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultAicPLC }}</b>
+                        <b>{{ this.totalAicPLC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ this.totalPLC = resultHeightPLC + resultModeratePLC + resultLowPLC + resultAicPLC }}</b>
+                        <b>{{ this.totalPLC }}</b>
                     </b-col>
                 </b-row>
                 <b-row class="border p-2">
                     <b-col>
-                        <b class="list-title">รวม การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</b>
+                        <b class="list-title">{{ this.titleArr[26] }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultHeightELC }}</b>
+                        <b>{{ this.totalHeightELC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultModerateELC }}</b>
+                        <b>{{ this.totalModerateELC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultLowELC }}</b>
+                        <b>{{ this.totalLowELC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultAicELC }}</b>
+                        <b>{{ this.totalAicELC }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ this.totalELC = resultHeightELC + resultModerateELC + resultLowELC + resultAicELC }}</b>
+                        <b>{{ this.totalELC }}</b>
                     </b-col>
                 </b-row>
                 <b-row class="border p-2 row-footer">
                     <b-col cols="7">
-                        <b class="list-title">รวม</b>
+                        <b class="list-title">{{ this.titleArr[27] }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultHeightPLC + resultHeightELC }}</b>
+                        <b>{{ this.totalHeight }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultModeratePLC + resultModerateELC }}</b>
+                        <b>{{ this.totalModerate }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultLowPLC + resultLowELC }}</b>
+                        <b>{{ this.totalLow }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ resultAicPLC + resultAicELC }}</b>
+                        <b>{{ this.totalAic }}</b>
                     </b-col>
                     <b-col cols="1" class="text-center">
-                        <b>{{ totalPLC + totalELC }}</b>
+                        <b>{{ this.total }}</b>
                     </b-col>
                 </b-row>
             </div>
         </div>
-        <resultCircle />
+
+        <b-row class="d-flex justify-content-center mt-3">
+            <b-col class="text-right" cols="9">
+                <!-- export Excel -->
+                <downloadexcel :data="sum" :fields="columns" worksheet="My Worksheet" name="Report.xls">
+                    <b-button variant="primary" class="py-2 px-4">
+                        <b-icon class="mr-2" icon="file-arrow-down-fill" aria-hidden="true"
+                            animation="cylon-vertical"></b-icon>Export Excel
+                    </b-button>
+                </downloadexcel>
+            </b-col>
+        </b-row>
+
+        <!-- <resultCircle /> -->
     </div>
 </template>
 
 <script>
-import resultCircle from '../components/ResultCircle.vue'
+// import resultCircle from '../components/ResultCircle.vue'
 import { api } from '../helpers/Helpers';
-import html2pdf from "html2pdf.js";
+// import html2pdf from "html2pdf.js";
 import downloadexcel from "vue-json-excel";
 
 
 export default {
     name: "Show",
     components: {
-        resultCircle,
+        // resultCircle,
         downloadexcel
     },
 
     data() {
         return {
             tasks: {},
-            sum1: { height: '', moderate: '', low: '', aic: '' },
-            sum2: { height: '', moderate: '', low: '', aic: '' },
-            sum3: { height: '', moderate: '', low: '', aic: '' },
-            sum4: { height: '', moderate: '', low: '', aic: '' },
-            sum5: { height: '', moderate: '', low: '', aic: '' },
-            sum6: { height: '', moderate: '', low: '', aic: '' },
-            sum7: { height: '', moderate: '', low: '', aic: '' },
-            sum8: { height: '', moderate: '', low: '', aic: '' },
-            sum9: { height: '', moderate: '', low: '', aic: '' },
-            sum10: { height: '', moderate: '', low: '', aic: '' },
-            sum11: { height: '', moderate: '', low: '', aic: '' },
-            sum12: { height: '', moderate: '', low: '', aic: '' },
-            sum13: { height: '', moderate: '', low: '', aic: '' },
-            sum14: { height: '', moderate: '', low: '', aic: '' },
-            sum15: { height: '', moderate: '', low: '', aic: '' },
-            sum16: { height: '', moderate: '', low: '', aic: '' },
-            sum17: { height: '', moderate: '', low: '', aic: '' },
-            sum18: { height: '', moderate: '', low: '', aic: '' },
-            sum19: { height: '', moderate: '', low: '', aic: '' },
-            sum20: { height: '', moderate: '', low: '', aic: '' },
-            sum21: { height: '', moderate: '', low: '', aic: '' },
-            sum22: { height: '', moderate: '', low: '', aic: '' },
-            sum23: { height: '', moderate: '', low: '', aic: '' },
-            sum24: { height: '', moderate: '', low: '', aic: '' },
-            sum25: { height: '', moderate: '', low: '', aic: '' },
 
+            // columns fields excel
+            columns:
+            {
+                "รายละเอียด": "title",
+                "สูง": "height",
+                "ปานกลาง": "moderate",
+                "ต่ำ": "low",
+                "Aic": "aic",
+                "รวม": "total",
+            }
+            ,
             sum: new Array(25),
 
-            bestZa: [],
+            titleArr: [
+                'องค์กรแสดงถึงความยึดมั่นในคุณค่าของความซื่อตรง (Integrity) และจริยธรรม',
+                'คณะกรรมการมีความเป็นอิสระจากฝ่ายบริหาร และทำหน้าที่กำกับดูแล (Oversight)และพัฒนาการดำเนินการด้านการควบคุมภายใน',
+                'ฝ่ายบริหารได้จัดให้มีโครงสร้างสายการรายงานการกำหนดอำนาจในการสั่งการและความรับผิดชอบที่เหมาะสมเพื่อให้องค์กรบรรลุวัตถุประสงค์ ภายใต้การกำกับดูแล (oversight) ของคณะกรรมการ',
+                'องค์กรแสดงถึงความมุ่งมั่นในการจูงใจ พัฒนาและรักษาบุคลากรที่มีความรู้ความสามารถ',
+                'องค์กรกำหนดให้บุคลากรมีหน้าที่และความรับผิดชอบในการควบคุมภายในเพื่อให้บรรลุตามวัตถุประสงค์ขององค์กร',
+                'องค์กรกำหนดวัตถุประสงค์ไว้อย่างชัดเจนเพียงพอ เพื่อให้สามารถระบุและประเมินความเสี่ยงต่างๆ ที่เกี่ยวข้องกับการบรรลุวัตถุประสงค์ขององค์กร',
+                'องค์กรระบุและวิเคราะห์ความเสี่ยงทุกประเภทที่อาจกระทบต่อการบรรลุวัตถุประสงค์ไว้อย่างครอบคลุมทั่วทั้งองค์กร',
+                'องค์กรได้พิจารณาถึงโอกาสที่จะเกิดการทุจริตในการประเมินความเสี่ยงที่จะบรรลุวัตถุประสงค์ขององค์กร',
+                'องค์กรสามารถระบุและประเมินความเปลี่ยนแปลงที่อาจมีผลกระทบต่อระบบการควบคุมภายใน',
+                'องค์กรมีมาตรการควบคุมที่ช่วยลดความเสี่ยงที่จะไม่บรรลุวัตถุประสงค์ขององค์กรให้อยู่ในระดับที่ยอมรับได้',
+                'องค์กรเลือกและพัฒนากิจกรรมการควบคุมทั่วไปด้วยระบบเทคโนโลยี เพื่อช่วยสนับสนุนการบรรลุวัตถุประสงค์',
+                'องค์กรจัดให้มีกิจกรรมการควบคุมผ่านทางนโยบาย ซึ่งได้กำหนดสิ่งที่คาดหวังและขั้นตอนการปฏิบัติ เพื่อให้นโยบายที่กำหนดไว้นั้นสามารถนำไปสู่การปฏิบัติได้',
+                'องค์กรข้อมูลที่เกี่ยวข้องและมีคุณภาพเพื่อสนับสนุนให้การควบคุมภายในสามารถดำเนินไปได้ตามที่กำหนดไว้',
+                'องค์กรสื่อสารข้อมูลภายในองค์กรซึ่งรวมถึงวัตถุประสงค์และความรับผิดชอบต่อการควบคุมภายในที่จำเป็นต่อการสนับสนุนให้การควบคุมภายในสามารถดำเนินไปได้ตามที่วางไว้',
+                'องค์กรได้สื่อสารกับหน่วยงานภายนอก เกี่ยวกับประเด็นที่อาจมีผลกระทบต่อการควบคุมภายใน',
+                'องค์กรติดตามและประเมินผลการควบคุมภายใน เพื่อให้มั่นใจได้ว่าการควบคุมภายในยังดำเนินไปอย่างครบถ้วนเหมาะสม',
+                'องค์กรประเมินและสื่อสารข้อบกพร่องของการควบคุมภายในอย่างทันเวลาต่อบุคคลที่รับผิดชอบ ซึ่งรวมถึงผู้บริหารระดับสูงและคณะกรรมการตามความเหมาะสม',
+                'กระบวนการขายและรับชำระเงิน',
+                'กระบวนการจัดซื้อจัดจ้างและการจ่ายชำระเงิน',
+                'กระบวนการบริหารการผลิต',
+                'กระบวนการบริหารสินค้าคงคลัง',
+                'กระบวนการบริหารสินทรัพย์ถาวร',
+                'กระบวนการบริหารทรัพยากรบุคคล',
+                'กระบวนการบริหารด้านบัญชีและการเงิน',
+                'กระบวนการควบคุมทั่วไปด้านระบบเทคโนโลยีสารสนเทศ (IT General Control)',
 
+                'รวม การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)',
+                'รวม การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)',
+                'รวม',
+
+            ],
+
+            // ผลรวมของ PLC
             totalHeightPLC: '',
             totalModeratePLC: '',
             totalLowPLC: '',
             totalAicPLC: '',
-
             totalPLC: '',
-            totalELC: ''
+
+            // ผลรวมของ ELC
+            totalHeightELC: '',
+            totalModerateELC: '',
+            totalLowELC: '',
+            totalAicELC: '',
+            totalELC: '',
+
+            // ผลรวมทั้งหมด
+            totalHeight: '',
+            totalModerate: '',
+            totalLow: '',
+            totalAic: '',
+            total: '',
 
         }
     },
@@ -1112,46 +1134,46 @@ export default {
 
     async mounted() {
         this.tasks = await api.gettask(this.$route.params.id);
-        // this.calForm1();
         this.calForm();
-
     },
 
     updated() {
     },
 
     methods: {
-        exportToPDF() {
-            html2pdf(document.getElementById("element-to-convert"), {
-                margin: 1,
-                filename: "i-was-html.pdf",
-            });
-        },
-        addData() {
-            this.bestza.append({ id: 1, height: this.sum1.height, moderate: this.sum1.moderate, low: this.sum1.low, aic: this.sum1.aic, total: this.totalHeightPLC });
-            this.bestza.append({ id: 2, height: this.sum2.height, moderate: this.sum2.moderate, low: this.sum2.low, aic: this.sum2.aic, total: this.totalHeightPLC });
-            // console.log(this.bestza)
-        },
+        // exportToPDF() {
+        //     html2pdf(document.getElementById("element-to-convert"), {
+        //         margin: 1,
+        //         filename: "i-was-html.pdf",
+        //     });
+        // },
+
         calForm() {
-            // console.log(this.tasks)
+
             let entries = Object.fromEntries(
                 Object.entries(this.tasks).filter(([key]) => key.startsWith("form"))
             )
-            // console.log(entries)
+
+            // console.log(entries);
 
             Object.entries(entries).forEach((formValue, formIndex) => {
-                // console.log(formValue[1]);
+                // console.log(`FormValue = ${formValue} :: FormIndex = ${formIndex}`);
                 let sumHeight = 0;
                 let sumModerate = 0;
                 let sumLow = 0;
                 let sumAic = 0;
                 Object.entries(formValue[1]).forEach((formNumberValue) => {
+                    // console.log(`FormValue = ${formValue[1]} :: FormNumberValue = ${formNumberValue}`);
                     sumHeight = sumHeight + formNumberValue[1].height;
+                    // console.log(JSON.stringify(sumHeight));
                     sumModerate = sumModerate + formNumberValue[1].moderate;
                     sumLow = sumLow + formNumberValue[1].low;
                     sumAic = sumAic + formNumberValue[1].aic;
                 });
+
                 this.sum[formIndex] = {
+                    // index: formIndex + 1,
+                    title: this.titleArr[formIndex],
                     height: sumHeight,
                     moderate: sumModerate,
                     low: sumLow,
@@ -1160,88 +1182,90 @@ export default {
                 };
             });
 
-            // this.sum[0]={ height: '', moderate: '', low: '', aic: '' }
-            console.log(this.sum)
+            // นำค่าแต่ละส่วนมาบวกกัน 1-17 (PLC)
+            let sumHeightPLC = 0;
+            let sumModeratePLC = 0;
+            let sumLowPLC = 0;
+            let sumAicPLC = 0;
+            let sumPLC = this.sum.slice(0, 17);
+            sumPLC.forEach((obj) => {
+                sumHeightPLC = sumHeightPLC + obj.height;
+                sumModeratePLC = sumModeratePLC + obj.moderate;
+                sumLowPLC = sumLowPLC + obj.low;
+                sumAicPLC = sumAicPLC + obj.aic;
+                this.totalPLC = sumHeightPLC + sumModeratePLC + sumLowPLC + sumAicPLC
+            });
+
+            this.totalHeightPLC = sumHeightPLC;
+            this.totalModeratePLC = sumModeratePLC;
+            this.totalLowPLC = sumLowPLC;
+            this.totalAicPLC = sumAicPLC;
+
+            // นำค่าแต่ละส่วนมาบวกกัน 18-25 (ELC)
+            let sumHeightELC = 0;
+            let sumModerateELC = 0;
+            let sumLowELC = 0;
+            let sumAicELC = 0;
+            let sumELC = this.sum.slice(17, 25);
+            sumELC.forEach((obj) => {
+                sumHeightELC = sumHeightELC + obj.height;
+                sumModerateELC = sumModerateELC + obj.moderate;
+                sumLowELC = sumLowELC + obj.low;
+                sumAicELC = sumAicELC + obj.aic;
+                this.totalELC = sumHeightELC + sumModerateELC + sumLowELC + sumAicELC;
+
+            });
+
+            this.totalHeightELC = sumHeightELC;
+            this.totalModerateELC = sumModerateELC;
+            this.totalLowELC = sumLowELC;
+            this.totalAicELC = sumAicELC;
+
+            // ผลรวมทั้งหมด
+            this.totalHeight = this.totalHeightPLC + this.totalHeightELC;
+            this.totalModerate = this.totalModeratePLC + this.totalModerateELC;
+            this.totalLow = this.totalLowPLC + this.totalLowELC;
+            this.totalAic = this.totalAicPLC + this.totalHeightELC;
+            this.total = this.totalPLC + this.totalELC;
+
+            // เว้น 1 บรรทัด ใน excel
+            this.sum[this.sum.length + 1] = {
+                title: "",
+                height: "",
+                moderate: "",
+                low: "",
+                aic: "",
+                total: ""
+            };
 
 
-        },
+            this.sum[this.sum.length + 2] = {
+                title: this.titleArr[25],
+                height: this.totalHeightPLC,
+                moderate: this.totalModeratePLC,
+                low: this.totalLowPLC,
+                aic: this.totalAicPLC,
+                total: this.totalPLC
+            };
 
-        // getSum1() {
-        //     for(const form in this.tasks.form1){
-        //         this.sum.height += this.tasks.form1[form].height
-        //         this.sum.moderate += this.tasks.form1[form].moderate
-        //         this.sum.low += this.tasks.form1[form].low
-        //         this.sum.aic += this.tasks.form1[form].aic
-        //     }
-        //     console.log(`Height = ${this.sum.height}`)
-        //     console.log(`Moderate = ${this.sum.moderate}`)
-        //     console.log(`Low = ${this.sum.low}`)
-        //     console.log(`AIC = ${this.sum.aic}`)
-        // }
-        calForm1() {
-            const sum = {};
-            let entries = Object.fromEntries(
-                Object.entries(this.tasks).filter(([key]) => key === "form1")
-            )
-            console.log(entries)
-            for (let i = 0; i < this.tasks.form1.length; i++) {
-                for (const key in this.tasks.form1[i]) {
-                    if (key !== "id") {
-                        sum[key] = (sum[key] || 0) + this.tasks.form1[i][key];
-                    }
-                }
-            }
-            // console.log(sum)
-        }
-    },
+            this.sum[this.sum.length + 3] = {
+                title: this.titleArr[26],
+                height: this.totalHeightELC,
+                moderate: this.totalModerateELC,
+                low: this.totalLowELC,
+                aic: this.totalAicELC,
+                total: this.totalELC
+            };
 
-    computed: {
-        resultHeightPLC() {
-            return this.sum18.height + this.sum19.height + this.sum20.height + this.sum21.height +
-                this.sum22.height + this.sum23.height + this.sum24.height + this.sum25.height
+            this.sum[this.sum.length + 4] = {
+                title: this.titleArr[27],
+                height: this.totalHeight,
+                moderate: this.totalModerate,
+                low: this.totalLow,
+                aic: this.totalAic,
+                total: this.total
+            };
 
-        },
-        resultModeratePLC() {
-            return this.sum18.moderate + this.sum19.moderate + this.sum20.moderate + this.sum21.moderate +
-                this.sum22.moderate + this.sum23.moderate + this.sum24.moderate + this.sum25.moderate
-
-        },
-        resultLowPLC() {
-            return this.sum18.low + this.sum19.low + this.sum20.low + this.sum21.low +
-                this.sum22.low + this.sum23.low + this.sum24.low + this.sum25.low
-
-        },
-        resultAicPLC() {
-            return this.sum18.aic + this.sum19.aic + this.sum20.aic + this.sum21.aic +
-                this.sum22.aic + this.sum23.aic + this.sum24.aic + this.sum25.aic
-        },
-
-        resultHeightELC() {
-            return this.sum1.height + this.sum2.height + this.sum3.height + this.sum4.height +
-                this.sum5.height + this.sum6.height + this.sum7.height + this.sum8.height +
-                this.sum9.height + this.sum10.height + this.sum11.height + this.sum12.height +
-                this.sum13.height + this.sum14.height + this.sum15.height + this.sum16.height + this.sum17.height
-        },
-
-        resultModerateELC() {
-            return this.sum1.moderate + this.sum2.moderate + this.sum3.moderate + this.sum4.moderate +
-                this.sum5.moderate + this.sum6.moderate + this.sum7.moderate + this.sum8.moderate +
-                this.sum9.moderate + this.sum10.moderate + this.sum11.moderate + this.sum12.moderate +
-                this.sum13.moderate + this.sum14.moderate + this.sum15.moderate + this.sum16.moderate + this.sum17.moderate
-        },
-
-        resultLowELC() {
-            return this.sum1.low + this.sum2.low + this.sum3.low + this.sum4.low +
-                this.sum5.low + this.sum6.low + this.sum7.low + this.sum8.low +
-                this.sum9.low + this.sum10.low + this.sum11.low + this.sum12.low +
-                this.sum13.low + this.sum14.low + this.sum15.low + this.sum16.low + this.sum17.low
-        },
-
-        resultAicELC() {
-            return this.sum1.aic + this.sum2.aic + this.sum3.aic + this.sum4.aic +
-                this.sum5.aic + this.sum6.aic + this.sum7.aic + this.sum8.aic +
-                this.sum9.aic + this.sum10.aic + this.sum11.aic + this.sum12.aic +
-                this.sum13.aic + this.sum14.aic + this.sum15.aic + this.sum16.aic + this.sum17.aic
         },
     },
 }

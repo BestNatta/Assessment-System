@@ -2,7 +2,12 @@
     <div>
         <div class="con-dashboard1 d-flex justify-content-between mt-5">
             <div class="apex-chart1">
-                <apex-chart ref="chart" type="bar" height="400" :options="chartOptions" :series="series"/>
+                <apex-chart ref="chart" type="bar" height="400" :options="chartOptions" :series="series" />
+                <div class="text-right">
+                    <router-link :to="{ name: 'result', params: { id: getValue._id } }">
+                        <b-button size="sm" variant="primary">ดูเพิ่มเติม</b-button>
+                    </router-link>
+                </div>
             </div>
             <div class="donut-dash">
                 <chart-donut :valuePLC="valuePLC" :valueELC="valueELC" />
@@ -154,9 +159,9 @@ export default {
             getSum1: null,
             getSum2: null,
             getSum3: null,
-            formName:null
+            formName: null
 
-            
+
 
         }
     },
@@ -370,7 +375,7 @@ export default {
             })
         },
         dataGroup() {
-            
+
             // craete array 25 array แล้วกำหนดค่าให้เป็น 0
             var counterOperation = new Array(25).fill(0);
             var counterManagement = new Array(25).fill(0);
@@ -387,25 +392,23 @@ export default {
             var forms = filteredObj;
 
             // ทำการ loop key : value ทีละชุด เพื่อเพิ่มค่าในตัวแปร ที่ใช้ if ในการ check ค่า โดยจะเพิ่มค่าทีละ 1
-            Object.entries(forms).forEach(( formValue, formIndex) => {
+            Object.entries(forms).forEach((formValue, formIndex) => {
                 formNameArr[formIndex] = formValue[0];
                 Object.entries(formValue[1]).forEach((formNumberValue) => {
-                    if (formNumberValue[1].selected === "Operation") 
-                        {
+                    if (formNumberValue[1].selected === "Operation") {
                         counterOperation[formIndex] = counterOperation[formIndex] + 1;
-                        }       
-                    else if (formNumberValue[1].selected === "Management") 
-                        {  
+                    }
+                    else if (formNumberValue[1].selected === "Management") {
                         counterManagement[formIndex] = counterManagement[formIndex] + 1;
-                        } 
-                    else if (formNumberValue[1].selected === "Board of Directors") 
-                        {
+                    }
+                    else if (formNumberValue[1].selected === "Board of Directors") {
                         counterBoardOfDirectors[formIndex] = counterBoardOfDirectors[formIndex] + 1;
-                        }
+                    }
                 });
             });
-            
+
             this.getSum1 = counterOperation;
+            // console.log(this.getSum1)
             this.getSum2 = counterManagement;
             this.getSum3 = counterBoardOfDirectors;
             this.formName = formNameArr;
