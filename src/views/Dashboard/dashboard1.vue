@@ -99,12 +99,13 @@ export default {
                 },
                 xaxis: {
                     type: 'category',
-                    categories: ['ข้อที่ 1', 'ข้อที่ 2', ' ข้อที่ 3', ' ข้อที่ 4', 'ข้อที่ 5', 'ข้อที่ 6', 'ข้อที่ 7', 'ข้อที่ 8', 'ข้อที่ 9', 'ข้อที่ 10', 'ข้อที่ 11', 'ข้อที่ 12', 'ข้อที่ 13', 'ข้อที่ 14', 'ข้อที่ 15', 'ข้อที่ 16', 'ข้อที่ 17', 'ข้อที่ 18', 'ข้อที่ 19', 'ข้อที่ 20', 'ข้อที่ 21', 'ข้อที่ 22', 'ข้อที่ 23', 'ข้อที่ 24', 'ข้อที่ 25'],
+                    // categories: ['ข้อที่ 1', 'ข้อที่ 2', ' ข้อที่ 3', ' ข้อที่ 4', 'ข้อที่ 5', 'ข้อที่ 6', 'ข้อที่ 7', 'ข้อที่ 8', 'ข้อที่ 9', 'ข้อที่ 10', 'ข้อที่ 11', 'ข้อที่ 12', 'ข้อที่ 13', 'ข้อที่ 14', 'ข้อที่ 15', 'ข้อที่ 16', 'ข้อที่ 17', 'ข้อที่ 18', 'ข้อที่ 19', 'ข้อที่ 20', 'ข้อที่ 21', 'ข้อที่ 22', 'ข้อที่ 23', 'ข้อที่ 24', 'ข้อที่ 25'],
+                    categories: [],
                     labels: {
                         show: true,
                         rotate: -45,
                         rotateAlways: true,
-                    }
+                    },
                 },
                 yaxis: {
                     min: 0,
@@ -161,15 +162,31 @@ export default {
             getSum3: null,
             formName: null
 
-
-
         }
     },
 
     async mounted() {
         this.getValue = await api.gettask(this.$route.params.id);
+        this.dataGroup();
         this.getData();
-        this.dataGroup()
+        // this.chartOptions.xaxis.categories = this.formName;
+        // console.log(this.formName)
+    },
+
+    updated() {
+
+    },
+
+    watch: {
+        formName(newValue) {
+            let x = newValue;
+            // console.log(x)
+            for (let i = 0; i < Object.keys(x).length; i++) {
+                this.chartOptions.xaxis.categories[i] = newValue[i].replace("form", "ข้อที่")
+            }
+
+            this.$refs.chart.updateOptions(this.chartOptions)
+        }
     },
 
     methods: {

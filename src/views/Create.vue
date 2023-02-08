@@ -29,6 +29,7 @@ export default {
                 description2: '',
                 form1: {
                     form1_1: {
+                        title: 'คณะกรรมการและผู้บริหารกำหนดแนวทาง',
                         currentAction: '',
                         selected: 'Board of Directors',
                         options: [

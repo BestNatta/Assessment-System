@@ -67,7 +67,7 @@ export default {
                     },
                 },
                 xaxis: {
-                    categories:[]
+                    categories: [],
                 },
                 yaxis: {
                     min: 0,
@@ -101,26 +101,25 @@ export default {
         }
     },
 
-    props: ['getSum1', 'getSum2', 'getSum3','formName'],
+    props: ['getSum1', 'getSum2', 'getSum3', 'formName'],
 
     created() {
-        
+
     },
 
     async mounted() {
         this.getValue = await api.gettask(this.$route.params.id);
 
-        if (this.getSum3) {
-            this.series[0].data = this.getSum3;
-            this.series[1].data = this.getSum2;
-            this.series[2].data = this.getSum1;
-            this.chartOptions.xaxis.categories = this.formName;
-            for(let i=0; i<Object.keys(this.formName).length;i++ ){
-                this.chartOptions.xaxis.categories[i] = "ข้อที่ " + this.formName[i]
-            }
-        }
+        // if (this.getSum3) {
+        //     this.series[0].data = this.getSum3;
+        //     this.series[1].data = this.getSum2;
+        //     this.series[2].data = this.getSum1;
+        //     this.chartOptions.xaxis.categories = this.formName;
+        //     for (let i = 0; i < Object.keys(this.formName).length; i++) {
+        //         this.chartOptions.xaxis.categories[i] = "ข้อที่ " + this.formName[i]
+        //     }
+        // }
     },
-
 
     watch: {
         getSum1(newValue) {
@@ -135,16 +134,16 @@ export default {
             this.series[0].data = newValue;
             this.$refs.chart.updateOptions(this.series)
         },
-        formName(newValue){
+        formName(newValue) {
             let x = newValue;
-            for(let i=0; i<Object.keys(x).length;i++ ){
-                this.chartOptions.xaxis.categories[i] = "ข้อที่ " + newValue[i]
+            for (let i = 0; i < Object.keys(x).length; i++) {
+                // this.chartOptions.xaxis.categories[i] = "ข้อที่ " + newValue[i]
+                this.chartOptions.xaxis.categories[i] = newValue[i].replace("form", "ข้อที่")
             }
 
             this.$refs.chart.updateOptions(this.chartOptions)
         }
-        
-    }
+    },
 
 }   
 </script>

@@ -1,6 +1,5 @@
 <template>
     <div>
-
         <b-row class="mt-3">
             <b-col class="text-center">
                 <h5>ชื่อบริษัท</h5>
@@ -1026,7 +1025,7 @@
         </div>
 
         <b-row class="d-flex justify-content-center mt-3">
-            <b-col class="text-right" cols="9">
+            <b-col class="text-right px-0" cols="7">
                 <!-- export Excel -->
                 <downloadexcel :data="sum" :fields="columns" worksheet="My Worksheet" name="Report.xls">
                     <b-button variant="primary" class="py-2 px-4">

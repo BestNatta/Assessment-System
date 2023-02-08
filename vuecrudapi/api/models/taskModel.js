@@ -25,6 +25,7 @@ const taskSchema = new Schema(
 
     form1: {
       form1_1: {
+        title: String,
         currentAction: String,
         selected: String,
         options: Array,
@@ -165,7 +166,7 @@ const taskSchema = new Schema(
         total: Number
       }
     },
-    
+
     // -------------------------------  Form 4
 
     form4: {
@@ -1265,7 +1266,7 @@ const taskSchema = new Schema(
         total: Number
       }
     },
-    
+
   },
   { collection: 'form' }
 );
