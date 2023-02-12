@@ -69,7 +69,7 @@
                                             • การปฏิบัติหน้าที่ประจำวันและการตัดสินใจในเรื่องต่างๆ<br>
                                             • การปฏิบัติต่อคู่ค้า ลูกค้า และบุคคลภายนอก
                                         </label> -->
-                                        <b-input v-model="forms.form1.form1_1.title"></b-input>
+                                        <b-input v-model="forms.form1.form1_1.title" disabled></b-input>
                                     </div>
                                     <b-row class="mt-5 d-block px-3">
                                         <b>ระดับความสำคัญ</b>

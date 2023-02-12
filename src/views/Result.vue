@@ -1025,7 +1025,7 @@
         </div>
 
         <b-row class="d-flex justify-content-center mt-3">
-            <b-col class="text-right px-0" cols="7">
+            <b-col class="text-right px-0" cols="9">
                 <!-- export Excel -->
                 <downloadexcel :data="sum" :fields="columns" worksheet="My Worksheet" name="Report.xls">
                     <b-button variant="primary" class="py-2 px-4">
@@ -1034,6 +1034,7 @@
                     </b-button>
                 </downloadexcel>
             </b-col>
+            <b-col><button @click="this.export()">Print PDF</button></b-col>
         </b-row>
 
         <!-- <resultCircle /> -->
@@ -1042,6 +1043,8 @@
 
 <script>
 // import resultCircle from '../components/ResultCircle.vue'
+
+// import pdfMake from 'pdfmake'
 import { api } from '../helpers/Helpers';
 // import html2pdf from "html2pdf.js";
 import downloadexcel from "vue-json-excel";
@@ -1134,6 +1137,7 @@ export default {
     async mounted() {
         this.tasks = await api.gettask(this.$route.params.id);
         this.calForm();
+        this.export();
     },
 
     updated() {
@@ -1266,6 +1270,27 @@ export default {
             };
 
         },
-    },
+
+        // Export PDF
+
+        // export() {
+        //     const docDefinition = {
+        //         content: [
+        //             'English',
+        //             'ไทย'
+        //         ]
+        //     }
+        //     pdfMake.fonts = {
+        //         // download default Roboto font from cdnjs.com
+        //         Roboto: {
+        //             normal: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Regular.ttf',
+        //             bold: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Medium.ttf',
+        //             italics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-Italic.ttf',
+        //             bolditalics: 'https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.66/fonts/Roboto/Roboto-MediumItalic.ttf'
+        //         }
+        //     }
+        //     pdfMake.createPdf(docDefinition).open({}, window)
+        // }
+    }
 }
 </script>

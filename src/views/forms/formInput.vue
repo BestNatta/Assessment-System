@@ -161,8 +161,6 @@ export default {
             getForm24: '',
             getForm25: '',
             combineValue: '',
-
-
         }
     },
     props: {
