@@ -1,6 +1,5 @@
 <template>
-    <div v-if="forms.form1">
-        <!-- Descriptions -->
+    <div>
         <div class="container mb-5 w-75 text-center">
             <h4 class="mb-5"><u>เกณฑ์การจัดระดับความสำคัญ</u></h4>
             <table id="tasks" class="ui celled compact table">
@@ -45,279 +44,84 @@
         <div class="container">
             <b-row class="mt-5">
                 <b-col class="text-center">
-                    <h4><u>สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน</u></h4>
+                    <h4><u>การควบคุมภายในระดับองค์กร(Entity-Level Controls: ELC)</u></h4>
                 </b-col>
             </b-row>
 
             <div class="form-content">
-
-                <!-- 1. -->
                 <section class="mb-4">
-                    <header class="d-flex">
-                        <b-icon class="vue-icon" v-b-toggle.collapse-1 icon="arrow-down-right-square-fill"></b-icon>
-                        <p>1. องค์กรแสดงถึงความยึดมั่นในคุณค่าของความซื่อตรง (Integrity) และจริยธรรม</p>
-                    </header>
-                    <b-collapse id="collapse-1" class="mt-2">
-                        <div class="container-form">
-                            <!-----------1.1---------->
-                            <b-row class="px-3 mt-4 d-flex justify-content-between">
-                                <b>1.1</b>
-                                <b-col cols="6">
-                                    <div class="form-offer">
-                                        <!-- <label>คณะกรรมการและผู้บริหารกำหนดแนวทาง
-                                            และมีการปฏิบัติที่อยู่บนหลักความซื่อตรงและการรักษาจรรยาบรรณในการดำเนินงานที่ครอบคลุมถึง<br>
-                                            • การปฏิบัติหน้าที่ประจำวันและการตัดสินใจในเรื่องต่างๆ<br>
-                                            • การปฏิบัติต่อคู่ค้า ลูกค้า และบุคคลภายนอก
-                                        </label> -->
-                                        <b-input v-model="forms.form1.form1_1.title" disabled></b-input>
-                                    </div>
-                                    <b-row class="mt-5 d-block px-3">
-                                        <b>ระดับความสำคัญ</b>
-                                        <div class="title-head-form d-flex">
-                                            <div class="con-checkbox">
-                                                <label class="container-box">สูง
-                                                    <input type="checkbox" value="height"
-                                                        v-model=forms.form1.form1_1.height :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color1"></span>
-                                                </label>
-                                                <label class="container-box">ปานกลาง
-                                                    <input type="checkbox" value="moderate"
-                                                        v-model=forms.form1.form1_1.moderate :true-value=1
-                                                        :false-value=0>
-                                                    <span class="checkmark checkbox-color2"></span>
-                                                </label>
-                                            </div>
-                                            <div class="con-checkbox">
-                                                <label class="container-box">ต่ำ
-                                                    <input type="checkbox" value="low" v-model=forms.form1.form1_1.low
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color3"></span>
-                                                </label>
-                                                <label class="container-box">AIC
-                                                    <input type="checkbox" value="aic" v-model=forms.form1.form1_1.aic
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color4"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </b-row>
-                                </b-col>
-                                <b-col cols="5">
-                                    <b-form-group content-cols="8" label-cols="12">
-                                        <b>กลุ่ม</b>
-                                        <b-form-select v-model="forms.form1.form1_1.selected"
-                                            :options="forms.form1.form1_1.options"></b-form-select>
-                                    </b-form-group>
-                                    <b-row class="mt-5">
-                                        <b-col>
-                                            <b-form-group content-cols="12" label-cols="12">
-                                                <b>การดำเนินการในปัจจุบัน</b>
-                                                <b-form-textarea rows="5"
-                                                    v-model="forms.form1.form1_1.currentAction"></b-form-textarea>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-col>
-                            </b-row>
-                            <hr>
-                            <!-----------1.2---------->
-                            <b-row class="mt-4 d-flex justify-content-between ">
-                                <b class="mb-3">1.2</b>
-                                <b-col cols="6">
-                                    <div class="form-offer">
-                                        <label
-                                            for="">มีข้อกำหนดที่เป็นลายลักษณ์อักษรให้ผู้บริหารและพนักงานปฏิบัติหน้าที่ด้วยความซื่อตรงและรักษาจรรยาบรรณ
-                                            ที่ครอบคลุมถึง<br>
-                                            • มีข้อกำหนดเกี่ยวกับจริยธรรม (Code of conduct) สำหรับผู้บริหารและพนักงาน
-                                            ที่เหมาะสม<br>
-                                            •
-                                            มีข้อกำหนดห้ามผู้บริหารและพนักงานปฏิบัติตนในลักษณะที่อาจก่อให้เกิดความขัดแย้งทางผลประโยชน์กับกิจการ
-                                            ซึ่งรวมถึงการห้ามคอร์รัปชั่นอันทำให้เกิดความเสียหายต่อองค์กร<br>
-                                            • มีบทลงโทษที่เหมาะสมหากมีการฝ่าฝืนข้อกำหนดข้างต้น<br>
-                                            • มีการสื่อสารข้อกำหนดและบทลงโทษข้างต้นให้ผู้บริหารและพนักงานทุกคนรับทราบ
-                                            เช่น
-                                            รวมอยู่ในการปฐมนิเทศพนักงานใหม่
-                                            ให้พนักงานลงนามรับทราบข้อกำหนดและบทลงโทษเป็นประจำทุกปี
-                                            รวมทั้งมีการเผยแพร่ Code of conduct ให้แก่พนักงานและบุคคลภายนอกได้รับทราบ
-
-                                        </label>
-                                    </div>
-                                    <b-row class="mt-5 d-block px-3">
-                                        <b>ระดับความสำคัญ</b>
-                                        <div class="title-head-form d-flex">
-                                            <div class="con-checkbox">
-                                                <label class="container-box">สูง
-                                                    <input type="checkbox" value="height"
-                                                        v-model=forms.form1.form1_2.height :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color1"></span>
-                                                </label>
-                                                <label class="container-box">ปานกลาง
-                                                    <input type="checkbox" value="moderate"
-                                                        v-model=forms.form1.form1_2.moderate :true-value=1
-                                                        :false-value=0>
-                                                    <span class="checkmark checkbox-color2"></span>
-                                                </label>
-                                            </div>
-                                            <div class="con-checkbox">
-                                                <label class="container-box">ต่ำ
-                                                    <input type="checkbox" value="low" v-model=forms.form1.form1_2.low
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color3"></span>
-                                                </label>
-                                                <label class="container-box">AIC
-                                                    <input type="checkbox" value="aic" v-model=forms.form1.form1_2.aic
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color4"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </b-row>
-                                </b-col>
-                                <b-col cols="5">
-                                    <b-form-group content-cols="8" label-cols="12">
-                                        <b>กลุ่ม</b>
-                                        <b-form-select v-model="forms.form1.form1_2.selected"
-                                            :options="forms.form1.form1_2.options"></b-form-select>
-                                    </b-form-group>
-                                    <b-row class="mt-5">
-                                        <b-col>
-                                            <b-form-group content-cols="12" label-cols="12">
-                                                <b>การดำเนินการในปัจจุบัน</b>
-                                                <b-form-textarea rows="5"
-                                                    v-model="forms.form1.form1_2.currentAction"></b-form-textarea>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-col>
-                            </b-row>
-                            <hr>
-                            <!-----------1.3---------->
-                            <b-row class="mt-4 d-flex justify-content-between ">
-                                <b class="mb-3">1.3</b>
-                                <b-col cols="6">
-                                    <div class="form-offer">
-                                        <label for="">มีกระบวนการติดตามและประเมินผลการปฏิบัติตาม Code of conduct <br>
-                                            •
-                                            การติดตามและประเมินผลโดยหน่วยงานตรวจสอบภายในหรือหน่วยงานกำกับดูแลการปฏิบัติ
-                                            (compliance unit)
-                                            <br>
-                                            • การประเมินตนเองโดยผู้บริหารและพนักงาน <br>
-                                            • การประเมินโดยผู้เชี่ยวชาญที่เป็นอิสระจากภายนอกองค์กร
-                                        </label>
-                                    </div>
-                                    <b-row class="mt-5 d-block px-3">
-                                        <b>ระดับความสำคัญ</b>
-                                        <div class="title-head-form d-flex">
-                                            <div class="con-checkbox">
-                                                <label class="container-box">สูง
-                                                    <input type="checkbox" value="height"
-                                                        v-model=forms.form1.form1_3.height :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color1"></span>
-                                                </label>
-                                                <label class="container-box">ปานกลาง
-                                                    <input type="checkbox" value="moderate"
-                                                        v-model=forms.form1.form1_3.moderate :true-value=1
-                                                        :false-value=0>
-                                                    <span class="checkmark checkbox-color2"></span>
-                                                </label>
-                                            </div>
-                                            <div class="con-checkbox">
-                                                <label class="container-box">ต่ำ
-                                                    <input type="checkbox" value="low" v-model=forms.form1.form1_3.low
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color3"></span>
-                                                </label>
-                                                <label class="container-box">AIC
-                                                    <input type="checkbox" value="aic" v-model=forms.form1.form1_3.aic
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color4"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </b-row>
-                                </b-col>
-                                <b-col cols="5">
-                                    <b-form-group content-cols="8" label-cols="12">
-                                        <b>กลุ่ม</b>
-                                        <b-form-select v-model="forms.form1.form1_3.selected"
-                                            :options="forms.form1.form1_3.options"></b-form-select>
-                                    </b-form-group>
-                                    <b-row class="mt-5">
-                                        <b-col>
-                                            <b-form-group content-cols="12" label-cols="12">
-                                                <b>การดำเนินการในปัจจุบัน</b>
-                                                <b-form-textarea rows="5"
-                                                    v-model="forms.form1.form1_3.currentAction"></b-form-textarea>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-col>
-                            </b-row>
-                            <hr>
-                            <!-----------1.4---------->
-                            <b-row class="mt-4 d-flex justify-content-between ">
-                                <b class="mb-3">1.4</b>
-                                <b-col cols="6">
-                                    <div class="form-offer">
-                                        <label for="">มีการจัดการอย่างทันเวลา
-                                            หากพบการไม่ปฏิบัติตามข้อกำหนดเกี่ยวกับความซื่อตรงและการรักษาจรรยาบรรณ <br>
-                                            • มีกระบวนการที่ทำให้สามารถตรวจพบการฝ่าฝืนได้ภายในเวลาที่เหมาะสม <br>
-                                            • มีกระบวนการที่ทำให้สามารถลงโทษหรือจัดการกับการฝ่าฝืนได้อย่างเหมาะสม
-                                            และภายในเวลาอันควร <br>
-                                            • มีการแก้ไขการกระทำที่ขัดต่อหลักความซื่อตรงและการรักษาจรรยาบรรณอย่างเหมาะสม
-                                            และภายในเวลาอันควร
-                                        </label>
-                                    </div>
-                                    <b-row class="mt-5 d-block px-3">
-                                        <b>ระดับความสำคัญ</b>
-                                        <div class="title-head-form d-flex">
-                                            <div class="con-checkbox">
-                                                <label class="container-box">สูง
-                                                    <input type="checkbox" value="height"
-                                                        v-model=forms.form1.form1_4.height :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color1"></span>
-                                                </label>
-                                                <label class="container-box">ปานกลาง
-                                                    <input type="checkbox" value="moderate"
-                                                        v-model=forms.form1.form1_4.moderate :true-value=1
-                                                        :false-value=0>
-                                                    <span class="checkmark checkbox-color2"></span>
-                                                </label>
-                                            </div>
-                                            <div class="con-checkbox">
-                                                <label class="container-box">ต่ำ
-                                                    <input type="checkbox" value="low" v-model=forms.form1.form1_4.low
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color3"></span>
-                                                </label>
-                                                <label class="container-box">AIC
-                                                    <input type="checkbox" value="aic" v-model=forms.form1.form1_4.aic
-                                                        :true-value=1 :false-value=0>
-                                                    <span class="checkmark checkbox-color4"></span>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </b-row>
-                                </b-col>
-                                <b-col cols="5">
-                                    <b-form-group content-cols="8" label-cols="12">
-                                        <b>กลุ่ม</b>
-                                        <b-form-select v-model="forms.form1.form1_4.selected"
-                                            :options="forms.form1.form1_4.options"></b-form-select>
-                                    </b-form-group>
-                                    <b-row class="mt-5">
-                                        <b-col>
-                                            <b-form-group content-cols="12" label-cols="12">
-                                                <b>การดำเนินการในปัจจุบัน</b>
-                                                <b-form-textarea rows="5"
-                                                    v-model="forms.form1.form1_4.currentAction"></b-form-textarea>
-                                            </b-form-group>
-                                        </b-col>
-                                    </b-row>
-                                </b-col>
-                            </b-row>
+                    <!-- <form action="#"> -->
+                    <header v-for="(mainForms, mainIndex) in this.getMainForm" :key="mainForms.id">
+                        <div v-if="mainIndex == 17" class="text-center my-5">
+                            <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน(Process-Level Controls : PLC)</u></h4>
                         </div>
-                    </b-collapse>
+                        <div class="d-flex mb-4">
+                            <b-icon class="vue-icon" v-b-toggle="`collapse-${mainIndex}`"
+                                icon="arrow-down-right-square-fill"></b-icon>
+                            <h5 class="mr-2">{{ mainIndex + 1 }}. {{ mainForms.title }}</h5>
+                            <textarea class="form-control" v-if="mainIndex >= 17" v-model="mainForms.mainTitle"></textarea>
+
+                        </div>
+                        <b-collapse v-model="mainForms.isOpen" :id="`collapse-${mainIndex}`" class="mb-5">
+                            <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
+                                :key="subForms.id">
+                                <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} {{ subForms.title
+                                }}</p>
+
+                                <textarea class="form-control" v-if="mainIndex >= 17"
+                                    v-model="subForms.subTitle"></textarea>
+                                <div class="form-group">
+                                    <label>ระดับความสำคัญ</label>
+                                    <div class="d-flex">
+                                        <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
+                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.heightValue"
+                                            value="1" @change="subForms.heightValue = $event.target.value">
+                                        <label :for="'height-' + mainIndex + '-' + subIndex">Height</label>
+
+                                        <input type="radio" :id="'moderate-' + mainIndex + '-' + subIndex"
+                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.moderateValue"
+                                            value="1" @change="subForms.moderateValue = $event.target.value">
+                                        <label :for="'height-' + mainIndex + '-' + subIndex">Moderate</label>
+
+                                        <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
+                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.lowValue"
+                                            value="1" @change="subForms.lowValue = $event.target.value">
+                                        <label :for="'height-' + mainIndex + '-' + subIndex">Low</label>
+
+                                        <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
+                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.aicValue"
+                                            value="1" @change="subForms.aicValue = $event.target.value">
+                                        <label :for="'height-' + mainIndex + '-' + subIndex">AIC</label>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>กลุ่ม</label>
+                                    <select class="custom-select" v-model="subForms.selected">
+                                        <option v-for="(option, index) in subForms.options" :key="index" :value="option">{{
+                                            option }}</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>การดำเนินการในปัจจุบัน</label>
+                                    <textarea rows="4" class="form-control" v-model="subForms.operation"></textarea>
+                                </div>
+                            </div>
+                            <div class="text-right mt-2">
+                                <button class="btn btn-info mr-1" @click.prevent="addSubForm(mainIndex)">เพิ่ม</button>
+                                <button class="btn btn-danger" @click.prevent="deleteSubForm(mainIndex)">ลบ</button>
+                            </div>
+                        </b-collapse>
+                    </header>
+                    <b-row>
+                        <b-col>
+                            <button class="btn btn-info mr-1" @click.prevent="addMainForm()">เพิ่มรายการ</button>
+                            <button class="btn btn-danger" @click.prevent="deleteMainForm()">ลบ</button>
+                        </b-col>
+                        <!-- <b-col class="text-right">
+                                <button class="btn btn-primary px-5" @click.prevent="formSubmit()">บันทึก</button>
+                            </b-col> -->
+                    </b-row>
+                    <!-- </form> -->
                 </section>
             </div>
         </div>
@@ -325,24 +129,119 @@
 </template>
 
 <script>
+import { api } from '../../helpers/Helpers';
 export default {
     name: 'form-1',
 
     data() {
         return {
+            getMainForm: [],
+            getSubForm: [],
+            // subForms: {
+            //     selected: '',
+            //     operation: '',
+            //     heightValue: '',
+            //     moderateValue: '',
+            //     lowValue: '',
+            //     aicValue: '',
+            // },
+            mainTitle: '',
+            subTitle: '',
+            formData: []
         }
+    },
+
+
+    async mounted() {
+        const getApi = await api.gettasks();
+        const getFormDefault = getApi.formDefaultTasks[0]
+        this.getMainForm = getFormDefault.mainForm;
+
+        // this.getSubForm = getFormDefault.mainForm[0].subForm;
+
+        this.getMainForm.forEach((mainForms) => {
+            const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
+            this.forms.mainForm.title = formTitle1;
+
+            mainForms.subForm.forEach((subForms) => {
+                const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
+                this.forms.mainForm.subForm.title = formTitle2
+            })
+        });
     },
 
     props: ['forms'],
 
-    mounted() {
-        // console.log(this.forms)
+
+    methods: {
+        getSubIndex(mainIndex, subIndex) {
+            return (mainIndex + 1) + '.' + (subIndex + 1);
+        },
+        onRadioChange() {
+
+        },
+        formSubmit() {
+            this.getMainForm.forEach((mainForms) => {
+                const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
+
+                mainForms.subForm.forEach((subForms) => {
+                    const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
+                    const data = {
+                        formTitle1,
+                        formTitle2,
+                        heightValue: subForms.heightValue,
+                        moderateValue: subForms.moderateValue,
+                        lowValue: subForms.lowValue,
+                        aicValue: subForms.aicValue,
+                        selected: subForms.selected,
+                        operation: subForms.operation,
+                    };
+                    this.formData.push(data);
+                });
+            });
+            this.$emit('submit', this.formData);
+        },
+        addMainForm() {
+            this.getMainForm.push({
+                title: "",
+                isOpen: false,
+                subForm: [
+                    {
+                        title: "",
+                        heightValue: "",
+                        moderateValue: "",
+                        lowValue: "",
+                        aicValue: "",
+                        selected: 'Board of Directors',
+                        options: ['Board of Directors', 'Management', 'Operation'],
+                        operation: ""
+                    }
+                ]
+            });
+        },
+        addSubForm(mainIndex) {
+            this.getMainForm[mainIndex].subForm.push({
+                id: this.getMainForm[mainIndex].subForm.length + 1,
+                title: '',
+                heightValue: '',
+                moderateValue: '',
+                lowValue: '',
+                aicValue: '',
+                selected: 'Board of Directors',
+                options: ['Board of Directors', 'Management', 'Operation'],
+                operation: ''
+            });
+        },
+        deleteMainForm(event) {
+            if (confirm('คุณแน่ใจรึเปล่าที่จะลบ !')) {
+                this.getMainForm.splice(this.getMainForm.indexOf(event), 1);
+            }
+        },
+        deleteSubForm(subIndex, event) {
+            if (confirm('คุณแน่ใจรึเปล่าที่จะลบ !')) {
+                this.getMainForm[subIndex].subForm.splice(this.getMainForm[subIndex].subForm.indexOf(event), 1);
+            }
+        },
     },
-    watch: {
-        forms(newValue, oldValue) {
-            console.log(newValue)
-            console.log(oldValue)
-        }
-    }
 } 
 </script>

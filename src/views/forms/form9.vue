@@ -29,8 +29,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_1.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form9.form9_1.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -88,8 +88,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_2.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form9.form9_2.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -132,8 +132,7 @@
                             <b-col cols="6">
 
                                 <div class="form-offer">
-                                    <label
-                                        for="">บริษัทประเมินการเปลี่ยนแปลงผู้นำองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
+                                    <label for="">บริษัทประเมินการเปลี่ยนแปลงผู้นำองค์กรที่อาจมีผลกระทบต่อการดำเนินธุรกิจ
                                         การควบคุมภายใน และรายงานทางการเงิน
                                         ตลอดจนได้กำหนดมาตรการตอบสนองต่อการเปลี่ยนแปลงนั้นอย่างเพียงพอแล้ว</label>
                                 </div>
@@ -147,8 +146,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form9.form9_3.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form9.form9_3.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>

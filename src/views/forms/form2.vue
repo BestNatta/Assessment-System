@@ -28,8 +28,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_1.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_1.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -85,8 +85,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_2.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_2.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -144,8 +144,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_3.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_3.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -201,8 +201,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_4.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_4.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -263,8 +263,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_5.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_5.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -307,8 +307,7 @@
                             <b class="mb-3">2.6</b>
                             <b-col cols="6">
                                 <div class="form-offer">
-                                    <label
-                                        for="">คณะกรรมการบริษัทกำกับดูแลการพัฒนาและปฏิบัติเรื่องการควบคุมภายในในองค์กร
+                                    <label for="">คณะกรรมการบริษัทกำกับดูแลการพัฒนาและปฏิบัติเรื่องการควบคุมภายในในองค์กร
                                         ซึ่งครอบคลุมทั้งการสร้างสภาพแวดล้อมการควบคุม การประเมินความเสี่ยง
                                         กิจกรรมการควบคุม
                                         ข้อมูลและการสื่อสาร และการติดตาม</label>
@@ -323,8 +322,8 @@
                                                 <span class="checkmark checkbox-color1"></span>
                                             </label>
                                             <label class="container-box">ปานกลาง
-                                                <input type="checkbox" value="moderate"
-                                                    v-model=forms.form2.form2_6.moderate :true-value=1 :false-value=0>
+                                                <input type="checkbox" value="moderate" v-model=forms.form2.form2_6.moderate
+                                                    :true-value=1 :false-value=0>
                                                 <span class="checkmark checkbox-color2"></span>
                                             </label>
                                         </div>
@@ -364,10 +363,11 @@
                 </b-collapse>
             </section>
         </div>
-    </div>
+</div>
 </template>
 
 <script>
+
 export default {
     name: 'form-report1',
     data() {
