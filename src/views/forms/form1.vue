@@ -50,7 +50,6 @@
 
             <div class="form-content">
                 <section class="mb-4">
-                    <!-- <form action="#"> -->
                     <header v-for="(mainForms, mainIndex) in this.getMainForm" :key="mainForms.id">
                         <div v-if="mainIndex == 17" class="text-center my-5">
                             <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน(Process-Level Controls : PLC)</u></h4>
@@ -96,10 +95,10 @@
                                 </div>
                                 <div class="form-group">
                                     <label>กลุ่ม</label>
-                                    <select class="custom-select" v-model="subForms.selected">
-                                        <option v-for="(option, index) in subForms.options" :key="index" :value="option">{{
-                                            option }}</option>
-                                    </select>
+                                    <b-form-select class="custom-select" v-model="selected" :options="options1">
+                                        <!-- <option v-for="(option, index) in subForms.options" :key="index" :value="option">{{
+                                            option }}</option> -->
+                                    </b-form-select>
                                 </div>
                                 <div class="form-group">
                                     <label>การดำเนินการในปัจจุบัน</label>
@@ -117,11 +116,7 @@
                             <button class="btn btn-info mr-1" @click.prevent="addMainForm()">เพิ่มรายการ</button>
                             <button class="btn btn-danger" @click.prevent="deleteMainForm()">ลบ</button>
                         </b-col>
-                        <!-- <b-col class="text-right">
-                                <button class="btn btn-primary px-5" @click.prevent="formSubmit()">บันทึก</button>
-                            </b-col> -->
                     </b-row>
-                    <!-- </form> -->
                 </section>
             </div>
         </div>
@@ -137,17 +132,17 @@ export default {
         return {
             getMainForm: [],
             getSubForm: [],
-            // subForms: {
-            //     selected: '',
-            //     operation: '',
-            //     heightValue: '',
-            //     moderateValue: '',
-            //     lowValue: '',
-            //     aicValue: '',
-            // },
-            mainTitle: '',
-            subTitle: '',
-            formData: []
+
+            selected: null,
+            options1: [
+                { value: null, text: 'Pleace fill input', },
+                { value: 1, text: 'Board of Directors' },
+                { value: 2, text: 'Management' },
+                { value: 3, text: 'Operator' },
+            ],
+            operation: '',
+            // mainTitle: '',
+            // subTitle: '',
         }
     },
 
@@ -157,49 +152,48 @@ export default {
         const getFormDefault = getApi.formDefaultTasks[0]
         this.getMainForm = getFormDefault.mainForm;
 
-        // this.getSubForm = getFormDefault.mainForm[0].subForm;
-
+        const mainFormArray = [];
         this.getMainForm.forEach((mainForms) => {
             const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
-            this.forms.mainForm.title = formTitle1;
 
-            mainForms.subForm.forEach((subForms) => {
-                const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
-                this.forms.mainForm.subForm.title = formTitle2
+            const subFormArray = [];
+            if (mainForms.subForm) {
+                mainForms.subForm.forEach((subForms) => {
+                    const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
+
+                    subFormArray.push(
+                        {
+                            title: formTitle2,
+                            selected: '',
+                            operation: '',
+                            heightValue: '',
+                            moderateValue: '',
+                            lowValue: '',
+                            aicValue: ''
+                        }
+                    )
+                })
+            }
+
+            mainFormArray.push({
+                title: formTitle1,
+                subForm: subFormArray
             })
         });
+
+        this.forms.mainForm = mainFormArray;
     },
+
 
     props: ['forms'],
 
-
     methods: {
+
         getSubIndex(mainIndex, subIndex) {
             return (mainIndex + 1) + '.' + (subIndex + 1);
         },
         onRadioChange() {
 
-        },
-        formSubmit() {
-            this.getMainForm.forEach((mainForms) => {
-                const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
-
-                mainForms.subForm.forEach((subForms) => {
-                    const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
-                    const data = {
-                        formTitle1,
-                        formTitle2,
-                        heightValue: subForms.heightValue,
-                        moderateValue: subForms.moderateValue,
-                        lowValue: subForms.lowValue,
-                        aicValue: subForms.aicValue,
-                        selected: subForms.selected,
-                        operation: subForms.operation,
-                    };
-                    this.formData.push(data);
-                });
-            });
-            this.$emit('submit', this.formData);
         },
         addMainForm() {
             this.getMainForm.push({

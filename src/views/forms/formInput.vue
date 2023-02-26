@@ -59,6 +59,7 @@ export default {
     methods: {
         onSubmit() {
             this.$emit('formInput', this.forms)
+            console.log(this.forms);
         }
     },
 }

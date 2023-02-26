@@ -28,9 +28,9 @@ export default {
                 description1: '',
                 chapter2: '',
                 description2: '',
-                mainForm: {
+                mainForm: [{
                     title: '',
-                    subForm: {
+                    subForm: [{
                         title: '',
                         selected: '',
                         operation: '',
@@ -38,16 +38,17 @@ export default {
                         moderateValue: '',
                         lowValue: '',
                         aicValue: ''
-                    }
-                }
+                    }]
+                }]
             },
         };
     },
     methods: {
         createOrUpdate: async function (task) {
-            const res = await api.createtask(task);
+            // const res = await api.createtask(task);
+            await api.createtask(task);
             this.flash("task created", "success");
-            this.$router.push(`/tasks/${res._id}/result`);
+            // this.$router.push(`/tasks/${res._id}/result`);
         },
     },
 }
