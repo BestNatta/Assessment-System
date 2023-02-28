@@ -95,14 +95,15 @@
                                 </div>
                                 <div class="form-group">
                                     <label>กลุ่ม</label>
-                                    <b-form-select class="custom-select" v-model="selected" :options="options1">
+                                    <b-form-select class="custom-select" v-model="selected[subIndex]"
+                                        :options="subForms.options">
                                         <!-- <option v-for="(option, index) in subForms.options" :key="index" :value="option">{{
                                             option }}</option> -->
                                     </b-form-select>
                                 </div>
                                 <div class="form-group">
                                     <label>การดำเนินการในปัจจุบัน</label>
-                                    <textarea rows="4" class="form-control" v-model="subForms.operation"></textarea>
+                                    <textarea rows="4" class="form-control" v-model="operation[subIndex]"></textarea>
                                 </div>
                             </div>
                             <div class="text-right mt-2">
@@ -133,61 +134,89 @@ export default {
             getMainForm: [],
             getSubForm: [],
 
-            selected: null,
-            options1: [
-                { value: null, text: 'Pleace fill input', },
-                { value: 1, text: 'Board of Directors' },
-                { value: 2, text: 'Management' },
-                { value: 3, text: 'Operator' },
-            ],
-            operation: '',
+            selected: {},
+            operation: [],
             // mainTitle: '',
             // subTitle: '',
         }
     },
 
-
     async mounted() {
         const getApi = await api.gettasks();
         const getFormDefault = getApi.formDefaultTasks[0]
         this.getMainForm = getFormDefault.mainForm;
+        this.loadSubFormArray();
 
-        const mainFormArray = [];
-        this.getMainForm.forEach((mainForms) => {
-            const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
+        // const mainFormArray = [];
+        // this.getMainForm.forEach((mainForms) => {
+        //     const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
 
-            const subFormArray = [];
-            if (mainForms.subForm) {
-                mainForms.subForm.forEach((subForms) => {
-                    const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
+        //     const subFormArray = [];
+        //     if (mainForms.subForm) {
+        //         mainForms.subForm.forEach((subForms) => {
+        //             const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
 
-                    subFormArray.push(
-                        {
+        //             subFormArray.push(
+        //                 {
+        //                     title: formTitle2,
+        //                     selected: subForms.selected,
+        //                     operation: '',
+        //                     heightValue: '',
+        //                     moderateValue: '',
+        //                     lowValue: '',
+        //                     aicValue: ''
+        //                 }
+        //             )
+        //         })
+        //     }
+        //     mainFormArray.push({
+        //         title: formTitle1,
+        //         subForm: subFormArray
+        //     })
+        // })
+        // this.forms.mainForm = mainFormArray;
+    },
+
+    props: ['forms'],
+
+    watch: {
+        selected: function (newValue, oldValue) {
+            console.log(`Selected value change == ${newValue}\n Slected value not change == ${oldValue}`);
+            this.loadSubFormArray();
+        },
+        // deep: true
+    },
+
+    methods: {
+
+        loadSubFormArray() {
+            const mainFormArray = [];
+            this.getMainForm.forEach((mainForms) => {
+                const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
+
+                const subFormArray = [];
+                if (mainForms.subForm) {
+                    mainForms.subForm.forEach((subForms, subIndex) => {
+                        const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
+
+                        subFormArray.push({
                             title: formTitle2,
-                            selected: '',
-                            operation: '',
+                            selected: this.selected[subIndex],
+                            operation: this.operation[subIndex],
                             heightValue: '',
                             moderateValue: '',
                             lowValue: '',
                             aicValue: ''
-                        }
-                    )
+                        });
+                    })
+                }
+                mainFormArray.push({
+                    title: formTitle1,
+                    subForm: subFormArray
                 })
-            }
-
-            mainFormArray.push({
-                title: formTitle1,
-                subForm: subFormArray
-            })
-        });
-
-        this.forms.mainForm = mainFormArray;
-    },
-
-
-    props: ['forms'],
-
-    methods: {
+            });
+            this.forms.mainForm = mainFormArray;
+        },
 
         getSubIndex(mainIndex, subIndex) {
             return (mainIndex + 1) + '.' + (subIndex + 1);
