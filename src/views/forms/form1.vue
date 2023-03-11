@@ -57,15 +57,25 @@
                         <div class="d-flex mb-4">
                             <b-icon class="vue-icon" v-b-toggle="`collapse-${mainIndex}`"
                                 icon="arrow-down-right-square-fill"></b-icon>
-                            <h5 class="mr-2">{{ mainIndex + 1 }}. {{ mainForms.title }}</h5>
-                            <textarea class="form-control" v-if="mainIndex >= 17" v-model="mainForms.mainTitle"></textarea>
+                            <div class="d-flex">
+                                <h5 class="mr-1">{{ mainIndex + 1 }}. </h5>
+                                <h5 v-if="mainIndex < 17"> {{ mainForms.title }}</h5>
+                            </div>
+                            <textarea class="form-control" v-if="mainIndex >= mainFormLength"
+                                v-model="mainTitle[mainIndex]"></textarea>
 
                         </div>
                         <b-collapse v-model="mainForms.isOpen" :id="`collapse-${mainIndex}`" class="mb-5">
                             <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
                                 :key="subForms.id">
-                                <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} {{ subForms.title
-                                }}</p>
+                                <div>
+                                    <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} </p>
+                                    <p>{{ subForms.title }}</p>
+
+                                    <textarea class="form-control" v-model="subFormTitle[mainIndex][subIndex]"
+                                        v-if="subIndex >= subFormLength[mainIndex]"></textarea>
+                                </div>
+                                <hr>
 
                                 <textarea class="form-control" v-if="mainIndex >= 17"
                                     v-model="subForms.subTitle"></textarea>
@@ -73,51 +83,56 @@
                                     <label>ระดับความสำคัญ</label>
                                     <div class="d-flex">
                                         <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
-                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.heightValue"
-                                            value="1" @change="subForms.heightValue = $event.target.value">
+                                            :name="'lavel-' + mainIndex + '-' + subIndex"
+                                            v-model="heightValue[mainIndex][subIndex]"
+                                            @change="onRadioChange(mainIndex, subIndex, 'heightValue')" value="1">
                                         <label :for="'height-' + mainIndex + '-' + subIndex">Height</label>
 
                                         <input type="radio" :id="'moderate-' + mainIndex + '-' + subIndex"
-                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.moderateValue"
-                                            value="1" @change="subForms.moderateValue = $event.target.value">
+                                            :name="'lavel-' + mainIndex + '-' + subIndex"
+                                            v-model="moderateValue[mainIndex][subIndex]"
+                                            @change="onRadioChange(mainIndex, subIndex, 'moderateValue')" value="1">
                                         <label :for="'height-' + mainIndex + '-' + subIndex">Moderate</label>
 
                                         <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
-                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.lowValue"
-                                            value="1" @change="subForms.lowValue = $event.target.value">
+                                            :name="'lavel-' + mainIndex + '-' + subIndex"
+                                            v-model="lowValue[mainIndex][subIndex]"
+                                            @change="onRadioChange(mainIndex, subIndex, 'lowValue')" value="1">
                                         <label :for="'height-' + mainIndex + '-' + subIndex">Low</label>
 
                                         <input type="radio" :id="'height-' + mainIndex + '-' + subIndex"
-                                            :name="'lavel-' + mainIndex + '-' + subIndex" v-model="subForms.aicValue"
-                                            value="1" @change="subForms.aicValue = $event.target.value">
+                                            :name="'lavel-' + mainIndex + '-' + subIndex"
+                                            v-model="aicValue[mainIndex][subIndex]"
+                                            @change="onRadioChange(mainIndex, subIndex, 'aicValue')" value="1">
                                         <label :for="'height-' + mainIndex + '-' + subIndex">AIC</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>กลุ่ม</label>
-                                    <b-form-select class="custom-select" v-model="selected[subIndex]"
+                                    <b-form-select class="custom-select" v-model="selected[mainIndex][subIndex]"
                                         :options="subForms.options">
-                                        <!-- <option v-for="(option, index) in subForms.options" :key="index" :value="option">{{
-                                            option }}</option> -->
                                     </b-form-select>
                                 </div>
                                 <div class="form-group">
                                     <label>การดำเนินการในปัจจุบัน</label>
-                                    <textarea rows="4" class="form-control" v-model="operation[subIndex]"></textarea>
+                                    <textarea rows="4" class="form-control"
+                                        v-model="operation[mainIndex][subIndex]"></textarea>
+                                </div>
+                                <div class="text-right mt-2">
+                                    <button class="btn btn-info mr-1"
+                                        @click.prevent="addSubForm(mainIndex, subIndex)">เพิ่ม</button>
+                                    <button class="btn btn-danger" @click.prevent="deleteSubForm(mainIndex)">ลบ</button>
                                 </div>
                             </div>
-                            <div class="text-right mt-2">
-                                <button class="btn btn-info mr-1" @click.prevent="addSubForm(mainIndex)">เพิ่ม</button>
-                                <button class="btn btn-danger" @click.prevent="deleteSubForm(mainIndex)">ลบ</button>
-                            </div>
                         </b-collapse>
+                        <b-row>
+                            <b-col v-if="mainIndex === getMainForm.length - 1">
+                                <button class="btn btn-info mr-1"
+                                    @click.prevent="addMainForm(mainIndex)">เพิ่มรายการ</button>
+                                <button class="btn btn-danger" @click.prevent="deleteMainForm(mainIndex)">ลบ</button>
+                            </b-col>
+                        </b-row>
                     </header>
-                    <b-row>
-                        <b-col>
-                            <button class="btn btn-info mr-1" @click.prevent="addMainForm()">เพิ่มรายการ</button>
-                            <button class="btn btn-danger" @click.prevent="deleteMainForm()">ลบ</button>
-                        </b-col>
-                    </b-row>
                 </section>
             </div>
         </div>
@@ -136,8 +151,17 @@ export default {
 
             selected: {},
             operation: [],
-            // mainTitle: '',
-            // subTitle: '',
+            heightValue: [],
+            moderateValue: [],
+            lowValue: [],
+            aicValue: [],
+
+            titleSubForm: 0,
+            mainTitle: [],
+            subFormTitle: [],
+
+            mainFormLength: 0,
+            subFormLength: 0,
         }
     },
 
@@ -145,53 +169,93 @@ export default {
         const getApi = await api.gettasks();
         const getFormDefault = getApi.formDefaultTasks[0]
         this.getMainForm = getFormDefault.mainForm;
+
+        this.subFormTitle = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.subFormTitle)
+        })
+
+        this.selected = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.selected);
+        });
+
+        this.operation = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.operation);
+        });
+
+        this.heightValue = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.heightValue);
+        });
+
+        this.moderateValue = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.moderateValue);
+        });
+
+        this.lowValue = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.lowValue);
+        });
+
+        this.aicValue = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.aicValue);
+        });
+
+        this.mainFormLength = this.getMainForm.length
+        this.subFormLength = this.getMainForm.map((item) => item.subForm.length)
         this.loadSubFormArray();
 
-        // const mainFormArray = [];
-        // this.getMainForm.forEach((mainForms) => {
-        //     const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
 
-        //     const subFormArray = [];
-        //     if (mainForms.subForm) {
-        //         mainForms.subForm.forEach((subForms) => {
-        //             const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
 
-        //             subFormArray.push(
-        //                 {
-        //                     title: formTitle2,
-        //                     selected: subForms.selected,
-        //                     operation: '',
-        //                     heightValue: '',
-        //                     moderateValue: '',
-        //                     lowValue: '',
-        //                     aicValue: ''
-        //                 }
-        //             )
-        //         })
-        //     }
-        //     mainFormArray.push({
-        //         title: formTitle1,
-        //         subForm: subFormArray
-        //     })
-        // })
-        // this.forms.mainForm = mainFormArray;
     },
 
     props: ['forms'],
 
     watch: {
-        selected: function (newValue, oldValue) {
-            console.log(`Selected value change == ${newValue}\n Slected value not change == ${oldValue}`);
+        selected: function () {
             this.loadSubFormArray();
         },
-        // deep: true
+
+        heightValue: function () {
+            this.loadSubFormArray();
+        },
+
+        moderateValue: function () {
+            this.loadSubFormArray();
+        },
+
+        lowValue: function () {
+            this.loadSubFormArray();
+        },
+
+        aicValue: function () {
+            this.loadSubFormArray();
+        },
+
+        mainTitle: {
+            handler(newVal) {
+                newVal.forEach((title, index) => {
+                    if (this.getMainForm[index]) {
+                        this.getMainForm[index].title = title;
+                        this.forms.mainForm[index].title = title;
+                    }
+                });
+            },
+            deep: true
+        },
+        subFormTitle(newVal) {
+            newVal.forEach((titleMain, mainIndex) => {
+                titleMain.forEach((titleSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex]
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].title = titleSub || getVal.title
+                    }
+                })
+            })
+        }
     },
 
     methods: {
-
         loadSubFormArray() {
             const mainFormArray = [];
-            this.getMainForm.forEach((mainForms) => {
+            this.getMainForm.forEach((mainForms, mainIndex) => {
                 const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
 
                 const subFormArray = [];
@@ -201,65 +265,84 @@ export default {
 
                         subFormArray.push({
                             title: formTitle2,
-                            selected: this.selected[subIndex],
-                            operation: this.operation[subIndex],
-                            heightValue: '',
-                            moderateValue: '',
-                            lowValue: '',
-                            aicValue: ''
+                            selected: this.selected[mainIndex][subIndex],
+                            operation: this.operation[mainIndex][subIndex],
+                            heightValue: this.heightValue[mainIndex][subIndex],
+                            moderateValue: this.moderateValue[mainIndex][subIndex],
+                            lowValue: this.lowValue[mainIndex][subIndex],
+                            aicValue: this.aicValue[mainIndex][subIndex],
                         });
-                    })
+                    });
                 }
                 mainFormArray.push({
                     title: formTitle1,
-                    subForm: subFormArray
-                })
+                    subForm: subFormArray,
+                });
             });
             this.forms.mainForm = mainFormArray;
+        },
+
+        onRadioChange(mainIndex, subIndex, optionIndex) {
+            // this[optionIndex][mainIndex][subIndex] = 1;
+
+            // if (optionIndex === 'heightValue') {
+            //     this.heightValue[mainIndex][subIndex] = 0;
+            // } else if (optionIndex === 'moderateValue') {
+            //     this.moderateValue[mainIndex][subIndex] = 0;
+            // } else if (optionIndex === 'lowValue') {
+            //     this.lowValue[mainIndex][subIndex] = 0;
+            // } else if (optionIndex === 'aicValue') {
+            //     this.aicValue[mainIndex][subIndex] = 0;
+            // }
+            if (optionIndex === 'heightValue') {
+                this.heightValue[mainIndex].fill(0);
+            } else if (optionIndex === 'moderateValue') {
+                this.moderateValue[mainIndex].fill(0);
+            } else if (optionIndex === 'lowValue') {
+                this.lowValue[mainIndex].fill(0);
+            } else if (optionIndex === 'aicValue') {
+                this.aicValue[mainIndex].fill(0);
+            }
+
+            // Set the clicked radio button value to 1
+            this[optionIndex][mainIndex][subIndex] = 1;
         },
 
         getSubIndex(mainIndex, subIndex) {
             return (mainIndex + 1) + '.' + (subIndex + 1);
         },
-        onRadioChange() {
 
+        addMainForm(mainIndex) {
+            const newMainForm = {
+                title: this.mainTitle[mainIndex] || '',
+                isOpen: true,
+            };
+            this.getMainForm.push(newMainForm);
+            this.forms.mainForm.push(newMainForm);
+            this.loadSubFormArray();
         },
-        addMainForm() {
-            this.getMainForm.push({
-                title: "",
-                isOpen: false,
-                subForm: [
-                    {
-                        title: "",
-                        heightValue: "",
-                        moderateValue: "",
-                        lowValue: "",
-                        aicValue: "",
-                        selected: 'Board of Directors',
-                        options: ['Board of Directors', 'Management', 'Operation'],
-                        operation: ""
-                    }
-                ]
-            });
-        },
-        addSubForm(mainIndex) {
-            this.getMainForm[mainIndex].subForm.push({
-                id: this.getMainForm[mainIndex].subForm.length + 1,
-                title: '',
+
+        addSubForm(mainIndex, subIndex) {
+            const newSubForm = {
+                title: this.subFormTitle[mainIndex][subIndex] || '',
+                selected: '',
+                operation: '',
                 heightValue: '',
                 moderateValue: '',
                 lowValue: '',
                 aicValue: '',
-                selected: 'Board of Directors',
-                options: ['Board of Directors', 'Management', 'Operation'],
-                operation: ''
-            });
+            }
+            this.getMainForm[mainIndex].subForm.push(newSubForm);
+            this.forms.mainForm[subIndex].subForm.push(newSubForm)
+            this.loadSubFormArray();
         },
+
         deleteMainForm(event) {
             if (confirm('คุณแน่ใจรึเปล่าที่จะลบ !')) {
                 this.getMainForm.splice(this.getMainForm.indexOf(event), 1);
             }
         },
+
         deleteSubForm(subIndex, event) {
             if (confirm('คุณแน่ใจรึเปล่าที่จะลบ !')) {
                 this.getMainForm[subIndex].subForm.splice(this.getMainForm[subIndex].subForm.indexOf(event), 1);
