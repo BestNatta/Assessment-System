@@ -149,7 +149,7 @@ export default {
             getMainForm: [],
             getSubForm: [],
 
-            selected: {},
+            selected: [],
             operation: [],
             heightValue: [],
             moderateValue: [],
@@ -171,12 +171,17 @@ export default {
         this.getMainForm = getFormDefault.mainForm;
 
         this.subFormTitle = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.subFormTitle)
+            return mainForm.subForm.map(subForm => subForm.title)
         })
+        console.log(this.subFormTitle);
 
         this.selected = this.getMainForm.map(mainForm => {
             return mainForm.subForm.map(subForm => subForm.selected);
         });
+
+        this.options = this.getMainForm.map(mainForm => {
+            return mainForm.subForm.map(subForm => subForm.options)
+        })
 
         this.operation = this.getMainForm.map(mainForm => {
             return mainForm.subForm.map(subForm => subForm.operation);
@@ -201,16 +206,24 @@ export default {
         this.mainFormLength = this.getMainForm.length
         this.subFormLength = this.getMainForm.map((item) => item.subForm.length)
         this.loadSubFormArray();
-
-
-
     },
 
     props: ['forms'],
 
     watch: {
-        selected: function () {
-            this.loadSubFormArray();
+        // selected: function () {
+        //     this.loadSubFormArray();
+        // },
+        selected(newVal) {
+            // console.log(newVal);
+            newVal.forEach((valueMain, mainIndex) => {
+                valueMain.forEach((valueSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].selected = valueSub
+                    }
+                })
+            })
         },
 
         heightValue: function () {
@@ -246,6 +259,16 @@ export default {
                     const getVal = this.getMainForm[mainIndex].subForm[subIndex]
                     if (getVal) {
                         this.forms.mainForm[mainIndex].subForm[subIndex].title = titleSub || getVal.title
+                    }
+                })
+            })
+        },
+        operation(newVal) {
+            newVal.forEach((titleMain, mainIndex) => {
+                titleMain.forEach((titleSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].operation = titleSub;
                     }
                 })
             })
@@ -325,15 +348,17 @@ export default {
         addSubForm(mainIndex, subIndex) {
             const newSubForm = {
                 title: this.subFormTitle[mainIndex][subIndex] || '',
-                selected: '',
-                operation: '',
+                selected: this.selected[mainIndex][subIndex] || ['Board of Directors'],
+                options: this.options[mainIndex][subIndex] || ['Board of Directors', 'Managment', 'Opertion'],
+                operation: this.operation[mainIndex][subIndex],
                 heightValue: '',
                 moderateValue: '',
                 lowValue: '',
                 aicValue: '',
             }
-            this.getMainForm[mainIndex].subForm.push(newSubForm);
-            this.forms.mainForm[subIndex].subForm.push(newSubForm)
+            // console.log(newSubForm);
+            this.getMainForm[mainIndex].subForm.push(newSubForm);    // ติดตรงที่ เวลามีการ add item ใหม่ ค่า title จะถูกส่งไป index ใหม่ด้วย (ผิด)
+            // this.forms.mainForm[subIndex].subForm.push(newSubForm)
             this.loadSubFormArray();
         },
 

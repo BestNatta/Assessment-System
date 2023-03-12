@@ -14,7 +14,7 @@
               <th><i class="trash icon"></i></th>
             </tr>
           </thead>
-          <tr v-for="(task, i) in tasks" :key="i">
+          <tr v-for="(task, i) in this.tasks" :key="task.id">
             <td class="text-center">{{ i + 1 }}</td>
             <td>{{ task.company_name }}</td>
             <td class="center aligned">
@@ -35,6 +35,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import { api } from '../helpers/Helpers';
 export default {
@@ -44,6 +45,12 @@ export default {
       tasks: []
     };
   },
+
+  async mounted() {
+    const tasks = await api.gettasks();
+    this.tasks = tasks.formUserTasks;
+  },
+
   methods: {
     async onDestroy(id) {
       const sure = window.confirm('คุณต้องการลบข้อมูลหรือไม่ ?');
@@ -54,9 +61,5 @@ export default {
       this.tasks = newtasks;
     }
   },
-  async mounted() {
-    this.tasks = await api.gettasks();
-    console.log(this.tasks);
-  }
 };
 </script>
