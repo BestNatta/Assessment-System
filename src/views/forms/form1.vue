@@ -51,7 +51,7 @@
             <div class="form-content">
                 <section class="mb-4">
                     <header v-for="(mainForms, mainIndex) in this.getMainForm" :key="mainForms.id">
-                        <div v-if="mainIndex == 17" class="text-center my-5">
+                        <div v-if="mainIndex === mainFormLength" class="text-center my-5">
                             <h4><u>การควบคุมภายในระดับกระบวนปฏิบัติงาน(Process-Level Controls : PLC)</u></h4>
                         </div>
                         <div class="d-flex mb-4">
@@ -59,79 +59,80 @@
                                 icon="arrow-down-right-square-fill"></b-icon>
                             <div class="d-flex">
                                 <h5 class="mr-1">{{ mainIndex + 1 }}. </h5>
-                                <h5 v-if="mainIndex < 17"> {{ mainForms.title }}</h5>
+                                <h5 v-if="mainIndex < mainFormLength">{{ mainForms.title }}</h5>
                             </div>
                             <textarea class="form-control" v-if="mainIndex >= mainFormLength"
                                 v-model="mainTitle[mainIndex]"></textarea>
-
                         </div>
-                        <b-collapse v-model="mainForms.isOpen" :id="`collapse-${mainIndex}`" class="mb-5">
+
+                        <b-collapse v-if="mainIndex < mainFormLength" :id="`collapse-${mainIndex}`" class="mb-5">
                             <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
                                 :key="subForms.id">
                                 <div>
-                                    <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} </p>
+                                    <p class="font-weight-normal">{{ getSubIndex(mainIndex,
+                                        subIndex) }} </p>
                                     <p>{{ subForms.title }}</p>
 
                                     <textarea class="form-control" v-model="subFormTitle[mainIndex][subIndex]"
                                         v-if="subIndex >= subFormLength[mainIndex]"></textarea>
                                 </div>
                                 <hr>
-
-                                <textarea class="form-control" v-if="mainIndex >= 17"
+                                {{ subForms }}
+                                <textarea class="form-control" v-if="mainIndex >= mainFormLength"
                                     v-model="subForms.subTitle"></textarea>
+
                                 <div class="form-group">
                                     <label>ระดับความสำคัญ</label>
                                     <div class="d-flex justify-content-center con-check">
-                                        <!-- <input value="height" v-model="additional_grouped" @change="uniqueCheck"
-                                            type="checkbox" :true-value="1" :false-value="0" />
-                                        <label for="">สูง</label>
-
-                                        <input value="moderate" v-model="additional_grouped" @change="uniqueCheck"
-                                            type="checkbox" :true-value="1" :false-value="0" />
-                                        <label for="">ปานกลาง</label>
-
-                                        <input value="low" v-model="additional_grouped" @change="uniqueCheck"
-                                            type="checkbox" :true-value="1" :false-value="0" />
-                                        <label for="">ต่ำ</label>
-
-                                        <input value="aic" v-model="additional_grouped" @change="uniqueCheck"
-                                            type="checkbox" :true-value="1" :false-value="0" />
-                                        <label for="">AIC</label> -->
-                                        <input type="radio" v-model="heightValue[mainIndex][subIndex]" name="options"
-                                            value="height" @change="changeCheck($event, mainIndex, subIndex)" />
+                                        <input type="radio" v-model="heightValue[mainIndex][subIndex]"
+                                            :name="'options-' + mainIndex + '-' + subIndex" value="height"
+                                            @change="changeCheck($event, mainIndex, subIndex)" />
                                         <label>Height</label>
 
-                                        <input type="radio" v-model="moderateValue[mainIndex][subIndex]" name="options"
-                                            value="moderate" @change="changeCheck($event, mainIndex, subIndex)" />
+                                        <input type="radio" v-model="moderateValue[mainIndex][subIndex]"
+                                            :name="'options-' + mainIndex + '-' + subIndex" value="moderate"
+                                            @change="changeCheck($event, mainIndex, subIndex)" />
                                         <label>Moderatet</label>
 
-                                        <input type="radio" v-model="lowValue[mainIndex][subIndex]" name="options"
-                                            value="low" @change="changeCheck($event, mainIndex, subIndex)" />
+                                        <input type="radio" v-model="lowValue[mainIndex][subIndex]"
+                                            :name="'options-' + mainIndex + '-' + subIndex" value="low"
+                                            @change="changeCheck($event, mainIndex, subIndex)" />
                                         <label>Low</label>
 
-                                        <input type="radio" v-model="aicValue[mainIndex][subIndex]" name="options"
-                                            value="aic" @change="changeCheck($event, mainIndex, subIndex)" />
+                                        <input type="radio" v-model="aicValue[mainIndex][subIndex]"
+                                            :name="'options-' + mainIndex + '-' + subIndex" value="aic"
+                                            @change="changeCheck($event, mainIndex, subIndex)" />
                                         <label>Aic</label>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label>กลุ่ม</label>
                                     <b-form-select class="custom-select" v-model="selected[mainIndex][subIndex]"
-                                        :options="subForms.options">
-                                    </b-form-select>
+                                        :options="subForms.options" />
                                 </div>
                                 <div class="form-group">
                                     <label>การดำเนินการในปัจจุบัน</label>
                                     <textarea rows="4" class="form-control"
                                         v-model="operation[mainIndex][subIndex]"></textarea>
                                 </div>
-                                <div class="text-right mt-2">
+                                <div class="text-right mt-2" v-if="subIndex === getMainForm[mainIndex].subForm.length - 1">
                                     <button class="btn btn-info mr-1"
                                         @click.prevent="addSubForm(mainIndex, subIndex)">เพิ่ม</button>
                                     <button class="btn btn-danger" @click.prevent="deleteSubForm(mainIndex)">ลบ</button>
                                 </div>
                             </div>
                         </b-collapse>
+
+                        <!------------------------------------- New Forms ------------------------------------->
+                        <!-- 
+                        <b-collapse v-if="mainIndex >= mainFormLength" v-model="mainForms.isOpen"
+                            :id="`collapse-${mainIndex}`" class="mb-5">
+                            <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
+                                :key="subForms.id">
+                                <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} </p>
+                                <textarea class="form-control" v-model="subFormTitle"></textarea>
+                            </div>
+                        </b-collapse> -->
                         <b-row>
                             <b-col v-if="mainIndex === getMainForm.length - 1">
                                 <button class="btn btn-info mr-1"
@@ -162,9 +163,7 @@ export default {
             moderateValue: [],
             lowValue: [],
             aicValue: [],
-            additional_grouped: [],
 
-            titleSubForm: 0,
             mainTitle: [],
             subFormTitle: [],
 
@@ -181,7 +180,6 @@ export default {
         this.subFormTitle = this.getMainForm.map(mainForm => {
             return mainForm.subForm.map(subForm => subForm.title)
         })
-        // console.log(this.subFormTitle);
 
         this.selected = this.getMainForm.map(mainForm => {
             return mainForm.subForm.map(subForm => subForm.selected);
@@ -212,6 +210,7 @@ export default {
         });
 
         this.mainFormLength = this.getMainForm.length
+        // console.log(this.mainFormLength);
         this.subFormLength = this.getMainForm.map((item) => item.subForm.length)
         this.loadSubFormArray();
     },
@@ -219,39 +218,60 @@ export default {
     props: ['forms'],
 
     watch: {
-        // selected: function () {
-        //     this.loadSubFormArray();
-        // },
+
         selected(newVal) {
-            // console.log(newVal);
             newVal.forEach((valueMain, mainIndex) => {
                 valueMain.forEach((valueSub, subIndex) => {
                     const getVal = this.getMainForm[mainIndex].subForm[subIndex];
                     if (getVal) {
-                        this.forms.mainForm[mainIndex].subForm[subIndex].selected = valueSub
+                        this.forms.mainForm[mainIndex].subForm[subIndex].selected = valueSub;
                     }
                 })
             })
         },
 
-        heightValue: function (newVal) {
-            console.log(newVal);
-            this.loadSubFormArray();
+        heightValue(newVal) {
+            newVal.forEach((valueMain, mainIndex) => {
+                valueMain.forEach((valueSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].height = valueSub;
+                    }
+                })
+            })
         },
 
-        moderateValue: function (newVal) {
-            console.log(newVal);
-            this.loadSubFormArray();
+        moderateValue(newVal) {
+            newVal.forEach((valueMain, mainIndex) => {
+                valueMain.forEach((valueSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].moderate = valueSub;
+                    }
+                })
+            })
         },
 
-        lowValue: function (newVal) {
-            console.log(newVal);
-            this.loadSubFormArray();
+        lowValue(newVal) {
+            newVal.forEach((valueMain, mainIndex) => {
+                valueMain.forEach((valueSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].low = valueSub;
+                    }
+                })
+            })
         },
 
-        aicValue: function (newVal) {
-            console.log(newVal);
-            this.loadSubFormArray();
+        aicValue(newVal) {
+            newVal.forEach((valueMain, mainIndex) => {
+                valueMain.forEach((valueSub, subIndex) => {
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
+                    if (getVal) {
+                        this.forms.mainForm[mainIndex].subForm[subIndex].aic = valueSub;
+                    }
+                })
+            })
         },
 
         mainTitle: {
@@ -265,16 +285,18 @@ export default {
             },
             deep: true
         },
+
         subFormTitle(newVal) {
             newVal.forEach((titleMain, mainIndex) => {
                 titleMain.forEach((titleSub, subIndex) => {
-                    const getVal = this.getMainForm[mainIndex].subForm[subIndex]
+                    const getVal = this.getMainForm[mainIndex].subForm[subIndex];
                     if (getVal) {
-                        this.forms.mainForm[mainIndex].subForm[subIndex].title = titleSub || getVal.title
+                        this.forms.mainForm[mainIndex].subForm[subIndex].title = titleSub || getVal.title;
                     }
                 })
             })
         },
+
         operation(newVal) {
             newVal.forEach((titleMain, mainIndex) => {
                 titleMain.forEach((titleSub, subIndex) => {
@@ -290,16 +312,16 @@ export default {
     methods: {
         loadSubFormArray() {
             const mainFormArray = [];
+
             this.getMainForm.forEach((mainForms, mainIndex) => {
                 const formTitle1 = mainForms.mainTitle ? mainForms.title + mainForms.mainTitle : mainForms.title;
 
                 const subFormArray = [];
                 if (mainForms.subForm) {
                     mainForms.subForm.forEach((subForms, subIndex) => {
-                        const formTitle2 = subForms.subTitle ? subForms.title + subForms.subTitle : subForms.title;
 
                         subFormArray.push({
-                            title: formTitle2,
+                            title: this.subFormTitle[mainIndex][subIndex],
                             selected: this.selected[mainIndex][subIndex],
                             operation: this.operation[mainIndex][subIndex],
                             heightValue: this.heightValue[mainIndex][subIndex],
@@ -317,85 +339,19 @@ export default {
             this.forms.mainForm = mainFormArray;
         },
 
-        onRadioChange(mainIndex, subIndex, optionIndex) {
-            // this[optionIndex][mainIndex][subIndex] = 1;
-
-            // if (optionIndex === 'heightValue') {
-            //     this.heightValue[mainIndex][subIndex] = 0;
-            // } else if (optionIndex === 'moderateValue') {
-            //     this.moderateValue[mainIndex][subIndex] = 0;
-            // } else if (optionIndex === 'lowValue') {
-            //     this.lowValue[mainIndex][subIndex] = 0;
-            // } else if (optionIndex === 'aicValue') {
-            //     this.aicValue[mainIndex][subIndex] = 0;
-            // }
-            if (optionIndex === 'heightValue') {
-                this.heightValue[mainIndex].fill(0);
-            } else if (optionIndex === 'moderateValue') {
-                this.moderateValue[mainIndex].fill(0);
-            } else if (optionIndex === 'lowValue') {
-                this.lowValue[mainIndex].fill(0);
-            } else if (optionIndex === 'aicValue') {
-                this.aicValue[mainIndex].fill(0);
-            }
-
-            // Set the clicked radio button value to 1
-            this[optionIndex][mainIndex][subIndex] = 1;
-        },
-
-        // uniqueCheck(e) {
-        //     this.additional_grouped = [];
-        //     if (e.target.checked) {
-        //         this.additional_grouped.push(e.target.value);
-        //         this.additional_grouped.push(Number(e.target.getAttribute('true-value')));
-        //     } else {
-        //         this.additional_grouped.push(Number(e.target.getAttribute('false-value')));
-        //     }
-        //     console.log(this.additional_grouped);
-        // },
-
-        // changeCheck(e) {
-        //     const valueMap = {
-        //         height: { height: 1, moderate: 0, low: 0, aic: 0 },
-        //         moderate: { height: 0, moderate: 1, low: 0, aic: 0 },
-        //         low: { height: 0, moderate: 0, low: 1, aic: 0 },
-        //         aic: { height: 0, moderate: 0, low: 0, aic: 1 },
-        //     };
-
-        //     Object.assign(this, valueMap[e.target.value]);
-
-        //     // console.log("height:", this.height);
-        //     // console.log("moderate:", this.moderate);
-        //     // console.log("low:", this.low);
-        //     // console.log("aic:", this.aic);
-        // },
-        // changeCheck(e, mainIndex, subIndex) {
-        //     const valueMap = {
-        //         height: 3,
-        //         moderate: 2,
-        //         low: 5,
-        //         aic: 7,
-        //     };
-        //     const value = valueMap[e.target.value];
-        //     this.heightValue[mainIndex][subIndex] = value;
-        //     this.moderateValue[mainIndex][subIndex] = value;
-        //     this.lowValue[mainIndex][subIndex] = value;
-        //     this.aicValue[mainIndex][subIndex] = value;
-        // },
-        changeCheck(e, mainIndex, subIndex) {
+        changeCheck(event, mainIndex, subIndex) {
             const valueMap = {
                 height: 1,
                 moderate: 1,
                 low: 1,
                 aic: 1,
-                '': 0, // add a 0 value for the unselected option
             };
-            const value = valueMap[e.target.value];
-            this.heightValue[mainIndex][subIndex] = e.target.value === 'height' ? value : 0;
-            this.moderateValue[mainIndex][subIndex] = e.target.value === 'moderate' ? value : 0;
-            this.lowValue[mainIndex][subIndex] = e.target.value === 'low' ? value : 0;
-            this.aicValue[mainIndex][subIndex] = e.target.value === 'aic' ? value : 0;
-            console.log(value);
+            const value = valueMap[event.target.value];
+            this.heightValue[mainIndex][subIndex] = event.target.value === 'height' ? value : 0;
+            this.moderateValue[mainIndex][subIndex] = event.target.value === 'moderate' ? value : 0;
+            this.lowValue[mainIndex][subIndex] = event.target.value === 'low' ? value : 0;
+            this.aicValue[mainIndex][subIndex] = event.target.value === 'aic' ? value : 0;
+            this.loadSubFormArray();
         },
 
         getSubIndex(mainIndex, subIndex) {
@@ -403,31 +359,43 @@ export default {
         },
 
         addMainForm(mainIndex) {
-
             const newMainForm = {
                 title: this.mainTitle[mainIndex] || '',
                 isOpen: true,
+                subForm: [
+                    {
+                        title: '',
+                        selected: '',
+                        options: '',
+                        operation: '',
+                        heightValue: '',
+                        moderateValue: '',
+                        lowValue: '',
+                        aicValue: '',
+                    }
+                ]
             };
             this.getMainForm.push(newMainForm);
+            console.log(this.getMainForm);
             this.forms.mainForm.push(newMainForm);
-            this.loadSubFormArray();
         },
 
-        addSubForm(mainIndex) {
-            const subIndex = this.getMainForm[mainIndex].subForm.length;
+        addSubForm(mainIndex, subIndex) {
+            const options = this.getMainForm[mainIndex].subForm[subIndex].options;
+
             const newSubForm = {
-                title: this.subFormTitle[mainIndex][subIndex] || '',
-                selected: this.selected[mainIndex][subIndex] || ['Board of Directors'],
-                options: this.options[mainIndex][subIndex] || ['Board of Directors', 'Managment', 'Opertion'],
-                operation: this.operation[mainIndex][subIndex],
-                heightValue: this.heightValue[mainIndex][subIndex],
-                moderateValue: this.moderateValue[mainIndex][subIndex],
-                lowValue: this.lowValue[mainIndex][subIndex],
-                aicValue: this.aicValue[mainIndex][subIndex],
+                title: '',
+                selected: 'Board of Directors',
+                options: options,
+                operation: '',
+                heightValue: '',
+                moderateValue: '',
+                lowValue: '',
+                aicValue: '',
             }
-            // console.log(newSubForm);
+
+            this.selected[mainIndex].push(newSubForm.selected);
             this.getMainForm[mainIndex].subForm.push(newSubForm);
-            // this.forms.mainForm[subIndex].subForm.push(newSubForm);
             this.loadSubFormArray();
         },
 
