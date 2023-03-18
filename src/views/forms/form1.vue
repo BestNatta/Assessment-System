@@ -64,22 +64,21 @@
                             <textarea class="form-control" v-if="mainIndex >= mainFormLength"
                                 v-model="mainTitle[mainIndex]"></textarea>
                         </div>
-
-                        <b-collapse v-if="mainIndex < mainFormLength" :id="`collapse-${mainIndex}`" class="mb-5">
+                        <b-collapse :id="`collapse-${mainIndex}`" class="mb-5">
                             <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
                                 :key="subForms.id">
                                 <div>
                                     <p class="font-weight-normal">{{ getSubIndex(mainIndex,
                                         subIndex) }} </p>
-                                    <p>{{ subForms.title }}</p>
+                                    <p v-if="subFormLength[mainIndex] && subIndex < subFormLength[mainIndex]">{{
+                                        subForms.title }}</p>
 
                                     <textarea class="form-control" v-model="subFormTitle[mainIndex][subIndex]"
-                                        v-if="subIndex >= subFormLength[mainIndex]"></textarea>
+                                        v-if="!subFormLength[mainIndex] || subIndex >= subFormLength[mainIndex]"></textarea>
                                 </div>
                                 <hr>
-                                {{ subForms }}
-                                <textarea class="form-control" v-if="mainIndex >= mainFormLength"
-                                    v-model="subForms.subTitle"></textarea>
+                                <!-- <textarea class="form-control" v-if="mainIndex >= mainFormLength"
+                                    v-model="subForms.subTitle"></textarea> -->
 
                                 <div class="form-group">
                                     <label>ระดับความสำคัญ</label>
@@ -124,7 +123,7 @@
                         </b-collapse>
 
                         <!------------------------------------- New Forms ------------------------------------->
-                        <!-- 
+                        <!--
                         <b-collapse v-if="mainIndex >= mainFormLength" v-model="mainForms.isOpen"
                             :id="`collapse-${mainIndex}`" class="mb-5">
                             <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
@@ -319,9 +318,8 @@ export default {
                 const subFormArray = [];
                 if (mainForms.subForm) {
                     mainForms.subForm.forEach((subForms, subIndex) => {
-
                         subFormArray.push({
-                            title: this.subFormTitle[mainIndex][subIndex],
+                            title: this.subFormTitle[mainIndex] ? this.subFormTitle[mainIndex][subIndex] : '',
                             selected: this.selected[mainIndex][subIndex],
                             operation: this.operation[mainIndex][subIndex],
                             heightValue: this.heightValue[mainIndex][subIndex],
@@ -366,7 +364,9 @@ export default {
                     {
                         title: '',
                         selected: '',
-                        options: '',
+                        options: [
+                            "Board of Directors", "Management", "Operation"
+                        ],
                         operation: '',
                         heightValue: '',
                         moderateValue: '',
@@ -376,8 +376,15 @@ export default {
                 ]
             };
             this.getMainForm.push(newMainForm);
-            console.log(this.getMainForm);
+            // console.log(this.getMainForm);
             this.forms.mainForm.push(newMainForm);
+            this.subFormTitle.push([''])
+            this.heightValue.push(new Array())
+            this.moderateValue.push(new Array())
+            this.lowValue.push(new Array())
+            this.aicValue.push(new Array())
+            this.selected.push(new Array())
+            this.operation.push(new Array())
         },
 
         addSubForm(mainIndex, subIndex) {
@@ -411,5 +418,5 @@ export default {
             }
         },
     },
-} 
+}
 </script>
