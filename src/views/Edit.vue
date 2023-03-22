@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <form-input @formInput="createOrUpdate" :forms="this.forms" />
+    <form-input @formInput="createOrUpdate" :forms="this.data" />
   </div>
 </template>
 <script>
@@ -15,16 +15,17 @@ import { api } from '../helpers/Helpers';
 export default {
   name: 'edit',
   components: {
-    'form-input': formInput,
+    formInput,
   },
   data() {
     return {
-      forms: null
+      // forms: null,
+      data: []
     };
   },
-  
+
   methods: {
-    createOrUpdate: async function(form) {
+    createOrUpdate: async function (form) {
       await api.updatetask(form);
       this.flash('task updated sucessfully!', 'success');
       this.$router.push(`/tasks/`);
@@ -32,8 +33,11 @@ export default {
   },
 
   async mounted() {
-     this.forms = await api.gettask(this.$route.params.id);
-    //  console.log(this.forms)
+    let data = await api.gettask(this.$route.params.id);
+
+    console.log(data);
+    this.data = data;
+    console.log(this.data);
   }
 };
 </script>

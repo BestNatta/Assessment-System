@@ -2,23 +2,23 @@
 /*          Priorty            */
 
 .height {
-    background-color: #C00000;
-    color: #ffff;
+  background-color: #c00000;
+  color: #ffff;
 }
 
 .moderate {
-    background-color: #FFC000;
-    color: #ffff;
+  background-color: #ffc000;
+  color: #ffff;
 }
 
 .low {
-    background-color: #92D050;
-    color: #ffff;
+  background-color: #92d050;
+  color: #ffff;
 }
 
 .AIC {
-    background-color: #00B0F0;
-    color: #ffff;
+  background-color: #00b0f0;
+  color: #ffff;
 }
 
 /********** Tasks.vue***********/
@@ -34,87 +34,85 @@
 /*********  New.vue ***********/
 
 .th-lavel {
-    width: 30%;
-  }
-  
-  .th-height {
-    background: #C00000;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .th-moderate {
-    background: #FFC000;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .th-low {
-    background: #92D050;
-    color: #fff;
-    text-align: center;
-  }
-  
-  .th-aic {
-    background: #00B0F0;
-    color: #fff;
-    text-align: center;
-  }
+  width: 30%;
+}
 
-  .form-content {
-    margin-top: 5rem;
-  }
+.th-height {
+  background: #c00000;
+  color: #fff;
+  text-align: center;
+}
 
-  section > header   {
-    font-size: 1.2rem;
-    font-weight: 600;
-  }
+.th-moderate {
+  background: #ffc000;
+  color: #fff;
+  text-align: center;
+}
 
+.th-low {
+  background: #92d050;
+  color: #fff;
+  text-align: center;
+}
 
-  .desciption {
-    width: 500px;
-     border: 1px solid rgb(100, 100, 100);
-     border-radius: 5px;
-     padding: 10px;
-  }
+.th-aic {
+  background: #00b0f0;
+  color: #fff;
+  text-align: center;
+}
 
-  /*******************************************************************************************/
+.form-content {
+  margin-top: 5rem;
+}
 
-  .container-form {
-    border: 1px solid rgb(107, 107, 107);
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 2rem;
-    border-radius: 5px;
-    background-color: rgba(255, 255, 255, 0.303);
+section > header {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
 
-  }
+.desciption {
+  width: 500px;
+  border: 1px solid rgb(100, 100, 100);
+  border-radius: 5px;
+  padding: 10px;
+}
 
-  .form-offer {
-    border: 1px solid rgb(107, 107, 107);
-    padding: 1rem;
-    border-radius: 5px;
-    background-color: #1C1966;
-    box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
-    color: #fff;
-  }
+/*******************************************************************************************/
 
-  .form-details {
-    border: 1px solid rgb(39, 39, 39);
-    width: 50%;
-    padding: 0.5rem;
-    border-radius: 5px;
-  }
+.container-form {
+  border: 1px solid rgb(107, 107, 107);
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.303);
+}
 
-  .title-head-form1 p {
-    font-size: 1.1rem;
-    font-weight: 600;
-  }
+.form-offer {
+  border: 1px solid rgb(107, 107, 107);
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #1c1966;
+  box-shadow: 2px 2px 4px 2px rgb(0 0 0 / 30%);
+  color: #fff;
+}
 
-  .title-head-form {
-    /* margin-left: 7.7rem; */
-    margin-top: 1rem;
-  }
+.form-details {
+  border: 1px solid rgb(39, 39, 39);
+  width: 50%;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+.title-head-form1 p {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.title-head-form {
+  /* margin-left: 7.7rem; */
+  margin-top: 1rem;
+}
 
 .title-head-form p {
   font-size: 1.1rem;
@@ -136,7 +134,6 @@
   -ms-user-select: none;
   user-select: none;
   font-size: 16px;
-
 }
 
 .container-box {
@@ -147,7 +144,8 @@
   width: 100%;
   height: 30px;
 }
-input[type="radio"], input[type="checkbox"] {
+input[type="radio"],
+input[type="checkbox"] {
   width: 17%;
   box-sizing: border-box;
   padding: 0px;
@@ -162,79 +160,13 @@ input[type="radio"], input[type="checkbox"] {
   width: 0;
 }
 
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 30px;
-  width: 80px;
-  background-color: transparent;
-  border-radius: 3px;
-  border: 1px solid #000
-}
-
-/* On mouse-over, add a grey background color */
-.container-box:hover input ~ .checkbox-color1 {
-  background-color: #C00000;
-}
-.container-box:hover input ~ .checkbox-color2 {
-  background-color: #FFC000;
-}
-.container-box:hover input ~ .checkbox-color3 {
-  background-color: #92D050;
-}
-.container-box:hover input ~ .checkbox-color4 {
-  background-color: #00B0F0;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container-box input:checked ~ .checkbox-color1 {
-  background-color: #C00000;
-}
-.container-box input:checked ~ .checkbox-color2 {
-  background-color: #FFC000;
-}
-.container-box input:checked ~ .checkbox-color3 {
-  background-color: #92D050;
-}
-.container-box input:checked ~ .checkbox-color4 {
-  background-color: #00B0F0;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container-box input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container-box .checkmark:after {
-  left: 35px;
-  top: 5px;
-  width: 6px;
-  height: 15px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 .vue-icon {
   cursor: pointer;
   margin-right: 1rem;
   margin-top: 3px;
 }
 
-/****************************** Resule.vue **************************************/
-    
+/****************************** Result.vue **************************************/
 
 .container-result {
   display: flex;
@@ -242,7 +174,7 @@ input[type="radio"], input[type="checkbox"] {
 }
 
 .row-title {
-  background-color: #1C1966;
+  background-color: #1c1966;
   color: #fff;
 }
 
@@ -253,11 +185,10 @@ input[type="radio"], input[type="checkbox"] {
 
 .container-result .container {
   width: 75%;
-
 }
 
 .sub-topic {
-  background-color:#e7e6ff;
+  background-color: #e7e6ff;
 }
 
 .details-circle {
@@ -267,43 +198,13 @@ input[type="radio"], input[type="checkbox"] {
 /*                       ResuleCircle.vue                          */
 
 .circle-border {
-  background-color:#fff;
+  background-color: #fff;
   border: 1px solid red;
-
-}
-  
-  /*                       dashboard.vue                          */
-  .con-dashboard1 {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.con-dashboard2 {
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.apex-chart1 {
-    width: 73%;
-    color: #767676;
-    box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.3);
-    padding: 1.2rem;
-    border-radius: 10px;
-}
-.apex-chart2 {
-  width: 100%;
-  color: #767676;
-  box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.3);
-  padding: 1.2rem;
-  border-radius: 10px;
-}
-.donut-dash {
-  width: 25%;
-  padding: 1.2rem;
-  box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.3);
-  border-radius: 10px;
-
 }
 
-input.form-control:focus, 
+/*                       dashboard.vue                          */
+
+input.form-control:focus,
 [contenteditable].form-control:focus {
   box-shadow: inset 0 0 0 0 transparent;
 }

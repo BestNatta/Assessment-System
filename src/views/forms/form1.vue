@@ -122,16 +122,6 @@
                             </div>
                         </b-collapse>
 
-                        <!------------------------------------- New Forms ------------------------------------->
-                        <!--
-                        <b-collapse v-if="mainIndex >= mainFormLength" v-model="mainForms.isOpen"
-                            :id="`collapse-${mainIndex}`" class="mb-5">
-                            <div class="container-form p-4" v-for="(subForms, subIndex) in mainForms.subForm"
-                                :key="subForms.id">
-                                <p class="font-weight-normal">{{ getSubIndex(mainIndex, subIndex) }} </p>
-                                <textarea class="form-control" v-model="subFormTitle"></textarea>
-                            </div>
-                        </b-collapse> -->
                         <b-row>
                             <b-col v-if="mainIndex === getMainForm.length - 1">
                                 <button class="btn btn-info mr-1"

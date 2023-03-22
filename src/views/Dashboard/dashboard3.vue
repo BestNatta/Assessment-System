@@ -1,149 +1,134 @@
 <template>
     <div>
-        <apex-chart ref="chart" type="bar" height="450" :options="chartOptions" :series="series"></apex-chart>
-
+        <apex-chart ref="chart" type="radialBar" height="530" :options="chartOptions" :series="series"></apex-chart>
     </div>
 </template>
 
 <script>
-import { api } from '../../helpers/Helpers';
 export default {
-    name: 'dashbord3',
+    name: "dashbord3",
     data() {
         return {
+            // series: [],
+            // chartOptions: {
+            //     chart: {
+            //         height: 350,
+            //         type: 'radialBar',
+            //         colors: ['#900c27', '#c70039', '#f6c667', '#c9356c'],
+            //     },
+            //     plotOptions: {
+            //         radialBar: {
+            //             dataLabels: {
+            //                 name: {
+            //                     fontSize: '22px',
+            //                 },
+            //                 value: {
+            //                     fontSize: '16px',
+            //                 },
+            //                 total: {
+            //                     show: true,
+            //                     label: 'Total',
+            //                 }
+            //             }
+            //         }
+            //     },
+            //     labels: ['สุง', 'ปานกลาง', 'ต่ำ', 'AIC'],
+            // },
 
-            series: [{
-                name: 'Board of Directors',
-                data: []
-            }, {
-                name: 'Management',
-                data: []
-            }, {
-                name: 'Operation',
-                data: []
-            }],
+            series: [],
             chartOptions: {
                 chart: {
-                    type: 'bar',
-                    height: 350,
-                    stacked: true,
-                    toolbar: {
-                        show: true
+                    height: 390,
+                    type: 'radialBar',
+                    animations: {
+                        enabled: true,
+                        easing: 'easeinout',
+                        speed: 500,
                     },
-                    zoom: {
-                        enabled: false
+                },
+                plotOptions: {
+                    radialBar: {
+                        offsetY: 0,
+                        startAngle: 0,
+                        endAngle: 270,
+                        hollow: {
+                            margin: 5,
+                            size: '30%',
+                            background: 'transparent',
+                            image: undefined,
+                        },
+                        dataLabels: {
+                            name: {
+                                show: false,
+                            },
+                            value: {
+                                show: false,
+                            }
+                        }
                     }
                 },
-                title: {
-                    text: 'สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน',
-                    align: 'center',
-                    style: {
-                        fontSize: '18px'
+                colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5', '#342056'],
+                labels: ['สูง', 'ปานกลาง', 'ต่ำ', 'AIC', 'รวม'],
+                legend: {
+                    show: true,
+                    floating: true,
+                    fontSize: '16px',
+                    position: 'left',
+                    offsetX: 160,
+                    offsetY: 15,
+                    labels: {
+                        useSeriesColors: true,
+                    },
+                    markers: {
+                        size: 0
+                    },
+                    formatter: function (seriesName, opts) {
+                        return seriesName + ":  " + opts.w.globals.series[opts.seriesIndex]
+                    },
+                    itemMargin: {
+                        vertical: 8,
+                        horizontal: 40,
                     }
                 },
                 responsive: [{
                     breakpoint: 480,
                     options: {
                         legend: {
-                            position: 'bottom',
-                            offsetX: -10,
-                            offsetY: 0
+                            show: false
                         }
                     }
-                }],
-                plotOptions: {
-                    bar: {
-                        horizontal: false,
-                        borderRadius: 3,
-                        dataLabels: {
-                            total: {
-                                enabled: false,
-                                style: {
-                                    fontSize: '13px',
-                                    fontWeight: 900
-                                }
-                            }
-                        }
-                    },
-                },
-                xaxis: {
-                    categories: [],
-                },
-                yaxis: {
-                    min: 0,
-                    max: 10,
-                    title: {
-                        text: 'จำนวน',
-                        offsetX: 0,
-                        style: {
-                            fontSize: '16px'
-                        }
-                    }
-                },
-                legend: {
-                    position: 'right',
-                    offsetY: 40,
-                    markers: {
-                        fillColors: ['#6C00FF', '#3C79F5', '#2DCDDF']
-                    }
-                },
-                fill: {
-                    type: 'light',
-                    gradient: {
-                        shade: 'white',
-                        type: 'vertical'
-                    },
-                    opacity: 1,
-                    colors: ['#6C00FF', '#3C79F5', '#2DCDDF']
-                }
+                }]
             },
-            getValue: {}, // รับ data จาก api
+
         }
-    },
-
-    props: ['getSum1', 'getSum2', 'getSum3', 'formName'],
-
-    created() {
-
     },
 
     async mounted() {
-        this.getValue = await api.gettask(this.$route.params.id);
+        // console.log(this.getSum);
+        // this.formatter(40);
+        console.log(this.getSum);
 
-        // if (this.getSum3) {
-        //     this.series[0].data = this.getSum3;
-        //     this.series[1].data = this.getSum2;
-        //     this.series[2].data = this.getSum1;
-        //     this.chartOptions.xaxis.categories = this.formName;
-        //     for (let i = 0; i < Object.keys(this.formName).length; i++) {
-        //         this.chartOptions.xaxis.categories[i] = "ข้อที่ " + this.formName[i]
-        //     }
+    },
+
+    props: ["getSum"],
+
+    methods: {
+        chartColumn() {
+            this.getSum.forEach((value) => {
+                this.series[0] = value.heightValue;
+                this.series[1] = value.moderateValue;
+                this.series[2] = value.lowValue;
+                this.series[3] = value.aicValue;
+                this.series[4] = value.totalValue;
+            });
+
+            this.$refs.chart.updateOptions(this.series, true);
+        },
+        // formatter: function (x) {
+        //     console.log(x);
+        //     // return 249
         // }
+
     },
-
-    watch: {
-        getSum1(newValue) {
-            this.series[2].data = newValue;
-            this.$refs.chart.updateOptions(this.series)
-        },
-        getSum2(newValue) {
-            this.series[1].data = newValue;
-            this.$refs.chart.updateOptions(this.series)
-        },
-        getSum3(newValue) {
-            this.series[0].data = newValue;
-            this.$refs.chart.updateOptions(this.series)
-        },
-        formName(newValue) {
-            let x = newValue;
-            for (let i = 0; i < Object.keys(x).length; i++) {
-                // this.chartOptions.xaxis.categories[i] = "ข้อที่ " + newValue[i]
-                this.chartOptions.xaxis.categories[i] = newValue[i].replace("form", "ข้อที่")
-            }
-
-            this.$refs.chart.updateOptions(this.chartOptions)
-        }
-    },
-
-}   
+};
 </script>

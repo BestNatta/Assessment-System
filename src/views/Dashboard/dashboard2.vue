@@ -1,8 +1,6 @@
 <template>
     <div>
-        <apex-chart width="310px" height="350px" type="donut" ref="chart" :options="chartOptions"
-            :series="series"></apex-chart>
-        {{ this.getData() }}
+        <apex-chart type="donut" ref="chart" :options="chartOptions" :series="series" />
     </div>
 </template>
 
@@ -11,23 +9,25 @@ export default {
     name: 'dashbord-2',
     data() {
         return {
+            getPropPLC: [],
+
             series: [],
             chartOptions: {
                 animations: {
                     enabled: true
                 },
-                labels: ['PLC', 'ELC'],
+                labels: ['สูง', 'ปานกลาง', 'ต่ำ', 'AIC'],
                 dataLabels: {
                     enabled: false,
                 },
-                colors: ['#472183','#82C3EC'],
+                colors: ['#1ab7ea', '#0084ff', '#39539E', '#0077B5'],
                 title: {
-                    text: 'การควบคุมภายในระดับองค์กร',
+                    text: '(Process-Level Controls: PLC)',
                     align: 'center',
                     margin: 40,
                     offsetY: -10,
                     style: {
-                        fontSize: '18px'
+                        fontSize: '14px'
                     }
                 },
                 responsive: [{
@@ -44,50 +44,53 @@ export default {
                 },
                 plotOptions: {
                     pie: {
-                        customScale: 1.1,
-                        // size: '60%'
+                        customScale: 1.2,
+                        size: '60%',
                         donut: {
-                            size: '70%',
+                            size: '65%',
                             labels: {
                                 show: true,
                                 name: {
                                     show: true,
                                     fontSize: '25px',
-
                                 },
                                 total: {
                                     show: true,
                                     label: 'รวม',
                                     showAlways: false,
-                                    fontSize: '25px',
+                                    fontSize: '16px',
                                     fontWeight: 600,
                                     color: '#000'
                                 }
                             }
                         }
                     }
-                }
-            },
+                },
+            }
         }
+
     },
 
     mounted() {
-        this.getData();
-        this.$refs.chart.updateOptions(this.series, true);
+        // console.log(this.getValuePLC);
     },
 
-    updated() {
-        this.getData();
-        this.$refs.chart.updateOptions(this.series, true);
-    },
-
-    props: ['valuePLC', 'valueELC'],
+    props: ['getValuePLC'],
 
     methods: {
         getData() {
-            this.series[0] = this.valuePLC;
-            this.series[1] = this.valueELC;
+            this.getValuePLC.forEach((value) => {
+                this.series[0] = value.heightValue;
+                this.series[1] = value.moderateValue;
+                this.series[2] = value.lowValue;
+                this.series[3] = value.aicValue;
+            })
+            this.$refs.chart.updateOptions(this.series, true)
+
         },
+        // update() {
+        //     this.getData();
+        // }
     },
 }
 </script>

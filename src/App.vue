@@ -4,7 +4,7 @@
       <div class="ui center aligned container justify-content-center">
         <div class="ui large secondary inverted pointing menu compact">
           <router-link to="/tasks" exact class="item">
-           <i class="tasks icon"></i> หน้าแรก
+            <i class="tasks icon"></i> หน้าแรก
           </router-link>
           <router-link to="/tasks/create" class="item">
             <i class="plus circle icon"></i> สร้าง
@@ -12,23 +12,25 @@
         </div>
       </div>
     </div>
-      <div class="ui one column grid">
-        <div class="column">
-          <router-view />
-        </div>
+    <div class="ui one column grid">
+      <div class="column">
+        <router-view />
       </div>
+    </div>
   </div>
 </template>
 <script>
 import './assets/css/style.css';
+import './assets/css/dashboard.css';
 export default {
   name: 'app'
 };
 </script>
 <style>
-#app > div.navbar {
+#app>div.navbar {
   margin-bottom: 1.5em;
 }
+
 .myFlash {
   width: 250px;
   margin: 10px;
@@ -36,17 +38,20 @@ export default {
   top: 50;
   right: 0;
 }
+
 input {
   width: 300px;
 }
+
 div.label {
   width: 120px;
 }
+
 div.input {
   margin-bottom: 10px;
 }
+
 button.ui.button {
   margin-top: 15px;
   display: block;
-}
-</style>
+}</style>

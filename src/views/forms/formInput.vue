@@ -26,8 +26,13 @@
                 <hr />
             </div>
 
+            <!-- Component formInput -->
+
             <form-1 :forms="this.forms" />
 
+            <!-- <b-button @click="onClick">
+                click me
+            </b-button> -->
             <b-row>
                 <b-col class="d-flex justify-content-center">
                     <button class="positive ui button px-5">บันทึก</button>
@@ -51,12 +56,15 @@ export default {
     },
 
     mounted() {
-
     },
 
     props: ['forms'],
 
     methods: {
+        // onClick() {
+        //     console.log(this.forms)
+        // },
+
         onSubmit() {
             this.$emit('formInput', this.forms)
             console.log(this.forms);
