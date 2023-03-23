@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <h1>Show task</h1>
     <flash-message></flash-message>
@@ -44,4 +44,4 @@ export default {
   text-decoration: underline;
   margin: 20px 10px;
 }
-</style>
+</style> -->

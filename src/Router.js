@@ -3,11 +3,12 @@ import Router from 'vue-router';
 import Tasks from './views/Tasks.vue';
 // import Form from './views/Form.vue';
 import Create from './views/Create.vue'
-import Show from './views/Show.vue';
+// import Show from './views/Show.vue';
 import Edit from './views/Edit.vue';
-import Result from './views/Result.vue'
-import ResuleCircle from './components/ResultCircle.vue'
-import Dashboard from './views/Dashboard/dashboard1.vue'
+import Result from './views/Result.vue';
+import ResuleCircle from './components/ResultCircle.vue';
+import Dashboard from './views/Dashboard/dashboard1.vue';
+import PreviewPDF from './views/forms/pdfPreview.vue';
 
 Vue.use(Router);
 
@@ -33,11 +34,11 @@ export default new Router({
       component: Create
     },
 
-    {
-      path: '/tasks/:id',
-      name: 'show',
-      component: Show
-    },
+    // {
+    //   path: '/tasks/:id',
+    //   name: 'show',
+    //   component: Show
+    // },
 
     {
       path: '/tasks/:id/edit',
@@ -61,7 +62,13 @@ export default new Router({
       path: '/tasks/:id/dashboard',
       name: 'dashboard',
       component: Dashboard
+    },
+
+    {
+      path: '/tasks/PreviewPDF',
+      name: 'PreviewPDF',
+      component: PreviewPDF
     }
-   
+
   ]
 });

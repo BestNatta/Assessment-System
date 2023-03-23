@@ -54,4 +54,5 @@ div.input {
 button.ui.button {
   margin-top: 15px;
   display: block;
-}</style>
+}
+</style>

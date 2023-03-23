@@ -6,7 +6,7 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <form-input @formInput="createOrUpdate" :forms="this.data" />
+    <form-input @formInput="createOrUpdate" :forms="data" />
   </div>
 </template>
 <script>
@@ -35,7 +35,7 @@ export default {
   async mounted() {
     let data = await api.gettask(this.$route.params.id);
 
-    console.log(data);
+    // console.log(data);
     this.data = data;
     console.log(this.data);
   }

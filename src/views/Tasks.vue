@@ -7,11 +7,11 @@
         <table id="tasks" class="ui celled compact table">
           <thead>
             <tr class="text-center">
-              <th class="tr-number">ลำดับ</th>
-              <th class="tr-name"><i class="info circle icon"></i>ชื่อบริษัท</th>
-              <th><i class="lock open icon"></i></th>
-              <th><i class="edit icon"></i></th>
-              <th><i class="trash icon"></i></th>
+              <th class="tr-number"><font-awesome-icon :icon="['fas', 'list-ol']" size="lg" /></th>
+              <th class="tr-name"><font-awesome-icon :icon="['fas', 'building']" class="mr-2" />ชื่อบริษัท</th>
+              <th><b-icon icon="book-half" scale="1.2"></b-icon></th>
+              <th><b-icon icon="pencil-fill" scale="1.2"></b-icon></th>
+              <th><b-icon icon="trash-fill" scale="1.2"></b-icon></th>
             </tr>
           </thead>
           <tr v-for="(task, i) in this.tasks" :key="task.id">
