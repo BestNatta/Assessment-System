@@ -2,13 +2,12 @@
   background: white;
   display: block;
   margin: 0;
-  margin-bottom: 0.5cm;
   box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
 }
 
 .page[size="A4"] {
   width: 21cm;
-  height: 29.7cm;
+  height: 29.69cm;
 }
 
 @media print {
@@ -16,6 +15,7 @@
   page {
     margin: 0;
     box-shadow: 0;
+    padding: 0;
   }
 }
 
@@ -29,9 +29,6 @@
     height: 130px;
     display: flex;
     justify-content: end;
-    // padding: 20px;
-    // padding-bottom: 0px;
-    // border: 1px solid red;
     position: relative;
 
     .temp-1 {
@@ -45,7 +42,6 @@
       position: absolute;
       top: 50px;
       left: 5px;
-      //   border: 1px solid red;
       width: 35%;
       height: 80px;
       background-image: url("../images/logo.png");
@@ -60,8 +56,6 @@
       width: 70%;
       height: 167px;
       background-image: url("../images/temp-right.png");
-      //   background-color: #c00000;
-      //   clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);
       position: relative;
 
       .content {
@@ -115,6 +109,10 @@
     left: 50%;
     transform: translate(-50%, -50%);
 
+    .priority > p {
+      margin-bottom: 9px;
+    }
+
     .chapter {
       padding-left: 3rem;
       margin-bottom: 2rem;
@@ -124,29 +122,61 @@
       height: 70px;
       background-color: #226aa3;
       color: #fff;
+      flex-wrap: wrap-reverse;
 
       .frame {
         border: 1px solid #fff;
+      }
 
-        .level-height {
-          background-color: #c00000;
-          height: 35px;
-        }
+      .placement {
+        display: flex;
+        align-items: center;
+      }
 
-        .level-moderate {
-          background-color: #ffc000;
-          color: #000;
-        }
+      .level-height {
+        background-color: #c00000;
+        // height: 35px;
+      }
 
-        .level-low {
-          background-color: #92d050;
-          color: #000;
-        }
+      .level-moderate {
+        background-color: #ffc000;
+        color: #000;
+      }
 
-        .level-aic {
-          background-color: #00b0f0;
-          color: #000;
-        }
+      .level-low {
+        background-color: #92d050;
+        color: #000;
+      }
+
+      .level-aic {
+        background-color: #00b0f0;
+        color: #000;
+      }
+    }
+
+    .main-title {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background-color: #226aa3;
+    }
+
+    .sub-title {
+      height: 30px;
+      display: flex;
+      align-items: center;
+      background-color: #d9d9d9;
+      // page-break-before: right;
+    }
+
+    .text {
+      height: 40px;
+      background-color: #f2f2f2;
+
+      .col-text {
+        max-width: 100%;
+        word-wrap: break-word;
       }
     }
   }

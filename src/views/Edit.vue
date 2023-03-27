@@ -6,7 +6,9 @@
       </b-col>
     </b-row>
     <flash-message></flash-message>
-    <form-input @formInput="createOrUpdate" :forms="data" />
+
+    <!-- {{ getAPI }} -->
+    <form-input @formInput="createOrUpdate" :forms="getAPI" />
   </div>
 </template>
 <script>
@@ -19,25 +21,25 @@ export default {
   },
   data() {
     return {
-      // forms: null,
-      data: []
+
+      getAPI: []
     };
   },
 
   methods: {
     createOrUpdate: async function (form) {
       await api.updatetask(form);
+      console.log(form);
       this.flash('task updated sucessfully!', 'success');
       this.$router.push(`/tasks/`);
     }
   },
 
   async mounted() {
-    let data = await api.gettask(this.$route.params.id);
+    this.getAPI = await api.gettask(this.$route.params.id);
+    // console.log(this.getAPI);
 
-    // console.log(data);
-    this.data = data;
-    console.log(this.data);
+    // this.createOrUpdate(this.getAPI);
   }
 };
 </script>

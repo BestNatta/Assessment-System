@@ -77,7 +77,7 @@
                                         v-if="!subFormLength[mainIndex] || subIndex >= subFormLength[mainIndex]"></textarea>
                                 </div>
                                 <hr>
-                                <!-- <textarea class="form-control" v-if="mainIndex >= mainFormLength"
+                                <!-- <textarea class="form-control" v-if="mainIndex >= mainFormLength"s
                                     v-model="subForms.subTitle"></textarea> -->
 
                                 <div class="form-group">
@@ -166,47 +166,27 @@ export default {
         const getFormDefault = getApi.formDefaultTasks[0]
         this.getMainForm = getFormDefault.mainForm;
 
-        this.subFormTitle = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.title)
-        })
+        this.initMainForm();
 
-        this.selected = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.selected);
-        });
 
-        this.options = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.options)
-        })
-
-        this.operation = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.operation);
-        });
-
-        this.heightValue = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.heightValue);
-        });
-
-        this.moderateValue = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.moderateValue);
-        });
-
-        this.lowValue = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.lowValue);
-        });
-
-        this.aicValue = this.getMainForm.map(mainForm => {
-            return mainForm.subForm.map(subForm => subForm.aicValue);
-        });
-
-        this.mainFormLength = this.getMainForm.length
-        // console.log(this.mainFormLength);
-        this.subFormLength = this.getMainForm.map((item) => item.subForm.length)
-        this.loadSubFormArray();
     },
 
     props: ['forms'],
 
     watch: {
+
+        forms(newVal) {
+            this.getMainForm = newVal.mainForm;
+            if (this.getMainForm) {
+                this.getMainForm.forEach(mainForm => {
+
+                    mainForm.subForm.forEach(item => {
+                        item.options = ["Board of Directors", "Management", "Operation"]
+                    })
+                })
+                this.initMainForm();
+            }
+        },
 
         selected(newVal) {
             newVal.forEach((valueMain, mainIndex) => {
@@ -407,6 +387,46 @@ export default {
                 this.getMainForm[subIndex].subForm.splice(this.getMainForm[subIndex].subForm.indexOf(event), 1);
             }
         },
+
+        initMainForm() {
+            this.subFormTitle = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.title)
+            })
+
+            this.selected = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.selected);
+            });
+
+            this.options = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.options)
+            })
+
+            this.operation = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.operation);
+            });
+
+            this.heightValue = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.heightValue === 1 ? 'height' : '');
+            });
+
+
+            this.moderateValue = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.moderateValue === 1 ? 'moderate' : '');
+            });
+
+            this.lowValue = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.lowValue === 1 ? 'low' : '');
+            });
+
+            this.aicValue = this.getMainForm.map(mainForm => {
+                return mainForm.subForm.map(subForm => subForm.aicValue === 1 ? 'aic' : '');
+            });
+
+            this.mainFormLength = this.getMainForm.length
+            // console.log(this.mainFormLength);
+            this.subFormLength = this.getMainForm.map((item) => item.subForm.length)
+            this.loadSubFormArray();
+        }
     },
 }
 </script>
