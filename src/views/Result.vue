@@ -394,6 +394,12 @@
                         </b-row>
                     </section>
                 </header>
+
+                <div class="text-center mt-3">
+                    <!-- <button class="btn btn-info">หฟกฟหก -->
+                        <router-link :to="{name: 'PreviewPDF', param: {id: tasks._id}}">Export PDF</router-link>
+                    <!-- </button> -->
+                </div>
             </div>
         </div>
 
@@ -456,8 +462,8 @@ export default {
 
     async mounted() {
         this.getAPI = await api.gettask(this.$route.params.id);
-        this.tasks = this.getAPI.mainForm
-        // this.calForm();
+        this.tasks = this.getAPI.mainForm;
+        // console.log(this.getAPI);
         // this.export();
         this.countVal();
     },
@@ -494,7 +500,7 @@ export default {
                     aicValue: acc.aicValue + cur.aicValue,
                     totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue + cur.aicValue
                 }
-            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
+            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })]; console.log(this.getELCValue)
 
             this.getPLCValue = [this.values.slice(17).reduce((acc, cur) => {
                 return {

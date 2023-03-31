@@ -144,7 +144,7 @@ export default {
     data() {
         return {
             getMainForm: [],
-            getSubForm: [],
+            // getSubForm: [],
 
             selected: [],
             operation: [],
@@ -167,7 +167,6 @@ export default {
         this.getMainForm = getFormDefault.mainForm;
 
         this.initMainForm();
-
 
     },
 
@@ -299,11 +298,13 @@ export default {
                         });
                     });
                 }
+
                 mainFormArray.push({
                     title: formTitle1,
                     subForm: subFormArray,
                 });
             });
+
             this.forms.mainForm = mainFormArray;
         },
 
@@ -319,7 +320,7 @@ export default {
             this.moderateValue[mainIndex][subIndex] = event.target.value === 'moderate' ? value : 0;
             this.lowValue[mainIndex][subIndex] = event.target.value === 'low' ? value : 0;
             this.aicValue[mainIndex][subIndex] = event.target.value === 'aic' ? value : 0;
-            this.loadSubFormArray();
+            // this.loadSubFormArray();
         },
 
         getSubIndex(mainIndex, subIndex) {
@@ -334,9 +335,7 @@ export default {
                     {
                         title: '',
                         selected: '',
-                        options: [
-                            "Board of Directors", "Management", "Operation"
-                        ],
+                        options: ["Board of Directors", "Management", "Operation"],
                         operation: '',
                         heightValue: '',
                         moderateValue: '',

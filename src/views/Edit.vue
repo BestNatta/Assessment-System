@@ -22,24 +22,22 @@ export default {
   data() {
     return {
 
-      getAPI: []
+      getAPI: {}
     };
-  },
-
-  methods: {
-    createOrUpdate: async function (form) {
-      await api.updatetask(form);
-      console.log(form);
-      this.flash('task updated sucessfully!', 'success');
-      this.$router.push(`/tasks/`);
-    }
   },
 
   async mounted() {
     this.getAPI = await api.gettask(this.$route.params.id);
     // console.log(this.getAPI);
+  },
 
-    // this.createOrUpdate(this.getAPI);
-  }
+  methods: {
+    createOrUpdate: async function (form) {
+      await api.updatetask(form);
+      this.flash('task updated sucessfully!', 'success');
+      this.$router.push(`/tasks/`);
+    }
+  },
+
 };
 </script>

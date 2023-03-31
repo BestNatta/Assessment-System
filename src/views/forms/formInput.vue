@@ -26,7 +26,7 @@
                 <hr />
             </div>
 
-            <!-- {{ forms }} -->
+            {{ forms }}
             <form-1 :forms="forms" />
 
             <b-row>
@@ -47,12 +47,12 @@ export default {
     },
     data() {
         return {
-
+            getData: {}
         }
     },
 
     mounted() {
-        // console.log(this.forms);
+        console.log(this.forms)
     },
 
     props: ['forms'],

@@ -8,7 +8,9 @@ import Edit from './views/Edit.vue';
 import Result from './views/Result.vue';
 import ResuleCircle from './components/ResultCircle.vue';
 import Dashboard from './views/Dashboard/dashboard1.vue';
-import PreviewPDF from './views/forms/pdfPreview.vue';
+import PreviewPDF from './views/pdf/homepage.vue';
+import ShowPreview from './views/pdf/Show.vue';
+
 
 Vue.use(Router);
 
@@ -65,10 +67,17 @@ export default new Router({
     },
 
     {
-      path: '/tasks/PreviewPDF',
+      path: '/tasks/:id/PreviewPDF',
       name: 'PreviewPDF',
       component: PreviewPDF
-    }
+    },
+
+    {
+      path: '/tasks/:id/ShowPreview',
+      name: 'ShowPreview',
+      component: ShowPreview
+    },
+
 
   ]
 });
