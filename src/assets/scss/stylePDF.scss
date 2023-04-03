@@ -333,10 +333,14 @@ thead th {
   width: 4%;
 }
 
-@page {
-  counter-increment: page;
-}
+// @page {
+//   counter-increment: page;
+// }
 
-.page-number::before {
-  content: "Page " counter(page);
-}
+// .page-number::before {
+//   content: "Page " counter(page);
+// }
+
+
+
+

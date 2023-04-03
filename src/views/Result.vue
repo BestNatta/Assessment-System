@@ -397,7 +397,7 @@
 
                 <div class="text-center mt-3">
                     <!-- <button class="btn btn-info">หฟกฟหก -->
-                        <router-link :to="{name: 'PreviewPDF', param: {id: tasks._id}}">Export PDF</router-link>
+                        <router-link :to="{name: 'ShowPreview', param: {id: tasks._id}}">Export PDF</router-link>
                     <!-- </button> -->
                 </div>
             </div>

@@ -102,7 +102,7 @@
                     </b-col>
                 </b-row>
 
-                <!-- <div class="page-break"></div> -->
+                <div class="html2pdf__page-break"></div>
 
                 <div class="sub-title pl-3">
                     <li></li>
@@ -190,6 +190,13 @@
                         <p></p>
                     </b-col>
                 </b-row>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test</h1>
+                <h1>test1</h1>
+                <h1>test1</h1>
+                <h1>test1</h1>
+
             </section>
 
             <footer-component class="footer-test" />

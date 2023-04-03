@@ -9,13 +9,15 @@
 
                 <home-page class="border border-light" :data="companyName" />
 
-                <list-content  />
+                <list-content />
 
                 <preview-2 class="border border-light" />
 
                 <detail />
 
-                <preview-1 class="border border-light" :mapForm="mapForm" />
+                <preview-dashboard :getELC="getELC" :getPLC="getPLC" />
+
+                <preview-1 class="border border-light" :mapForm="mapForm" v-for="tests in test" :key="tests" />
 
             </div>
         </div>
@@ -28,6 +30,7 @@ import html2pdf from 'html2pdf.js';
 import homePage from './homepage.vue';
 import ListContent from './Content.vue'
 import Preview1 from './Preview1.vue';
+import PreviewDashboard from './PreviewDashboard.vue';
 import Preview2 from './Preview2.vue';
 import Detail from './Detail.vue';
 export default {
@@ -36,14 +39,18 @@ export default {
         homePage,
         ListContent,
         Preview2,
+        PreviewDashboard,
         Preview1,
         Detail
     },
     data() {
         return {
+            test: 2,
             getAPI: [],
             getForm: [],
             mapForm: [],
+            getELC: [],
+            getPLC: [],
             companyName: '',
             // getMapData: null,
             item: 1
@@ -57,7 +64,7 @@ export default {
         this.getMapData = mapData[0];
 
         this.countVal();
-        this. getCompany();
+        this.getCompany();
 
     },
 
@@ -88,7 +95,26 @@ export default {
                     }
                 }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })
             })
-            // console.log(this.mapForm);
+
+            this.getELC = [this.mapForm.slice(0, 17).reduce((acc, cur) => {
+                return {
+                    heightValue: acc.heightValue + cur.heightValue,
+                    moderateValue: acc.moderateValue + cur.moderateValue,
+                    lowValue: acc.lowValue + cur.lowValue,
+                    aicValue: acc.aicValue + cur.aicValue,
+                    totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue + cur.aicValue
+                }
+            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
+
+            this.getPLC = [this.mapForm.slice(17).reduce((acc, cur) => {
+                return {
+                    heightValue: acc.heightValue + cur.heightValue,
+                    moderateValue: acc.moderateValue + cur.moderateValue,
+                    lowValue: acc.lowValue + cur.lowValue,
+                    aicValue: acc.aicValue + cur.aicValue,
+                    totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue + cur.aicValue
+                }
+            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
         },
 
         // export PDF
@@ -98,7 +124,7 @@ export default {
                 margin: 0,
                 padding: 0,
                 filename: 'Assingment.pdf',
-                image: { type: 'png' }
+                // image: { type: 'png' }
             }
 
             const getElPage = document.getElementById('element-to-convert');

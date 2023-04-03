@@ -8,7 +8,6 @@ import Edit from './views/Edit.vue';
 import Result from './views/Result.vue';
 import ResuleCircle from './components/ResultCircle.vue';
 import Dashboard from './views/Dashboard/dashboard1.vue';
-import PreviewPDF from './views/pdf/homepage.vue';
 import ShowPreview from './views/pdf/Show.vue';
 
 
@@ -64,12 +63,6 @@ export default new Router({
       path: '/tasks/:id/dashboard',
       name: 'dashboard',
       component: Dashboard
-    },
-
-    {
-      path: '/tasks/:id/PreviewPDF',
-      name: 'PreviewPDF',
-      component: PreviewPDF
     },
 
     {
