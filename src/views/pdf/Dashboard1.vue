@@ -17,7 +17,7 @@ export default {
                 animations: {
                     enabled: true
                 },
-                labels: ['สูง', 'ปานกลาง', 'ต่ำ', 'AIC'],
+                labels: [],
                 dataLabels: {
                     enabled: false,
                 },
@@ -42,11 +42,11 @@ export default {
                 legend: {
                     show: true,
                     position: 'right',
-                    offsetY: 0,
+                    offsetY: 100,
                     offsetX: 0,
                     itemMargin: {
                         horizontal: 1,
-                        vertical: 10
+                        vertical: 15
                     },
                 },
                 plotOptions: {
@@ -81,6 +81,18 @@ export default {
 
     watch: {
         sendELC(newVal) {
+            this.updateChart(newVal);
+            this.updateLabels(newVal);
+        }
+    },
+
+    mounted() {
+        this.updateChart(this.sendELC);
+        this.updateLabels(this.sendELC);
+    },
+    
+    methods: {
+        updateChart(newVal) {
             newVal.forEach((value) => {
                 this.series[0] = value.heightValue;
                 this.series[1] = value.moderateValue;
@@ -88,8 +100,20 @@ export default {
                 this.series[3] = value.aicValue;
 
                 this.$refs.chart.updateOptions(this.series, true);
+            });
+        },
+
+        updateLabels(newVal) {
+            newVal.forEach((value) => {
+                this.chartOptions.labels.push(`สูง = ${value.heightValue}`);
+                this.chartOptions.labels.push(`ปานกลาง = ${value.moderateValue}`);
+                this.chartOptions.labels.push(`ต่ำ = ${value.lowValue}`);
+                this.chartOptions.labels.push(`AIC = ${value.aicValue}`);
+
+                this.$refs.chart.updateOptions(this.chartOptions.labels, true);
+
             })
         }
-    },
+    }
 }
 </script>

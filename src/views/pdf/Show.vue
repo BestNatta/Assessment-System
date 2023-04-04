@@ -17,7 +17,8 @@
 
                 <preview-dashboard :getELC="getELC" :getPLC="getPLC" />
 
-                <preview-1 class="border border-light" :mapForm="mapForm" v-for="tests in test" :key="tests" />
+                <preview-1 class="border border-light" :mapForm="mapForm" />
+                <!-- <preview-1 class="border border-light" :mapForm="mapForm" v-for="tests in test" :key="tests" /> -->
 
             </div>
         </div>

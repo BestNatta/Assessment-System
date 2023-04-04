@@ -1,8 +1,8 @@
 <template>
     <div id="element-to-convert1">
-        <section class="pdf-content page" size="A4" ref="pdfContent">
+        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="item in pdfPages" :key="item.id">
             <header-component />
-
+            
             <section class="con-content">
                 <div class="chapter">
                     <h4>ส่วนที่ 1 บทสรุปผู้บริหาร</h4>
@@ -46,29 +46,28 @@
                     <p>สภาพแวดล้อมการควบคุม (Control Environment)</p>
                 </div>
 
-                <b-row class="text mx-0"
-                    v-for="(item, index) in Array.isArray(this.getData) ? this.getData.slice(0, 5) : []" :key="item.id">
+                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(0, 5) : []" :key="items.id">
                     <!-- <b-row class="text mx-0" > -->
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ index + 1 }}</p>
+                        <p>{{ i + 1 }}</p>
                     </b-col>
                     <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text">{{ item.title }}</p>
+                        <p class="col-text">{{ items.title }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.heightValue }}</p>
+                        <p>{{ items.heightValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.moderateValue }}</p>
+                        <p>{{ items.moderateValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.aicValue }}</p>
+                        <p>{{ items.aicValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.lowValue }}</p>
+                        <p>{{ items.lowValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.totalValue }}</p>
+                        <p>{{ items.totalValue }}</p>
                     </b-col>
                 </b-row>
 
@@ -77,30 +76,30 @@
                     <p>การประเมินความเสี่ยง (Risk Assessment)</p>
                 </div>
 
-                <b-row class="text mx-0"
-                    v-for="(item, index) in Array.isArray(this.getData) ? this.getData.slice(5, 9) : []" :key="item.id">
+                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(5, 9) : []" :key="items.id">
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ index + 6 }}</p>
+                        <p>{{ i + 6 }}</p>
                     </b-col>
                     <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text">{{ item.title }}</p>
+                        <p class="col-text">{{ items.title }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.heightValue }}</p>
+                        <p>{{ items.heightValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.moderateValue }}</p>
+                        <p>{{ items.moderateValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.lowValue }}</p>
+                        <p>{{ items.lowValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.aicValue }}</p>
+                        <p>{{ items.aicValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ item.totalValue }}</p>
+                        <p>{{ items.totalValue }}</p>
                     </b-col>
                 </b-row>
+
 
                 <div class="html2pdf__page-break"></div>
 
@@ -109,12 +108,12 @@
                     <p>การควบคุมการปฏิบัติงาน (Control Activities)</p>
                 </div>
 
-                <b-row class="text mx-0">
+                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(9,12) : []" :key="items.id">
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
+                        <p>{{ i + 10 }}</p>
                     </b-col>
                     <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text"></p>
+                        <p class="col-text">{{ items.title }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
@@ -133,7 +132,7 @@
                     </b-col>
                 </b-row>
 
-                <div class="sub-title pl-3">
+                <!-- <div class="sub-title pl-3">
                     <li></li>
                     <p>ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)</p>
                 </div>
@@ -160,9 +159,9 @@
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
                     </b-col>
-                </b-row>
+                </b-row> -->
 
-                <div class="sub-title pl-3">
+                <!-- <div class="sub-title pl-3">
                     <li></li>
                     <p>ระบบการติดตาม (Monitoring Activities)</p>
                 </div>
@@ -189,13 +188,7 @@
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
                     </b-col>
-                </b-row>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test</h1>
-                <h1>test1</h1>
-                <h1>test1</h1>
-                <h1>test1</h1>
+                </b-row> -->
 
             </section>
 
@@ -219,13 +212,30 @@ export default {
     metaInfo: { title: 'PDF Preview' },
     data() {
         return {
-            getData: []
+            getData: [],
+            // texts: [
+            //     'สภาพแวดล้อมการควบคุม (Control Environment)',
+            //     'การประเมินความเสี่ยง (Risk Assessment)',
+            //     'การควบคุมการปฏิบัติงาน (Control Activities)',
+            //     'ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)',
+            //     'ระบบการติดตาม (Monitoring Activities)'
+            // ]
         };
     },
 
     mounted() {
         this.getData = this.mapForm;
-        // console.log(this.test);
+    },
+
+    computed: {
+        pdfPages() {
+            const itemsPerPage = 9;
+            const pages = [];
+            for (let i = 0; i < this.getData.length; i += itemsPerPage) {
+                pages.push(this.getData.slice(i, i + itemsPerPage));
+            }
+            return pages
+        }
     },
 
     watch: {
@@ -234,10 +244,13 @@ export default {
         }
     },
 
-    props: ['mapForm', 'test'],
+    props: ['mapForm'],
 
     methods: {
-    }
+        // getText(index) {
+        //     return this.texts[index % this.texts.length]
+        // }
+    },
 };
 </script>
 

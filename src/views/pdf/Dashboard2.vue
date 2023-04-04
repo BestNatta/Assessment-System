@@ -17,7 +17,7 @@ export default {
                 animations: {
                     enabled: true
                 },
-                labels: ['สูง', 'ปานกลาง', 'ต่ำ', 'AIC'],
+                labels: [],
                 dataLabels: {
                     enabled: false,
                 },
@@ -40,12 +40,18 @@ export default {
                     }
                 }],
                 legend: {
-                    position: 'bottom',
-                    offsetY: 5,
+                    show: true,
+                    position: 'right',
+                    offsetY: 100,
+                    offsetX: 0,
+                    itemMargin: {
+                        horizontal: 1,
+                        vertical: 15
+                    },
                 },
                 plotOptions: {
                     pie: {
-                        customScale: 1.1,
+                        customScale: 1,
                         size: 400,
                         donut: {
                             size: '65%',
@@ -72,13 +78,21 @@ export default {
     },
 
     mounted() {
-
+        this.updateChart(this.sendPLC);
+        this.updateLabels(this.sendPLC);
     },
 
     props: ['sendPLC'],
 
     watch: {
         sendPLC(newVal) {
+            this.updateChart(newVal);
+            this.updateLabels(newVal);
+        }
+    },
+
+    methods: {
+        updateChart(newVal) {
             newVal.forEach((value) => {
                 this.series[0] = value.heightValue;
                 this.series[1] = value.moderateValue;
@@ -86,8 +100,20 @@ export default {
                 this.series[3] = value.aicValue;
 
                 this.$refs.chart.updateOptions(this.series, true);
+            });
+        },
+
+        updateLabels(newVal) {
+            newVal.forEach((value) => {
+                this.chartOptions.labels.push(`สูง = ${value.heightValue}`);
+                this.chartOptions.labels.push(`ปานกลาง = ${value.moderateValue}`);
+                this.chartOptions.labels.push(`ต่ำ = ${value.lowValue}`);
+                this.chartOptions.labels.push(`AIC = ${value.aicValue}`);
+
+                this.$refs.chart.updateOptions(this.chartOptions.labels, true);
+
             })
         }
-    }
+    },
 }
 </script>
