@@ -26,7 +26,7 @@
                 <hr />
             </div>
 
-            {{ forms }}
+            <!-- {{ forms }} -->
             <form-1 :forms="forms" />
 
             <b-row>

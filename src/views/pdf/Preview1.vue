@@ -1,11 +1,13 @@
 <template>
     <div id="element-to-convert1">
-        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="item in pdfPages" :key="item.id">
+        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(item, pdfPageIndex) in pdfPages"
+            :key="pdfPageIndex">
             <header-component />
-            
-            <section class="con-content">
-                <div class="chapter">
+
+            <section class="con-content" v-for="(mainTitle, mainIndex) in item" :key="mainIndex">
+                <div class="chapter d-flex mt-4">
                     <h4>ส่วนที่ 1 บทสรุปผู้บริหาร</h4>
+                    &ensp;<h4 v-if="pdfPageIndex > mainIndex">(ต่อ)</h4>
                 </div>
 
                 <b-row class="con-table mx-0">
@@ -36,84 +38,46 @@
                         </b-row>
                     </b-col>
                 </b-row>
-
-                <div class="main-title mx-0 pl-2">
+                <div class="main-title mx-0 pl-2" v-if="pdfPageIndex === mainIndex">
                     <p>การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</p>
                 </div>
 
-                <div class="sub-title pl-3">
-                    <li></li>
-                    <p>สภาพแวดล้อมการควบคุม (Control Environment)</p>
+                <div class="main-title mx-0 pl-2" v-if="pdfPageIndex === pdfPages.length - 1">
+                    <p>การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)</p>
                 </div>
 
-                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(0, 5) : []" :key="items.id">
-                    <!-- <b-row class="text mx-0" > -->
+                <div class="sub-title pl-3" v-if="pdfPageIndex >= mainIndex && pdfPageIndex < 5">
+                    <li></li>
+                    <p>{{ mainTitle.title }}</p>
+                </div>
+
+                <b-row class="text mx-0" v-for="(subTitle, subIndex) in mainTitle.data" :key="subIndex">
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ i + 1 }}</p>
+                        <p>{{ pdfPageIndex * 5 + subIndex + 1 }}</p>
                     </b-col>
                     <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text">{{ items.title }}</p>
+                        <p class="col-text">{{ subTitle.title }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.heightValue }}</p>
+                        <p>{{ subTitle.heightValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.moderateValue }}</p>
+                        <p>{{ subTitle.moderateValue }}</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.aicValue }}</p>
+                        <p>{{ subTitle.lowValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.lowValue }}</p>
+                        <p>{{ subTitle.aicValue }}</p>
                     </b-col>
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.totalValue }}</p>
+                        <p>{{ subTitle.totalValue }}</p>
                     </b-col>
                 </b-row>
 
-                <div class="sub-title pl-3">
-                    <li></li>
-                    <p>การประเมินความเสี่ยง (Risk Assessment)</p>
-                </div>
-
-                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(5, 9) : []" :key="items.id">
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ i + 6 }}</p>
-                    </b-col>
-                    <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text">{{ items.title }}</p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.heightValue }}</p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.moderateValue }}</p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.lowValue }}</p>
-                    </b-col>
-                    <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.aicValue }}</p>
-                    </b-col>
-                    <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ items.totalValue }}</p>
-                    </b-col>
-                </b-row>
-
-
-                <div class="html2pdf__page-break"></div>
-
-                <div class="sub-title pl-3">
-                    <li></li>
-                    <p>การควบคุมการปฏิบัติงาน (Control Activities)</p>
-                </div>
-
-                <b-row class="text mx-0" v-for="(items, i) in Array.isArray(item) ? item.slice(9,12) : []" :key="items.id">
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ i + 10 }}</p>
-                    </b-col>
-                    <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text">{{ items.title }}</p>
+                <b-row class="text-total mx-0" v-if="pdfPageIndex === pdfPages.length - 1">
+                    <b-col cols="7" class="border border-light d-flex align-items-center">
+                        <p class="col-text">รวม การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
@@ -132,17 +96,30 @@
                     </b-col>
                 </b-row>
 
-                <!-- <div class="sub-title pl-3">
-                    <li></li>
-                    <p>ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)</p>
-                </div>
+                <b-row class="text-total mx-0" v-if="pdfPageIndex === pdfPages.length - 1">
+                    <b-col cols="7" class="border border-light d-flex align-items-center">
+                        <p class="col-text">รวม การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</p>
+                    </b-col>
+                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
+                        <p></p>
+                    </b-col>
+                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
+                        <p></p>
+                    </b-col>
+                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
+                        <p></p>
+                    </b-col>
+                    <b-col class="border border-light d-flex align-items-center justify-content-center">
+                        <p></p>
+                    </b-col>
+                    <b-col class="border border-light d-flex align-items-center justify-content-center">
+                        <p></p>
+                    </b-col>
+                </b-row>
 
-                <b-row class="text mx-0">
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text"></p>
+                <b-row class="total mx-0" v-if="pdfPageIndex === pdfPages.length - 1">
+                    <b-col cols="7" class="border border-light d-flex align-items-center">
+                        <p class="col-text">รวม การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</p>
                     </b-col>
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
@@ -159,36 +136,9 @@
                     <b-col class="border border-light d-flex align-items-center justify-content-center">
                         <p></p>
                     </b-col>
-                </b-row> -->
+                </b-row>
 
-                <!-- <div class="sub-title pl-3">
-                    <li></li>
-                    <p>ระบบการติดตาม (Monitoring Activities)</p>
-                </div>
 
-                <b-row class="text mx-0">
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col cols="6" class="border border-light d-flex align-items-center">
-                        <p class="col-text"></p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                    <b-col class="border border-light d-flex align-items-center justify-content-center">
-                        <p></p>
-                    </b-col>
-                </b-row> -->
 
             </section>
 
@@ -199,7 +149,6 @@
 
 <script>
 import '../../assets/scss/stylePDF.scss';
-// import html2pdf from 'html2pdf.js';
 import headerComponent from './layouts/header.vue';
 import footerComponent from './layouts/footer.vue';
 
@@ -213,47 +162,84 @@ export default {
     data() {
         return {
             getData: [],
-            // texts: [
-            //     'สภาพแวดล้อมการควบคุม (Control Environment)',
-            //     'การประเมินความเสี่ยง (Risk Assessment)',
-            //     'การควบคุมการปฏิบัติงาน (Control Activities)',
-            //     'ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)',
-            //     'ระบบการติดตาม (Monitoring Activities)'
-            // ]
+            Titles: [
+                'สภาพแวดล้อมการควบคุม (Control Environment)',
+                'การประเมินความเสี่ยง (Risk Assessment)',
+                'การควบคุมการปฏิบัติงาน (Control Activities)',
+                'ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)',
+                'ระบบการติดตาม (Monitoring Activities)',
+                null
+            ],
+
+            getForms: [],
+            getTitle: []
         };
     },
 
     mounted() {
-        this.getData = this.mapForm;
-    },
 
-    computed: {
-        pdfPages() {
-            const itemsPerPage = 9;
-            const pages = [];
-            for (let i = 0; i < this.getData.length; i += itemsPerPage) {
-                pages.push(this.getData.slice(i, i + itemsPerPage));
-            }
-            return pages
-        }
-    },
-
-    watch: {
-        mapForm(newVal) {
-            this.getData = newVal
-        }
     },
 
     props: ['mapForm'],
 
-    methods: {
-        // getText(index) {
-        //     return this.texts[index % this.texts.length]
-        // }
+    watch: {
+        mapForm(newVal) {
+            this.getData = newVal;
+            const count = [5, 4, 3, 3, 2, 20];
+            let startIndex = 0;
+            this.getForms = this.Titles.map((title, index) => {
+                const endIndex = startIndex + count[index];
+                const slicedData = this.getData.slice(startIndex, endIndex);
+                startIndex = endIndex;
+                return { title, data: slicedData };
+            });
+            this.getForms.forEach((item) => {
+                item.data.forEach((value) => {
+                    console.log(value);
+                })
+            })
+            // const lastIndex = this.getForms.reduce((prev, { data }) => prev + data.length, 0);
+            // return lastIndex;
+        }
+    },
+
+    // watch: {
+    //     mapForm(newVal) {
+    //         this.getData = newVal;
+    //         let count = [5, 4, 3, 3, 2, 20];
+    //         let startIndex = 0;
+    //         this.getForms = this.Titles.map((title, index) => {
+    //             // console.log(index);
+    //             // console.log(count[index]);
+    //             let endIndex = startIndex + count[index];
+    //             // console.log(endIndex);
+    //             let slicedData = this.getData.slice(startIndex, endIndex);
+    //             // console.log(slicedData);
+    //             startIndex = endIndex;
+    //             // console.log(startIndex);
+    //             return { title: title, data: slicedData };
+    //         });
+    //         console.log(this.getForms);
+    //         for (let i = 0; i < this.getForms.length; i++) {
+    //             // console.log(startIndex);
+    //             let currentIndex = i === 0 ? 0 : this.getForms[i - 1].data.length + startIndex;
+    //             // console.log(i);
+    //             console.log(this.getForms[i].data.length);
+    //             // console.log(currentIndex);
+    //             return currentIndex + this.getForms[i].data.length;
+    //         }
+    //     }
+    // },
+
+    computed: {
+        pdfPages() {
+            const itemsPerPage = 1;
+            const pages = [];
+            for (let i = 0; i < this.getForms.length; i += itemsPerPage) {
+                pages.push(this.getForms.slice(i, i + itemsPerPage));
+            }
+            return pages
+        }
     },
 };
 </script>
-
-<style scoped>
-
-</style>

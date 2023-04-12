@@ -160,10 +160,11 @@
   .con-content {
     width: 90%;
     height: 75%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 0 auto;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
 
     .priority > p {
       margin-bottom: 9px;
@@ -233,6 +234,23 @@
         max-width: 100%;
         word-wrap: break-word;
         padding: 5px;
+      }
+    }
+
+    .text-total {
+      background-color: #BFBFBF;
+
+      .col-text {
+        padding: 6px;
+      }
+    }
+
+    .total {
+      background-color: #226aa3;
+
+      .col-text {
+        padding: 7px;
+        color: #fff;
       }
     }
     // .page-break {
