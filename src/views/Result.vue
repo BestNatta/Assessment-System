@@ -500,7 +500,7 @@ export default {
                     aicValue: acc.aicValue + cur.aicValue,
                     totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue + cur.aicValue
                 }
-            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })]; console.log(this.getELCValue)
+            }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
 
             this.getPLCValue = [this.values.slice(17).reduce((acc, cur) => {
                 return {

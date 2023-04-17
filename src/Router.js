@@ -8,7 +8,7 @@ import Edit from './views/Edit.vue';
 import Result from './views/Result.vue';
 import ResuleCircle from './components/ResultCircle.vue';
 import Dashboard from './views/Dashboard/dashboard1.vue';
-import ShowPreview from './views/pdf/Show.vue';
+import ShowPreview from './views/pdf/Main.vue';
 
 
 Vue.use(Router);

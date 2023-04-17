@@ -26,14 +26,6 @@
                 </footer>
             </section>
 
-            <!-- <list-content class="border border-light" /> -->
-
-            <!-- <preview-2 :forms="getAPI" /> -->
-
-            <!-- <detail class="border border-light" /> -->
-
-            <!-- <preview-1 v-for="items in item" :key="items" :mapForm="mapForm" :test="test" /> -->
-
         </div>
     </div>
 </template>

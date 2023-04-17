@@ -5,8 +5,13 @@
 
             <div class="con-detail mt-5 vh-100">
                 <div class=" mb-4">
-                    <h3><u>ส่วนที่ 1 บทสรุปผู้บริหาร</u></h3>
+                    <h3>ส่วนที่ 1 บทสรุปผู้บริหาร</h3>
                 </div>
+
+                <div>
+                    <p><u>เกณฑ์การจัดระดับความสำคัญ</u></p>
+                </div>
+                <br>
 
                 <div class="container px-0">
                     <table class="table table-ed border">

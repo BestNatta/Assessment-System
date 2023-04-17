@@ -149,12 +149,18 @@
   }
 
   .content-preview2 {
-    // border: 1px solid red;
     position: absolute;
     bottom: 30%;
     width: 90%;
     height: 30%;
     text-align: end;
+    color: #226AA3;
+
+    p {
+      font-size: 2rem;
+      margin-top: 7rem;
+    }
+
   }
 
   .con-content {
@@ -247,6 +253,7 @@
 
     .total {
       background-color: #226aa3;
+      color: #fff;
 
       .col-text {
         padding: 7px;

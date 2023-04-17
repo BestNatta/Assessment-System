@@ -7,19 +7,29 @@
         <div class="d-flex justify-content-center">
             <div id="element-to-convert">
 
-                <home-page class="border border-light" :data="companyName" />
+                <!-- หน้าปก -->
+                <Home-Page class="border border-light" :data="companyName" />
 
-                <list-content />
+                <!-- สารบัญ -->
+                <TOC />
 
-                <preview-2 class="border border-light" />
+                <!-- ส่วนที่ 1 -->
+                <Chapter-1 class="border border-light" />
 
-                <detail />
-
+                <!-- dashboard -->
                 <preview-dashboard :getELC="getELC" :getPLC="getPLC" />
 
-                <preview-1 class="border border-light" :mapForm="mapForm" />
-                <!-- <preview-1 class="border border-light" :mapForm="mapForm" v-for="tests in test" :key="tests" /> -->
+                <!-- บทสรุปผู้บริหาร -->
+                <executive-summary class="border border-light" :mapForm="mapForm" />
 
+                <!-- เกณฑ์การจัดระดับความสำคัญ -->
+                <SLA />
+                
+                <!-- ส่วนที่ 2 -->
+                <chapter-2 class="border border-light" />
+
+                <!-- สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน -->
+                <Content />
             </div>
         </div>
     </div>
@@ -28,21 +38,25 @@
 <script>
 import { api } from '../../helpers/Helpers';
 import html2pdf from 'html2pdf.js';
-import homePage from './homepage.vue';
-import ListContent from './Content.vue'
-import Preview1 from './Preview1.vue';
+import HomePage from './CoverPage.vue';
+import TOC from './TOC.vue';
+import ExecutiveSummary from './ExecutiveSummary.vue';
 import PreviewDashboard from './PreviewDashboard.vue';
-import Preview2 from './Preview2.vue';
-import Detail from './Detail.vue';
+import Chapter1 from './Chapter1.vue';
+import SLA from './SLA.vue';
+import Chapter2 from './Chapter2.vue';
+import Content from './Content.vue';
 export default {
     name: 'show-preview',
     components: {
-        homePage,
-        ListContent,
-        Preview2,
+        HomePage,
+        TOC,
+        Chapter1,
         PreviewDashboard,
-        Preview1,
-        Detail
+        ExecutiveSummary,
+        SLA,
+        Chapter2,
+        Content
     },
     data() {
         return {
@@ -127,9 +141,7 @@ export default {
                 filename: 'Assingment.pdf',
                 // image: { type: 'png' }
             }
-
             const getElPage = document.getElementById('element-to-convert');
-
             html2pdf().set(options).from(getElPage).save();
         },
     }
