@@ -29,7 +29,7 @@
                 <chapter-2 class="border border-light" />
 
                 <!-- สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน -->
-                <Content />
+                <Content :forms="mapForm"  />
             </div>
         </div>
     </div>
@@ -60,15 +60,12 @@ export default {
     },
     data() {
         return {
-            test: 2,
             getAPI: [],
             getForm: [],
             mapForm: [],
             getELC: [],
             getPLC: [],
             companyName: '',
-            // getMapData: null,
-            item: 1
         }
     },
 
@@ -133,7 +130,6 @@ export default {
         },
 
         // export PDF
-
         exportToPDF() {
             const options = {
                 margin: 0,

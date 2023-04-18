@@ -1,0 +1,26 @@
+thead {
+    background: #226AA3;
+    color: #fff;
+
+    p {
+        font-size: 13px;
+        font-weight: normal;
+    }
+}
+
+tbody {
+    background: #F2F2F2;
+}
+
+.circle {
+    background: #000;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px;
+    color: #fff;
+    font-size: 12px;
+}

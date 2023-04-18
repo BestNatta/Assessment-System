@@ -1,7 +1,6 @@
 <template>
     <div id="element-to-convert1">
-        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(item, pdfPageIndex) in pdfPages"
-            :key="pdfPageIndex">
+        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(item, pdfPageIndex) in pdfPages" :key="pdfPageIndex">
             <header-component />
 
             <section class="con-content" v-for="(mainTitle, mainIndex) in item" :key="mainIndex">
@@ -239,7 +238,6 @@ export default {
                     totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue
                 }
             }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
-            console.log(this.total);
         }
     },
 
