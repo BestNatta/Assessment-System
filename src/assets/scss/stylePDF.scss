@@ -1,18 +1,16 @@
-.page {
-  background: white;
-  display: block;
-  margin: 0;
-  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
-}
-
-// .page[size="A4"] {
-//   width: 21cm;
-//   height: 27.9cm;
+// * {
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
 // }
+
+.bg-main {
+  background-color: #a6a6a6;
+}
 
 .page[size="A4"] {
   width: 21cm;
-  height: 29.65cm;
+  height: 29.7cm;
   background: #fff;
   position: relative;
 
@@ -42,21 +40,12 @@
       background-size: 250px;
     }
 
-    .square-header-homepage {
-      width: 60%;
-      height: 130px;
-      // background-image: url("../images/d9-03.png");
-      // background-position: center;
-      // background-size: cover;
-      position: relative;
-
-      img {
-        position: absolute;
-        top: -23px;
-        right: -8px;
-        width: 100%;
-        height: auto;
-      }
+    img {
+      position: absolute;
+      top: -19px;
+      right: -10px;
+      width: 607px;
+      height: 168px;
     }
 
     .square-header {
@@ -71,7 +60,6 @@
         top: 20%;
         left: 32%;
         width: 70%;
-        // border: 1px solid #fff;
 
         p {
           font-size: 11px;
@@ -81,8 +69,31 @@
     }
   }
 
+  .header-homepage {
+    width: 100%;
+    height: 140px;
+    background-image: url("../images/d9-03.png");
+    background-position: 204px;
+    background-repeat: no-repeat;
+    background-size: 600px 180px;
+    display: flex;
+    justify-content: end;
+    position: relative;
+
+    .logo-haeder {
+      position: absolute;
+      top: 50px;
+      left: 5px;
+      width: 35%;
+      height: 80px;
+      background-image: url("../images/logo.png");
+      background-repeat: no-repeat;
+      background-position: 20px;
+      background-size: 250px;
+    }
+  }
+
   .con-content-homepage {
-    // border: 1px solid red;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -91,7 +102,6 @@
     height: 60%;
 
     .content1 {
-      // border: 1px solid #000;
       height: 55%;
 
       h1 {
@@ -129,14 +139,27 @@
   }
 
   .con-temp {
-    width: 35%;
-    height: 100%;
-    position: relative;
+    width: auto;
+    height: 90%;
+    // border: 1px solid red;
+    // position: relative;
+
+
+    .img {
+      position: absolute;
+      left: -44px;
+      bottom: 0;
+      width: 100%;
+      height: 80%;
+      background-image: url("../images/d1-01.png");
+      background-position: 9px 60px;
+      background-repeat: no-repeat;
+      background-size: 180px 850px;
+    }
 
     .temp-left {
       width: 43px;
       height: 100%;
-      position: relative;
       background: #f0f0f0;
     }
 
@@ -154,13 +177,12 @@
     width: 90%;
     height: 30%;
     text-align: end;
-    color: #226AA3;
+    color: #226aa3;
 
     p {
       font-size: 2rem;
       margin-top: 7rem;
     }
-
   }
 
   .con-content {
@@ -244,7 +266,7 @@
     }
 
     .text-total {
-      background-color: #BFBFBF;
+      background-color: #bfbfbf;
 
       .col-text {
         padding: 6px;
@@ -260,38 +282,32 @@
         color: #fff;
       }
     }
-    // .page-break {
-    //   page-break-before: always;
-    // }
   }
 
   .footer-homepage {
-    width: 813px;
-    height: auto;
-    position: relative;
-
-    img {
-      position: absolute;
-      bottom: -2px;
-      left: -8px;
-      width: 100%;
-    }
-  }
-
-  footer {
-    width: 100%;
-    max-height: 130px;
     position: absolute;
-    top: 90%;
-
-    .footer-temp {
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 50px;
-      background-color: #c00000;
-    }
+    bottom: 0;
+    // left: 0;
+    background-image: url("../images/d2-02.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 815px 494px;
+    width: 100%;
+    height: 450px;
   }
+
+  // footer {
+  //   width: 100%;
+  //   max-height: 130px;
+
+  //   .footer-temp {
+  //     position: absolute;
+  //     bottom: 0;
+  //     width: 100%;
+  //     height: 50px;
+  //     background-color: #c00000;
+  //   }
+  // }
 
   .footer-component {
     width: 100%;
@@ -316,11 +332,10 @@
     }
   }
 
-  .footer-test {
+  .footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    // left: 50%;
   }
 }
 
@@ -334,6 +349,11 @@
 .head-table {
   color: #fff;
   background-color: #002060;
+
+  th {
+    text-align: center;
+    width: 4%;
+  }
 }
 
 .detail-height {
@@ -353,11 +373,6 @@
   background-color: #00b0f0;
 }
 
-thead th {
-  text-align: center;
-  width: 4%;
-}
-
 // @page {
 //   counter-increment: page;
 // }
@@ -365,7 +380,3 @@ thead th {
 // .page-number::before {
 //   content: "Page " counter(page);
 // }
-
-
-
-

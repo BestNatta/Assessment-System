@@ -1,12 +1,10 @@
 <template>
     <div>
         <div id="element-to-convert">
-            <section class="pdf-content page " size="A4">
-                <header>
+            <section class="pdf-content page" size="A4">
+                <header class="header-homepage">
                     <div class="logo-haeder"></div>
-                    <div class="square-header-homepage">
-                        <img src="../../assets/images/d9-03.png" alt="">
-                    </div>
+                    <!-- <img src="../../assets/images/d9-03.png" alt=""> -->
                 </header>
 
                 <div class="con-content-homepage">
@@ -22,7 +20,7 @@
                 </div>
 
                 <footer class="footer-homepage">
-                    <img src="../../assets/images/d2-02.png" alt="">
+                    <!-- <img src="../../assets/images/d2-02.png" alt=""> -->
                 </footer>
             </section>
 

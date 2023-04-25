@@ -3,8 +3,9 @@
         <div id="element-to-convert1">
             <section class="pdf-content page" size="A4" ref="pdfContent">
                 <header-component />
+                <!-- <header class="mb-5"></header> -->
 
-                <div class="container  vh-100 w-75 mt-5">
+                <div class="container w-75 mt-5 ">
                     <section class="text-center mb-3 ">
                         <h3>สารบัญ</h3>
                     </section>
@@ -53,7 +54,7 @@
                     </b-row>
                 </div>
 
-                <footer-component class="footer-test" />
+                <footer-component class="footer" />
             </section>
         </div>
     </div>

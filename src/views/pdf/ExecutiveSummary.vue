@@ -1,10 +1,14 @@
 <template>
     <div id="element-to-convert1">
-        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(item, pdfPageIndex) in pdfPages" :key="pdfPageIndex">
+        <section class="pdf-content page" size="A4" ref="pdfContent" 
+            v-for="(item, pdfPageIndex) in pdfPages"
+            :key="pdfPageIndex">
+
             <header-component />
+            <!-- <header class="mb-4"></header> -->
 
             <section class="con-content" v-for="(mainTitle, mainIndex) in item" :key="mainIndex">
-                <div class="chapter d-flex mt-4">
+                <div class="chapter d-flex mt-5">
                     <h4>ส่วนที่ 1 บทสรุปผู้บริหาร</h4>
                     &ensp;<h4 v-if="pdfPageIndex > mainIndex">(ต่อ)</h4>
                 </div>
@@ -52,7 +56,7 @@
 
                 <b-row class="text mx-0" v-for="(subTitle, subIndex) in mainTitle.data" :key="subIndex">
                     <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                        <p>{{ pdfPageIndex * 5 + subIndex + 1 }}</p>
+                        <!-- <p>{{ pdfPageIndex * 5 + subIndex + 1 }}</p> --> {{ countIndex(pdfPageIndex, subIndex++) }}
                     </b-col>
                     <b-col cols="6" class="border border-light d-flex align-items-center">
                         <p class="col-text">{{ subTitle.title }}</p>
@@ -145,7 +149,7 @@
 
             </section>
 
-            <footer-component class="footer-test" />
+            <footer-component class="footer" />
         </section>
     </div>
 </template>
@@ -192,22 +196,17 @@ export default {
     watch: {
         mapForm(newVal) {
             this.getData = newVal;
-            const count = [5, 4, 3, 3, 2, 20];
-            let startIndex = 0;
-            this.getForms = this.Titles.map((title, index) => {
-                const endIndex = startIndex + count[index];
-                const slicedData = this.getData.slice(startIndex, endIndex);
-                startIndex = endIndex;
-                const totalValue = slicedData.reduce((acc, cur) => acc + cur.totalValue, 0);
-                return { title, data: slicedData, totalValue };
-            });
-
-            // this.totalPLC = this.getForms.slice(0, 5).map((value) => value.totalValue).reduce((acc, cur) => acc + cur, 0);
+            let count = [5, 4, 3, 3, 2, 20];
+            this.getForms = this.Titles.map((value, index) => {
+                let start = count.slice(0, index).reduce((acc, cur) => acc + cur, 0);
+                let slicedData = this.getData.slice(start, start + count[index]);
+                return { 
+                    title: value,
+                    data: slicedData
+                 }
+            })
 
             const allForms = [].concat(...this.getForms.map(group => group.data));
-            // console.log(allForms);
-            // const filterPLC = allForms.slice(0, 17);
-            // console.log(filterPLC);
 
             this.totalPLC = [allForms.slice(0, 17).reduce((acc, cur) => {
                 return {
@@ -235,7 +234,7 @@ export default {
                     moderateValue: acc.moderateValue + cur.moderateValue,
                     lowValue: acc.lowValue + cur.lowValue,
                     aicValue: acc.aicValue + cur.aicValue,
-                    totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue
+                    totalValue: acc.totalValue + cur.heightValue + cur.moderateValue + cur.lowValue + cur.aicValue
                 }
             }, { heightValue: 0, moderateValue: 0, lowValue: 0, aicValue: 0, totalValue: 0 })];
         }
@@ -251,5 +250,11 @@ export default {
             return pages
         }
     },
+
+    methods: {
+        countIndex(mainIndex, subIndex) {
+            return (mainIndex * 5) + (subIndex +1)
+        }
+    }
 };
 </script>

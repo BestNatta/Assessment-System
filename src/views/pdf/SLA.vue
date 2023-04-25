@@ -2,8 +2,9 @@
     <div class="d-flex justify-content-center">
         <section class="pdf-content page" size="A4" ref="pdfContent">
             <header-component />
+            <!-- <header class="mb-5"></header> -->
 
-            <div class="con-detail mt-5 vh-100">
+            <div class="con-detail vh-100 mt-5">
                 <div class=" mb-4">
                     <h3>ส่วนที่ 1 บทสรุปผู้บริหาร</h3>
                 </div>
@@ -50,10 +51,9 @@
                         </tbody>
                     </table>
                 </div>
-
             </div>
 
-            <footer-component class="footer-test" />
+            <footer-component class="footer" />
         </section>
     </div>
 </template>

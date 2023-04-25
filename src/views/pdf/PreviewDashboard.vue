@@ -2,7 +2,6 @@
     <div id="element-to-convert1">
         <section class="pdf-content page" size="A4" ref="pdfContent">
             <header-component />
-
             <div class="container-dashboard">
                 <div class="dashboaed-1">
                      <dashboard-1 :sendELC="getELC" />
@@ -12,7 +11,7 @@
                 </div>
             </div>
 
-            <footer-component class="footer-test" />
+            <footer-component class="footer" />
         </section>
     </div>
 </template>

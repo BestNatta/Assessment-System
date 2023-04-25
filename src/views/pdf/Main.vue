@@ -1,35 +1,38 @@
 <template>
-    <div>
-        <div class="text-center mb-3">
-            <b-button class="px-4 py-2" variant="info" @click="exportToPDF">Submit</b-button>
+    <div class="bg-main">
+        <div class="text-center m-0 py-3">
+            <b-button class="px-4 " variant="info" @click="exportToPDF">Export PDF</b-button>
         </div>
 
         <div class="d-flex justify-content-center">
             <div id="element-to-convert">
 
                 <!-- หน้าปก -->
-                <Home-Page class="border border-light" :data="companyName" />
+                <Home-Page :data="companyName" />
 
                 <!-- สารบัญ -->
-                <TOC />
+                <TOC  />
 
                 <!-- ส่วนที่ 1 -->
-                <Chapter-1 class="border border-light" />
+                <Chapter-1 />
 
                 <!-- dashboard -->
                 <preview-dashboard :getELC="getELC" :getPLC="getPLC" />
 
                 <!-- บทสรุปผู้บริหาร -->
-                <executive-summary class="border border-light" :mapForm="mapForm" />
+                <executive-summary :mapForm="mapForm" />
 
                 <!-- เกณฑ์การจัดระดับความสำคัญ -->
                 <SLA />
-                
+
                 <!-- ส่วนที่ 2 -->
-                <chapter-2 class="border border-light" />
+                <chapter-2 />
 
                 <!-- สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน -->
-                <Content :forms="mapForm"  />
+                <content-1 :forms="getForm" />
+
+                <!-- สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน (ต่อ) -->
+                <content-2 :forms="getForm" />
             </div>
         </div>
     </div>
@@ -45,7 +48,8 @@ import PreviewDashboard from './PreviewDashboard.vue';
 import Chapter1 from './Chapter1.vue';
 import SLA from './SLA.vue';
 import Chapter2 from './Chapter2.vue';
-import Content from './Content.vue';
+import Content1 from './Content1.vue';
+import Content2 from './Content2.vue';
 export default {
     name: 'show-preview',
     components: {
@@ -56,7 +60,8 @@ export default {
         ExecutiveSummary,
         SLA,
         Chapter2,
-        Content
+        Content1,
+        Content2
     },
     data() {
         return {
@@ -74,10 +79,8 @@ export default {
         this.getForm.push(this.getAPI);
         const mapData = this.getForm.map(item => item.mainForm);
         this.getMapData = mapData[0];
-
         this.countVal();
         this.getCompany();
-
     },
 
     methods: {
@@ -132,13 +135,16 @@ export default {
         // export PDF
         exportToPDF() {
             const options = {
-                margin: 0,
+                margin: [0, 0],
                 padding: 0,
-                filename: 'Assingment.pdf',
+                filename: 'Assignment.pdf',
+                html2canvas: { scale: 1 }
+                // pagebreak: { mode: ['avoid-all', 'css'], before: '.page-break' },
                 // image: { type: 'png' }
             }
             const getElPage = document.getElementById('element-to-convert');
             html2pdf().set(options).from(getElPage).save();
+            // html2pdf().set(options).from(getElPage).outputPdf("dataurlnewwindow");
         },
     }
 

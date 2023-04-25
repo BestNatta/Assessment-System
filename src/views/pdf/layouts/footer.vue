@@ -2,13 +2,11 @@
     <div>
         <b-row>
             <b-col class="d-flex justify-content-center">
-                <!-- <section class="pdf-content page" size="A4" ref="pdfContent"> -->
-                    <div class="footer-component">
-                        <div class="img"></div>
-                        <div class="square">
-                        </div>
+                <div class="footer-component">
+                    <div class="img"></div>
+                    <div class="square">
                     </div>
-                <!-- </section> -->
+                </div>
             </b-col>
         </b-row>
     </div>
