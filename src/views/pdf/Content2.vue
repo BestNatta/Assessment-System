@@ -2,8 +2,7 @@
     <div>
         <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(mainItem, mainIndex) in pdfPages" :key="mainIndex">
             <header-component />
-            <!-- <header class="mb-5"></header> -->
-
+            
             <div class="con-detail vh-100 mt-5">
                 <div class=" mb-4" v-if="mainIndex === 0">
                     <h3 class="mb-4">ส่วนที่ 2 สรุปข้อสังเกตจากการสอบทานการควบคุมภายใน (ต่อ)</h3>
