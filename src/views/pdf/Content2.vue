@@ -99,10 +99,14 @@ export default {
             const itemsPerPage = 1;
             const pages = [];
             for (let i = 0; i < this.getForm.length; i += itemsPerPage) {
-                pages.push(this.getForm.slice(i, i + itemsPerPage));
+                // console.log(this.getForm[i].subForm)
+                for (let j = 0; j < this.getForm[i].subForm.length; j += itemsPerPage) {
+                    console.log(this.getForm[i])
+                    pages.push(this.getForm.slice(j, j + itemsPerPage));
+                }
             }
             return pages
-        }
+        },
     },
 
     methods: {

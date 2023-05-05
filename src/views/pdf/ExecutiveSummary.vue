@@ -1,13 +1,13 @@
 <template>
     <div id="element-to-convert1">
-        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(item1, index1) in 3" :key="index1">
+        <section class="pdf-content page" size="A4" ref="pdfContent" v-for="(mainPage, indexPage) in 3" :key="indexPage">
 
             <header-component />
 
             <section class="con-content">
                 <div class="chapter d-flex mt-5">
                     <h4>ส่วนที่ 1 บทสรุปผู้บริหาร</h4>
-                    &ensp;<h4 v-if="index1 > 0">(ต่อ)</h4>
+                    &ensp;<h4 v-if="indexPage > 0">(ต่อ)</h4>
                 </div>
 
 
@@ -40,40 +40,40 @@
                     </b-col>
                 </b-row>
 
-                <div class="main-title mx-0 pl-2" v-if="index1 === 0">
+                <div class="main-title mx-0 pl-2" v-if="indexPage === 0">
                     <p>การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</p>
                 </div>
 
                 <!-- ข้อที่ 1 (1-5) -->
 
-                <span v-if="index1 === 0">
-                    <span v-for="(item, index) in sliceItem1" :key="index">
-                        <div class="sub-title pl-3" v-if="index < 1">
+                <span v-if="indexPage === 0">
+                    <span v-for="(item1, index1) in sliceItem1" :key="item1.id">
+                        <div class="sub-title pl-3" v-if="index1 < 1">
                             <li></li>
                             <p>สภาพแวดล้อมการควบคุม (Control Environment)</p>
                         </div>
 
                         <b-row class="text mx-0">
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ index + 1 }}</p>
+                                <p>{{ index1 + 1 }}</p>
                             </b-col>
                             <b-col cols="6" class="border border-light d-flex align-items-center">
-                                <p class="col-text">{{ item.title }}</p>
+                                <p class="col-text">{{ item1.title }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.heightValue }}</p>
+                                <p>{{ item1.heightValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.moderateValue }}</p>
+                                <p>{{ item1.moderateValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.lowValue }}</p>
+                                <p>{{ item1.lowValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.aicValue }}</p>
+                                <p>{{ item1.aicValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.totalValue }}</p>
+                                <p>{{ item1.totalValue }}</p>
                             </b-col>
                         </b-row>
                     </span>
@@ -81,33 +81,33 @@
 
                     <!-- ข้อที่ 2 (5-9) -->
 
-                    <span v-for="(item, index) in sliceItem2" :key="index">
-                        <div class="sub-title pl-3" v-if="index < 1">
+                    <span v-for="(item2, index2) in sliceItem2" :key="item2.id">
+                        <div class="sub-title pl-3" v-if="index2 < 1">
                             <li></li>
                             <p>การประเมินความเสี่ยง (Risk Assessment)</p>
                         </div>
 
                         <b-row class="text mx-0">
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ index + 6 }}</p>
+                                <p>{{ index2 + 6 }}</p>
                             </b-col>
                             <b-col cols="6" class="border border-light d-flex align-items-center">
-                                <p class="col-text">{{ item.title }}</p>
+                                <p class="col-text">{{ item2.title }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.heightValue }}</p>
+                                <p>{{ item2.heightValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.moderateValue }}</p>
+                                <p>{{ item2.moderateValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.lowValue }}</p>
+                                <p>{{ item2.lowValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.aicValue }}</p>
+                                <p>{{ item2.aicValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.totalValue }}</p>
+                                <p>{{ item2.totalValue }}</p>
                             </b-col>
                         </b-row>
                     </span>
@@ -115,96 +115,96 @@
 
                 <!-- ข้อที่ 3 (9-12) -->
 
-                <span v-if="index1 === 1">
-                    <span v-for="(item, index) in sliceItem3" :key="index">
-                        <div class="sub-title pl-3" v-if="index < 1">
+                <span v-if="indexPage === 1">
+                    <span v-for="(item3, index3) in sliceItem3" :key="item3.id">
+                        <div class="sub-title pl-3" v-if="index3 < 1">
                             <li></li>
                             <p>การควบคุมการปฏิบัติงาน (Control Activities)</p>
                         </div>
 
                         <b-row class="text mx-0">
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ index + 10 }}</p>
+                                <p>{{ index3 + 10 }}</p>
                             </b-col>
                             <b-col cols="6" class="border border-light d-flex align-items-center">
-                                <p class="col-text">{{ item.title }}</p>
+                                <p class="col-text">{{ item3.title }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.heightValue }}</p>
+                                <p>{{ item3.heightValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.moderateValue }}</p>
+                                <p>{{ item3.moderateValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.lowValue }}</p>
+                                <p>{{ item3.lowValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.aicValue }}</p>
+                                <p>{{ item3.aicValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.totalValue }}</p>
+                                <p>{{ item3.totalValue }}</p>
                             </b-col>
                         </b-row>
                     </span>
 
-                    <span v-for="(item, index) in sliceItem4" :key="index">
-                        <div class="sub-title pl-3" v-if="index < 1">
+                    <span v-for="(item4, index4) in sliceItem4" :key="item4.id">
+                        <div class="sub-title pl-3" v-if="index4 < 1">
                             <li></li>
                             <p>ระบบสารสนเทศและการสื่อสารข้อมูล (Information and Communication)</p>
                         </div>
 
                         <b-row class="text mx-0">
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ index + 13 }}</p>
+                                <p>{{ index4 + 13 }}</p>
                             </b-col>
                             <b-col cols="6" class="border border-light d-flex align-items-center">
-                                <p class="col-text">{{ item.title }}</p>
+                                <p class="col-text">{{ item4.title }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.heightValue }}</p>
+                                <p>{{ item4.heightValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.moderateValue }}</p>
+                                <p>{{ item4.moderateValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.lowValue }}</p>
+                                <p>{{ item4.lowValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.aicValue }}</p>
+                                <p>{{ item4.aicValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.totalValue }}</p>
+                                <p>{{ item4.totalValue }}</p>
                             </b-col>
                         </b-row>
                     </span>
 
-                    <span v-for="(item, index) in sliceItem5" :key="index">
-                        <div class="sub-title pl-3" v-if="index < 1">
+                    <span v-for="(item5, index5) in sliceItem5" :key="item5.id">
+                        <div class="sub-title pl-3" v-if="index5 < 1">
                             <li></li>
                             <p>ระบบการติดตาม (Monitoring Activities)</p>
                         </div>
 
                         <b-row class="text mx-0">
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ index + 16 }}</p>
+                                <p>{{ index5 + 16 }}</p>
                             </b-col>
                             <b-col cols="6" class="border border-light d-flex align-items-center">
-                                <p class="col-text">{{ item.title }}</p>
+                                <p class="col-text">{{ item5.title }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.heightValue }}</p>
+                                <p>{{ item5.heightValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.moderateValue }}</p>
+                                <p>{{ item5.moderateValue }}</p>
                             </b-col>
                             <b-col cols="1" class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.lowValue }}</p>
+                                <p>{{ item5.lowValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.aicValue }}</p>
+                                <p>{{ item5.aicValue }}</p>
                             </b-col>
                             <b-col class="border border-light d-flex align-items-center justify-content-center">
-                                <p>{{ item.totalValue }}</p>
+                                <p>{{ item5.totalValue }}</p>
                             </b-col>
                         </b-row>
                     </span>
@@ -212,11 +212,11 @@
 
                 <!-- ข้อ 3 (17-...) -->
 
-                <div class="main-title mx-0 pl-2" v-if="index1 === 2">
+                <div class="main-title mx-0 pl-2" v-if="indexPage === 2">
                         <p>การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)</p>
                     </div>
 
-                <span v-if="index1 === 2">
+                <span v-if="indexPage === 2">
                     <span v-for="(item, index) in sliceItem6" :key="index">
 
                         <b-row class="text mx-0">
@@ -245,7 +245,7 @@
                     </span>
                 </span>
 
-                <div v-if="index1 === 2">
+                <div v-if="indexPage === 2">
                     <b-row class="text-total mx-0" v-for="items1 in totalPLC" :key="items1.id">
                         <b-col cols="7" class="border border-light d-flex align-items-center">
                             <p class="col-text">รวม การควบคุมภายในระดับกระบวนปฏิบัติงาน (Process-Level Controls: PLC)
@@ -269,7 +269,7 @@
                     </b-row>
                 </div>
 
-                <div v-if="index1 === 2">
+                <div v-if="indexPage === 2">
                     <b-row class="text-total mx-0" v-for="items1 in totalELC" :key="items1.id">
                         <b-col cols="7" class="border border-light d-flex align-items-center">
                             <p class="col-text">รวม การควบคุมภายในระดับองค์กร (Entity-Level Controls: ELC)</p>
@@ -292,7 +292,7 @@
                     </b-row>
                 </div>
 
-                <div v-if="index1 === 2">
+                <div v-if="indexPage === 2">
                     <b-row class="total mx-0" v-for="items1 in total" :key="items1.id">
                         <b-col cols="7" class="border border-light d-flex align-items-center">
                             <p class="col-text">รวม</p>
@@ -370,8 +370,6 @@ export default {
                     data: slicedData
                 }
             })
-
-            // console.log(this.getForms);
 
             const allForms = [].concat(...this.getForms.map(group => group.data));
 
